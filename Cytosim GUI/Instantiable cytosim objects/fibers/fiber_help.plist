@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fiber (set parameters) DIC</key>
+	<dict>
+		<key>rigidity</key>
+		<string>Real number expressed in pN/µm2. Related to the persitence length `Lp` via the Boltzman constant and absolute temperature (kT = k_B * T). Rigidity = Lp * kT. Measurements gave: microtubule = 30, stabilized microtubule = 10, F-actin = 0.04, Phalloidin-stabilized actin = 0.08</string>
+		<key>segmentation</key>
+		<string>Real number. Distance between vertices. Scaled with rigidity as segmentation = sqrt(rigidity/force). simulation should not be trusted if any filament contains kinks (i.e. if the angle between consecutive segments is greater then 45 degrees). In that case, the simulation should be redone with a segmentation divided by 2, and the segmentation should be reduced until kinks do not appear.</string>
+		<key>min_length</key>
+		<string>Real number. Minimum length of the fiber</string>
+		<key>max_length</key>
+		<string>Real number. Maximum length of the fiber</string>
+		<key>total_polymer</key>
+		<string>A string that is converted into a number and that limits the total number of fibers of this class. Makes the assembly rate dependent on the amount of free monomer. assembly_speed = (1-sum_of_all_fiber_length/total_polymer). Default value  = infinite (inf).</string>
+		<key>persistent</key>
+		<string>Boolean. If &apos;false&apos; the fiber will be destroyed if it is shorter than min_length (default=false)</string>
+		<key>viscosity</key>
+		<string>Real number representing effective viscosity (if unspecified, simul:viscosity is used)</string>
+		<key>drag_radius</key>
+		<string>Real number. Radius used to calculate mobility, corresponding to the radius of the fiber</string>
+		<key>drag_length</key>
+		<string>Real number. cut-off on the length of the fiber, above which drag is proportional to length</string>
+		<key>drag_model</key>
+		<string>Integer number. If ≠0 drag = dragCoefficientSurface() else drag = dragCoefficientCylinder()</string>
+		<key>drag_gap</key>
+		<string>Real number. Distance of fluid between immobile surface and cylinder (set as drag_model[1])</string>
+		<key>binding_key</key>
+		<string>Integer number. Use powers of 2. Compared using bitwise AND with a hand&apos;s binding_key. allowed = ( fiber:binding_key &amp; hand:binding_key )</string>
+		<key>lattice</key>
+		<string>Integer number. If ≠0 a lattice is associated with this fiber</string>
+		<key>lattice_unit</key>
+		<string>Real number.</string>
+		<key>confine</key>
+		<string>Integer number. Possible values within: off (0), inside (1), outside (2), on/surface (3), plus_end (10), minus_end (11), both_ends (12)</string>
+		<key>confine_stiffness</key>
+		<string>Real number. Also known as confine[1].</string>
+		<key>confine_space</key>
+		<string>String. Name of space used for confinement (also known as confine[2])</string>
+		<key>steric</key>
+		<string>Integer number. Steric interaction generated if ≠0. The steric interaction generates a force derived from the potential energy E = 1/2 k * ( d - d_0 ) ^ 2. d is distance between two sections of the filament. The force is controlled by a stiffness (k) and equilibrium length (d_0). The force is repulsive at short range (d&lt;d_0) and attractive elsewhere (d&gt;d_0)</string>
+		<key>steric_radius</key>
+		<string>Real number. Radius of repulsive steric interaction (also known as steric[1])</string>
+		<key>steric_range</key>
+		<string>Real number. Extra radius of attractive steric interaction (also known as steric[2])</string>
+		<key>glue</key>
+		<string>Integer number. Interaction between PLUS_END and space. Creates a single every time a fiber contacts the surface. The single is deleted if the associated hand detaches.</string>
+		<key>glue_single</key>
+		<string>String. Name of single used for glue (set as glue[1])</string>
+		<key>activity {fiber}</key>
+		<string>String.  Set as one of: none, grow, classic, dynamic or treadmill  (default = none)</string>
+		<key>treadmilling fiber DIC</key>
+		<dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<string>Characteristic force of assembly state at the plus end</string>
+				<key>growing_force (minus end)</key>
+				<string>Characteristic force of assembly state at the minus end</string>
+			</dict>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed (plus end)</key>
+				<string>growing_speed[0] = force-dependent assembly rate. growing_speed[1] = concentration-dependent assembly rate. Assembly rate is limited by antagonistic force. if force &lt;0,  speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed; else speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_speed (minus end)</key>
+				<string>Not very clear. Has to be tested whether this applies separately for both ends  or actually is force- or concentration-dependent assembly rate</string>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shrinking_speed (plus end)</key>
+				<string>Shrinking speeds for plus ends that are outside</string>
+				<key>shrinking_speed (minus end)</key>
+				<string>Shrinking speeds for minus ends that are outside</string>
+			</dict>
+		</dict>
+		<key>grow(ing) fiber DIC</key>
+		<dict>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed {plus end}</key>
+				<string>growing_speed[0] = force-dependent assembly rate. growing_speed[1] = concentration-dependent assembly rate. Assembly rate is limited by antagonistic force. if force &lt;0,  speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed; else speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_speed {minus end}</key>
+				<string>Not very clear. Has to be tested whether this applies separately for both ends  or actually is force- or concentration-dependent assembly rate</string>
+			</dict>
+			<key>growing_off_speed</key>
+			<dict>
+				<key>growing_off_speed (plus end)</key>
+				<string>A constant representing spontaneous disassembly at the plus end.    if ( force &lt; 0 )
+             speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed;
+         else
+             speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_off_speed (minus end)</key>
+				<string>A constant representing spontaneous disassembly at the minus end.  if ( force &lt; 0 )
+             speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed;
+         else
+             speed = growing_speed * free_polymer + growing_off_speed;</string>
+			</dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<string>Characteristic force of assembly state at the plus end. </string>
+				<key>growing_force (minus end)</key>
+				<string>Characteristic force of assembly state at the minus end. </string>
+			</dict>
+			<key>shrink_outside</key>
+			<dict>
+				<key>shrink_outside (plus end)</key>
+				<string>A flag. If set to 1, the plus end will grow inside the confining space and shrink ouside of it</string>
+				<key>shrink_outside (minus end)</key>
+				<string>A flag. If set to 1, the minus end will grow inside the confining space and shrink ouside of it</string>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shrinking_speed (plus end)</key>
+				<string>Shrinking speeds for the plus ends that are outside of the space</string>
+				<key>shrinking_speed (minus end)</key>
+				<string>Shrinking speeds for the minus ends that are outside of the space</string>
+			</dict>
+		</dict>
+		<key>classic fiber DIC</key>
+		<dict>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed (plus end)</key>
+				<string>growing_speed[0] = force-dependent assembly rate. growing_speed[1] = concentration-dependent assembly rate. Assembly rate is limited by antagonistic force. if force &lt;0,  speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed; else speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_speed (minus end)</key>
+				<string>Not very clear. Has to be tested whether this applies separately for both ends  or actually is force- or concentration-dependent assembly rate</string>
+			</dict>
+			<key>growing_off_speed</key>
+			<dict>
+				<key>growing_off_speed (plus end)</key>
+				<string>A constant representing spontaneous disassembly at the plus end.    if ( force &lt; 0 )
+             speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed;
+         else
+             speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_off_speed (minus end)</key>
+				<string>A constant representing spontaneous disassembly at the minus end.  if ( force &lt; 0 )
+             speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed;
+         else
+             speed = growing_speed * free_polymer + growing_off_speed;</string>
+			</dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<string>Characteristic force of assembly state at the plus end. </string>
+				<key>growing_force (minus end)</key>
+				<string>Characteristic force of assembly state at the minus end. </string>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shriniking_speed (plus end)</key>
+				<string>Shrinking speeds for the plus ends that are outside of the space</string>
+				<key>shriniking_speed (minus end)</key>
+				<string>Shrinking speeds for the minus ends that are outside of the space</string>
+			</dict>
+			<key>catastrophe_rate</key>
+			<dict>
+				<key>catastrophe_rate (plus end)</key>
+				<string>Depends on the growth rate of the corresponding tip. catastrophe_rate_real = catastrophe_rate_stalled / ( 1 + coef * growing_speed_real ) where `coef` is set to match the given `catastrophe_rate` in the absence of force. coef = ( catastrophe_rate_stalled/catastrophe_rate - 1.0 ) / growing_speed_unloaded; growing_speed_unloaded = growing_speed + growing_off_speed; Note that if `catastrophe_rate_stalled &gt;&gt; catastrophe_rate`, the equation simplies to catastrophe_rate_real = catastrophe_rate * growing_speed_unloaded / growing_speed_real</string>
+				<key>catastrophe_rate (minus end)</key>
+				<string>Depends on the growth rate of the corresponding tip. catastrophe_rate_real = catastrophe_rate_stalled / ( 1 + coef * growing_speed_real ) where `coef` is set to match the given `catastrophe_rate` in the absence of force. coef = ( catastrophe_rate_stalled/catastrophe_rate - 1.0 ) / growing_speed_unloaded; growing_speed_unloaded = growing_speed + growing_off_speed; Note that if `catastrophe_rate_stalled &gt;&gt; catastrophe_rate`, the equation simplies to catastrophe_rate_real = catastrophe_rate * growing_speed_unloaded / growing_speed_real</string>
+			</dict>
+			<key>catastrophe_rate_stalled</key>
+			<dict>
+				<key>catastrophe_rate_stalled (plus end)</key>
+				<string>If this parameter is not set, the catastrophe rate will not depend on growth speed.</string>
+				<key>catastrophe_rate_stalled (minus end)</key>
+				<string>If this parameter is not set, the catastrophe rate will not depend on growth speed.</string>
+			</dict>
+			<key>rescue_rate</key>
+			<dict>
+				<key>rescue_rate (plus end)</key>
+				<string>Rate of stochastic switching from disassembly to assembly. </string>
+				<key>rescue_rate (minus end)</key>
+				<string>Rate of stochastic switching from disassembly to assembly. </string>
+			</dict>
+			<key>rebirth_rate</key>
+			<dict>
+				<key>rebirth_rate (plus end)</key>
+				<string> Switching rate to the growing state for a fiber shorter than `min_length` (default=0)</string>
+				<key>rebirth rate (minus end)</key>
+				<string> Switching rate to the growing state for a fiber shorter than `min_length` (default=0)</string>
+			</dict>
+		</dict>
+		<key>dynamic fiber DIC</key>
+		<dict>
+			<key>unit_length</key>
+			<string>Length of discrete units of assembly/disassembly</string>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed (plus end)</key>
+				<string>growing_speed[0] = force-dependent assembly rate. growing_speed[1] = concentration-dependent assembly rate. Assembly rate is limited by antagonistic force. if force &lt;0,  speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed; else speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_speed (minus end)</key>
+				<string>Not very clear. Has to be tested whether this applies separately for both ends  or actually is force- or concentration-dependent assembly rate</string>
+			</dict>
+			<key>growing_off_speed</key>
+			<dict>
+				<key>growing_off_speed (plus end)</key>
+				<string>A constant representing spontaneous disassembly at the plus end.    if ( force &lt; 0 )
+             speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed;
+         else
+             speed = growing_speed * free_polymer + growing_off_speed;</string>
+				<key>growing_off_speed (minus end)</key>
+				<string>A constant representing spontaneous disassembly at the minus end.  if ( force &lt; 0 )
+             speed = growing_speed * free_polymer * exp( force / growing_force ) + growing_off_speed;
+         else
+             speed = growing_speed * free_polymer + growing_off_speed;</string>
+			</dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<string>Characteristic force of assembly state at the plus end. </string>
+				<key>growing_force (minus end)</key>
+				<string>Characteristic force of assembly state at the minus end. </string>
+			</dict>
+			<key>hydrolysis_rate</key>
+			<dict>
+				<key>hydrolysis_rate (plus end)</key>
+				<string>Without spontaneous off rate (`growing_off_rate==0`), the catastrophe rate is set by catastrophe_rate = 3 * hydrolysis_rate ^2 / growing_rate;
+     
+     with `growing_rate = growing_speed / unit_length`</string>
+				<key>hydrolysis_rate (minus end)</key>
+				<string>Without spontaneous off rate (`growing_off_rate==0`), the catastrophe rate is set by catastrophe_rate = 3 * hydrolysis_rate ^2 / growing_rate; with `growing_rate = growing_speed / unit_length`</string>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shrinking_speed (plus end)</key>
+				<string>Shrinking speeds for the plus ends that are outside of the space</string>
+				<key>shrinking_speed (minus end)</key>
+				<string>Shrinking speeds for the minus ends that are outside of the space</string>
+			</dict>
+			<key>rebirth_rate</key>
+			<dict>
+				<key>rebirth_rate (plus end)</key>
+				<string> Switching rate to the growing state for a fiber shorter than `min_length` (default=0)</string>
+				<key>rebirth_rate (minus end)</key>
+				<string> Switching rate to the growing state for a fiber shorter than `min_length` (default=0)</string>
+			</dict>
+			<key>zone_space</key>
+			<string>String. Name of the Space defining the zone in which hydrolysis_rate is different.</string>
+			<key>zone_radius</key>
+			<string>Number. Radius of zone in which the hydrolysis_rate is different. This creates a circular zone around the origin</string>
+			<key>zone_hydrolysis_rate</key>
+			<string>Hydrolysis rate of G-units, outside the zone of radius `zone_radius`.</string>
+		</dict>
+	</dict>
+	<key>fiber (new parameters) DIC</key>
+	<dict>
+		<key>length {fiber}</key>
+		<string>Length of the fibers in microns, can be modified by adding LENGTH_MODIFIER (exponential or REAL). This introduces variability, without changing the mean length. The second form generates a flat distribution of width 2*LENGTH_MODIFIER.</string>
+		<key>end_state DIC</key>
+		<dict>
+			<key>plus_end</key>
+			<string>Specify the fiber&apos;s end state at simulation start: 0 = static (or white), 1 = grow (or green), 4=shrink (or red). Both values can be aggregated into a single line such as &apos;end_state = green, white&apos;.</string>
+			<key>minus_end</key>
+			<string>Specify the fiber&apos;s end state at simulation start: 0 = static (or white), 1 = grow (or green), 4=shrink (or red).  Both values can be aggregated into a single line such as &apos;end_state = grow, static&apos;.</string>
+		</dict>
+		<key>reference</key>
+		<string>By default, &apos;center&apos; sets the reference point at the middle of the fiber. Otherwise, it can be set at &apos;plus_end&apos; or at &apos;minus_end&apos;</string>
+		<key>shape</key>
+		<string>A series of point locations (X Y Z) separated by commas determine the shape of the fiber</string>
+		<key>position DIC</key>
+		<dict>
+			<key>position X</key>
+			<string>Initial position of the center along the X axis. Checking the X will automatically check Y and Z</string>
+			<key>position Y</key>
+			<string>Initial position of the center along the Y axis. Checking the Y will automatically check X and Z</string>
+			<key>position Z</key>
+			<string>Initial position of the center along the Z axis. Checking the Z will automatically check X and Y</string>
+		</dict>
+		<key>orientation DIC</key>
+		<dict>
+			<key>orientation X</key>
+			<string>Rotation specified with respect to the object&apos;s center of gravity. Has an effect only on objects that can be rotated. The value is a signed vector along the X axis.</string>
+			<key>orientation Y</key>
+			<string>Rotation specified with respect to the object&apos;s center of gravity. Has an effect only on objects that can be rotated. The value is a signed vector along the Y axis.</string>
+			<key>orientation Z</key>
+			<string>Rotation specified with respect to the object&apos;s center of gravity. Has an effect only on objects that can be rotated. The value is a signed vector along the Z axis.</string>
+		</dict>
+		<key>direction DIC</key>
+		<dict>
+			<key>direction X</key>
+			<string>Equivalent to rotation for linear simulations</string>
+			<key>direction Y</key>
+			<string>Equivalent to rotation for linear simulations</string>
+			<key>direction Z</key>
+			<string>Equivalent to rotation for linear simulations</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

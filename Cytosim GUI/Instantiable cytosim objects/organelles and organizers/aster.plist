@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aster (set parameters) DIC</key>
+	<dict>
+		<key>stiffness</key>
+		<real>0</real>
+		<key>focus</key>
+		<string>minus_end</string>
+		<key>fiber_rate</key>
+		<real>0</real>
+		<key>fiber_type</key>
+		<string></string>
+		<key>fiber_spec</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

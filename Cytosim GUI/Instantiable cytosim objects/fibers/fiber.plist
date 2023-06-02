@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fiber (set parameters) DIC</key>
+	<dict>
+		<key>rigidity</key>
+		<integer>30</integer>
+		<key>segmentation</key>
+		<real>0.1</real>
+		<key>min_length</key>
+		<real>0.01</real>
+		<key>max_length</key>
+		<integer>10</integer>
+		<key>total_polymer</key>
+		<string>inf</string>
+		<key>persistent</key>
+		<integer>0</integer>
+		<key>viscosity</key>
+		<integer>0</integer>
+		<key>drag_radius</key>
+		<real>0.0125</real>
+		<key>drag_length</key>
+		<integer>1</integer>
+		<key>drag_model</key>
+		<real>0</real>
+		<key>drag_gap</key>
+		<real>0</real>
+		<key>binding_key</key>
+		<integer>0</integer>
+		<key>lattice</key>
+		<real>0</real>
+		<key>lattice_unit</key>
+		<real>0</real>
+		<key>confine</key>
+		<integer>1</integer>
+		<key>confine_stiffness</key>
+		<integer>100</integer>
+		<key>confine_space</key>
+		<string>space name</string>
+		<key>steric</key>
+		<real>0</real>
+		<key>steric_radius</key>
+		<real>0</real>
+		<key>steric_range</key>
+		<real>0</real>
+		<key>glue</key>
+		<integer>0</integer>
+		<key>glue_single</key>
+		<string>single name</string>
+		<key>activity {fiber}</key>
+		<string>none</string>
+		<key>treadmilling fiber DIC</key>
+		<dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<real>1.67</real>
+				<key>growing_force (minus end)</key>
+				<integer>0</integer>
+			</dict>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed (plus end)</key>
+				<real>0.5</real>
+				<key>growing_speed (minus end)</key>
+				<integer>0</integer>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shrinking_speed (plus end)</key>
+				<integer>-1</integer>
+				<key>shrinking_speed (minus end)</key>
+				<integer>-1</integer>
+			</dict>
+		</dict>
+		<key>grow(ing) fiber DIC</key>
+		<dict>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed {plus end}</key>
+				<real>0.5</real>
+				<key>growing_speed {minus end}</key>
+				<integer>0</integer>
+			</dict>
+			<key>growing_off_speed</key>
+			<dict>
+				<key>growing_off_speed (plus end)</key>
+				<real>0</real>
+				<key>growing_off_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<real>0</real>
+				<key>growing_force (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>shrink_outside</key>
+			<dict>
+				<key>shrink_outside (plus end)</key>
+				<real>0</real>
+				<key>shrink_outside (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shrinking_speed (plus end)</key>
+				<real>0</real>
+				<key>shrinking_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+		</dict>
+		<key>classic fiber DIC</key>
+		<dict>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed (plus end)</key>
+				<real>0</real>
+				<key>growing_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>growing_off_speed</key>
+			<dict>
+				<key>growing_off_speed (plus end)</key>
+				<real>0</real>
+				<key>growing_off_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<real>0</real>
+				<key>growing_force (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shriniking_speed (plus end)</key>
+				<real>0</real>
+				<key>shriniking_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>catastrophe_rate</key>
+			<dict>
+				<key>catastrophe_rate (plus end)</key>
+				<real>0</real>
+				<key>catastrophe_rate (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>catastrophe_rate_stalled</key>
+			<dict>
+				<key>catastrophe_rate_stalled (plus end)</key>
+				<real>0</real>
+				<key>catastrophe_rate_stalled (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>rescue_rate</key>
+			<dict>
+				<key>rescue_rate (plus end)</key>
+				<real>0</real>
+				<key>rescue_rate (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>rebirth_rate</key>
+			<dict>
+				<key>rebirth_rate (plus end)</key>
+				<real>0</real>
+				<key>rebirth rate (minus end)</key>
+				<real>0</real>
+			</dict>
+		</dict>
+		<key>dynamic fiber DIC</key>
+		<dict>
+			<key>unit_length</key>
+			<real>0.008</real>
+			<key>growing_speed</key>
+			<dict>
+				<key>growing_speed (plus end)</key>
+				<real>0.5</real>
+				<key>growing_speed (minus end)</key>
+				<real>0.2</real>
+			</dict>
+			<key>growing_off_speed</key>
+			<dict>
+				<key>growing_off_speed (plus end)</key>
+				<real>0</real>
+				<key>growing_off_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>growing_force</key>
+			<dict>
+				<key>growing_force (plus end)</key>
+				<real>0</real>
+				<key>growing_force (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>hydrolysis_rate</key>
+			<dict>
+				<key>hydrolysis_rate (plus end)</key>
+				<real>0.4</real>
+				<key>hydrolysis_rate (minus end)</key>
+				<real>0.4</real>
+			</dict>
+			<key>shrinking_speed</key>
+			<dict>
+				<key>shrinking_speed (plus end)</key>
+				<integer>0</integer>
+				<key>shrinking_speed (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>rebirth_rate</key>
+			<dict>
+				<key>rebirth_rate (plus end)</key>
+				<real>0</real>
+				<key>rebirth_rate (minus end)</key>
+				<real>0</real>
+			</dict>
+			<key>zone_space</key>
+			<string></string>
+			<key>zone_radius</key>
+			<real>0</real>
+			<key>zone_hydrolysis_rate</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>fiber (new parameters) DIC</key>
+	<dict>
+		<key>length {fiber}</key>
+		<integer>1</integer>
+		<key>end_state DIC</key>
+		<dict>
+			<key>plus_end</key>
+			<string>0</string>
+			<key>minus_end</key>
+			<string>0</string>
+		</dict>
+		<key>reference</key>
+		<string>0</string>
+		<key>shape</key>
+		<string></string>
+		<key>position DIC</key>
+		<dict>
+			<key>position X</key>
+			<integer>1</integer>
+			<key>position Y</key>
+			<integer>0</integer>
+			<key>position Z</key>
+			<integer>0</integer>
+		</dict>
+		<key>orientation DIC</key>
+		<dict>
+			<key>orientation X</key>
+			<integer>1</integer>
+			<key>orientation Y</key>
+			<real>0</real>
+			<key>orientation Z</key>
+			<real>0</real>
+		</dict>
+		<key>direction DIC</key>
+		<dict>
+			<key>direction X</key>
+			<integer>1</integer>
+			<key>direction Y</key>
+			<integer>0</integer>
+			<key>direction Z</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

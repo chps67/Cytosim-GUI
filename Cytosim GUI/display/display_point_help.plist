@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Point display DIC</key>
+	<dict>
+		<key>visible {display}</key>
+		<string>0 for hidden, 1 for opaque. For a Space, bits are used to enable the display of front/back sides, such that one can use these values: 1 : display only faces that are facing outside, 2 : display only faces that are facing inside, 3 : display both sides.</string>
+		<key>color</key>
+		<string>color of object (in 3D display, the color of outer surfaces). Described as Red, Green, Blue and Alpha components</string>
+		<key>color2</key>
+		<string>This is used to display unattached Single and unbridging Couple, and the inner surfaces of objects such as Sphere, Solid, Bead and Space. If it is not defined, `color2` is set to be a darker tone of `color`.</string>
+		<key>coloring</key>
+		<string>if true (≠0), attribute random colors to individual objects</string>
+		<key>size</key>
+		<string>display diameter of points in pixel units.</string>
+		<key>width</key>
+		<string>display width of lines</string>
+		<key>shape {display}</key>
+		<string>&apos;c&apos; for circle, &apos;h&apos; for hexagon, &apos;s&apos; for star, etc.</string>
+		<key>style</key>
+		<string> a bitfield to set different display options.</string>
+		<key>symbol</key>
+		<string>character displayed (do not set, or set as 0 to disable this feature)</string>
+		<key>symbol_color</key>
+		<string>color of symbol (set as symbol[1])</string>
+	</dict>
+</dict>
+</plist>

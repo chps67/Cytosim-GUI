@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hand (set parameters) DIC</key>
+	<dict>
+		<key>binding_rate</key>
+		<integer>0</integer>
+		<key>binding_range</key>
+		<integer>0</integer>
+		<key>binding_key</key>
+		<string></string>
+		<key>unbinding_rate</key>
+		<integer>0</integer>
+		<key>unbinding_force</key>
+		<integer>0</integer>
+		<key>bind_also_end {hand}</key>
+		<integer>0</integer>
+		<key>bind_only_end {hand}</key>
+		<integer>0</integer>
+		<key>bind_end_range</key>
+		<integer>0</integer>
+		<key>hold_growing_end</key>
+		<integer>0</integer>
+		<key>hold_shrinking_end</key>
+		<string></string>
+		<key>activity {hand}</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

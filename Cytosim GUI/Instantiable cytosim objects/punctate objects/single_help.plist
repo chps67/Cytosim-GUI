@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>single (set parameters) DIC</key>
+	<dict>
+		<key>hand</key>
+		<string>Name of Hand</string>
+		<key>stiffness</key>
+		<string>Stiffness of link (nN/µm)</string>
+		<key>length</key>
+		<string>Resting length of link (µm)</string>
+		<key>diffusion</key>
+		<string>Diffusion coefficient</string>
+		<key>fast_diffusion</key>
+		<string>if set &gt; 0, assumes uniform concentration of diffusing Single. The possible values for `fast_diffusion` are: 0: disabled. Every Single is explicitly represented by a diffusing point. The unattached Single move randomly, with the specified diffusion constant, and they may accumulate at certain regions of the simulation. That happens in particular with asters when the motors move inward. In fact, the aster can really act like black hole for the motors, as seen in experiments! 1: attach Single along the length of fibers It is assumed that free Singles are uniformly distributed, and they are thus not explicitly represented. In this mode, Cytosim will only keep a count of the number of free motors, and directly attach these Singles by one of their Hand, at random positions of the fibers, irrespective of the manner in which the filaments are distributed in the simulation. The diffusion constant is not relevant. Similar to mode 1, but Hand1 of Single is directly attached at random positions on the growing ends of the fibers. 3: attach Single only near the edge of the Space.</string>
+		<key>speed</key>
+		<string>Constant drift</string>
+		<key>confine</key>
+		<string>Confinement can be `none`, `inside` (default) or `surface`</string>
+		<key>confine_stiffness</key>
+		<string>Unused Parameter: confinement stiffness (also known as `confine[1]`)</string>
+		<key>confine_space</key>
+		<string>Name of space used for confinement (also known as `confine[2]`)</string>
+		<key>activity {single}</key>
+		<string>Defined as &apos;diffuse&apos; or &apos;fixed&apos;</string>
+	</dict>
+	<key>single (new parameters)</key>
+	<dict>
+		<key>base DIC</key>
+		<dict>
+			<key>OBJECT</key>
+			<string>Name of the base object (like a Bead)</string>
+			<key>POINT</key>
+			<string>Point of attachment on the base</string>
+		</dict>
+		<key>attach DIC</key>
+		<dict>
+			<key>FIBER</key>
+			<string>Name of the fiber of attachment</string>
+			<key>ABCISSA</key>
+			<string>Attachment position along the fiber</string>
+			<key>REFERENCE</key>
+			<string>Fiber extremity from which the abcissa is measured (plus_end or minus_end)</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

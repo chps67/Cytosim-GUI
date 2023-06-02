@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Sphere (set parameters) DIC</key>
+	<dict>
+		<key>point_mobility</key>
+		<string>mobility of points on the surface</string>
+		<key>viscosity</key>
+		<string>effective viscosity (if unspecified, simul:viscosity is used). Set the effective viscosity to lower or increase the drag coefficient of a particular class of Sphere.</string>
+		<key>piston_effect</key>
+		<string>if true, use special formula to calculate mobilities
+
+This formula is derived from Lubrication theory and applies in the case where the sphere fits tightly in an elongated volume.</string>
+		<key>steric</key>
+		<string>flag to include steric interaction for this object</string>
+		<key>steric_range</key>
+		<string>distance added to the radius to set the steric interaction distance
+
+</string>
+		<key>confine</key>
+		<string>flag to confine this object</string>
+		<key>confine_stiffness</key>
+		<string>confinement stiffness (also known as confine[1])</string>
+		<key>confine_space</key>
+		<string>name of space used for confinement (also known as confine[2])</string>
+	</dict>
+</dict>
+</plist>

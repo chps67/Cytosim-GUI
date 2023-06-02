@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Play (set parameters) DIC</key>
+	<dict>
+		<key>play</key>
+		<real>0</real>
+		<key>loop</key>
+		<false/>
+		<key>period</key>
+		<real>0</real>
+		<key>delay</key>
+		<real>0</real>
+		<key>report</key>
+		<string></string>
+		<key>magic_key</key>
+		<string></string>
+		<key>save_images</key>
+		<false/>
+		<key>image_format</key>
+		<string></string>
+		<key>image_dir</key>
+		<string></string>
+		<key>downsample</key>
+		<real>0</real>
+	</dict>
+</dict>
+</plist>

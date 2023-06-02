@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>motor (set parameters) DIC</key>
+	<dict>
+		<key>stall_force</key>
+		<integer>0</integer>
+		<key>unloaded_speed</key>
+		<integer>0</integer>
+		<key>limit_speed</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

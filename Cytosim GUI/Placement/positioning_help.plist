@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>position DIC</key>
+	<dict>
+		<key>primitive DIC</key>
+		<dict>
+			<key>vector</key>
+			<string>The specified vector (A,B,C)</string>
+			<key>inside</key>
+			<string>A random position inside the current Space</string>
+			<key>edge</key>
+			<string>edge E : At distance E from the edge of the current Space</string>
+			<key>surface</key>
+			<string>surface E : On the surface of the current Space; By projecting a point at distance E from the surface.</string>
+			<key>line</key>
+			<string>line L T : Selected randomly with -L/2 &lt; X &lt; L/2; norm(Y,Z) &lt; T</string>
+			<key>sphere</key>
+			<string>sphere R T : At distance R +/- T/2 from the origin; R-T/2 &lt; norm(X,Y,Z) &lt; R+T/2</string>
+			<key>ball</key>
+			<string>ball R : At distance R at most from the origin; norm(X,Y,Z) &lt; R</string>
+			<key>disc</key>
+			<string>disc R T : in 2D, a disc in the XY-plane; in 3D, a disc in the XY-plane of thickness T in Z</string>
+			<key>discXZ</key>
+			<string>discXZ R T : Disc in the XZ-plane of radius R, thickness T</string>
+			<key>discYZ</key>
+			<string>discYZ R T : Disc in the YZ-plane of radius R, thickness T</string>
+			<key>equator</key>
+			<string>equator R T : At distance R from the origin, and T from the XY plane: norm(X,Y) &lt; R norm(Z) &lt; T</string>
+			<key>circle</key>
+			<string>circle R T : Circle of radius R and thickness T; At distance T from the circle of radius R</string>
+			<key>cylinder</key>
+			<string>cylinder W R : Cylinder of axis X, W=thickness in X, R=radius in YZ</string>
+			<key>ellipse</key>
+			<string>ellipse A B C : Inside the ellipse or ellipsoid of main axes 2A, 2B and 2C</string>
+			<key>arc</key>
+			<string>arc L Theta : A piece of circle of length L and covering an angle Theta</string>
+			<key>stripe</key>
+			<string>stripe L R : Random vector with L &lt; X &lt; R</string>
+			<key>square</key>
+			<string>square R : Random vector with -R &lt; X &lt; R; -R &lt; Y &lt; R; -R &lt; Z &lt; R</string>
+			<key>rectangle</key>
+			<string>rectangle A B C : Random vector with -A &lt; X &lt; A; -B &lt; Y &lt; B; -C &lt; Z &lt; C</string>
+			<key>gradient</key>
+			<string>gradient S E : Linear density gradient along X, of value 0 at X=S and 1 at X=E; gradient S E R : Linear density gradient, contained inside a cylinder of radius R</string>
+			<key>exponential</key>
+			<string>exponental S L : Exponential density gradient of length scale L, starting at S; exponential S L R : Exponential density gradient, contained inside a cylinder of radius R</string>
+		</dict>
+		<key>transformation DIC</key>
+		<dict>
+			<key>at</key>
+			<string>at X Y Z : Translate by specified vector (X,Y,Z)</string>
+			<key>add</key>
+			<string>add SHAPE : Translate by a vector chosen according to SHAPE</string>
+			<key>align</key>
+			<string>align VECTOR : Rotate to align parallel with specified vector</string>
+			<key>turn</key>
+			<string>turn ROTATION : Apply specified rotation</string>
+			<key>blur</key>
+			<string>blur REAL : </string>
+			<key>to</key>
+			<string>Add centered Gaussian noise of variance REAL</string>
+			<key>or</key>
+			<string>or POSITION : flip randomly between two specified positions</string>
+		</dict>
+	</dict>
+	<key>rotation DIC</key>
+	<dict>
+		<key>random</key>
+		<string>A rotation selected uniformly among all possible rotations</string>
+		<key>identity</key>
+		<string>The object is not rotated</string>
+		<key>angle</key>
+		<string>angle A B C : As specified by 3 (or 1 in 2D) Euler angles in radians</string>
+		<key>degree</key>
+		<string>degree A B C : As specified by 3 (or 1 in 2D) Euler angles in degrees</string>
+		<key>quat</key>
+		<string>quat q0 q1 q2 q3 : As specified by the Quaternion (q0, q1, q2, q3)</string>
+	</dict>
+	<key>direction DIC</key>
+	<dict>
+		<key>vector</key>
+		<string>REAL REAL REAL : the vector of norm 1 co-aligned with given vector</string>
+		<key>parallel</key>
+		<string>parallel REAL REAL REAL : one of the two vectors of norm 1 parallel with given vector. parallel Z : (0,0,+1) or (0,0,-1), randomly chosen with equal chance. parallel XY or parallel XZ or parallel YZ :  A random vector in the specified plane.</string>
+		<key>orthogonal</key>
+		<string>orthogonal REAL REAL REAL : a vector of norm 1 perpendicular to the given vector</string>
+		<key>vertical parallel Y</key>
+		<string>(0,+1,0) or (0,-1,0), randomly chosen with equal chance</string>
+		<key>radial</key>
+		<string>directed from the origin to the current point</string>
+		<key>antiradial</key>
+		<string>directed from the current point to the origin</string>
+		<key>circular</key>
+		<string>perpendicular to axis joining the current point to the origin</string>
+		<key>tangent {space}</key>
+		<string>parallel to the surface of the Space</string>
+		<key>normal {space}</key>
+		<string>perpendicular to the surface</string>
+		<key>inward {space}</key>
+		<string>normal to the surface, directed outward</string>
+		<key>outward {space}</key>
+		<string>normal to the surface, directed inward</string>
+	</dict>
+	<key>placement DIC</key>
+	<dict>
+		<key>inside</key>
+		<string>(default), it tries to find a place inside the Space</string>
+		<key>anywhere</key>
+		<string> the position is returned</string>
+		<key>outside</key>
+		<string>the object is created only if it is outside the Space</string>
+		<key>surface</key>
+		<string> the position is projected on the edge of current Space .</string>
+	</dict>
+	<key>nb_trials</key>
+	<string>Failure of testing if the object&apos;s vertices fulfills certain requirements (eg. are all points inside?) triggers another try up to the nb_trials limit. </string>
+</dict>
+</plist>

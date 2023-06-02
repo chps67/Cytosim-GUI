@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>View display DIC</key>
+	<dict>
+		<key>zoom</key>
+		<string>zoom factor = ratio between visible area and view_size. (The view can be biger than the window it lies in).</string>
+		<key>view_size</key>
+		<string>size of area visible in the window, in sim-units (default=10)</string>
+		<key>auto_scale</key>
+		<string>enables the display area to be set from the size of the simulation space
+
+If ( auto_scale &gt; 0 ), view_size is set automatically to match the simulation space. This is on by default.</string>
+		<key>focus {simul}</key>
+		<string>the point that is in the center of the window in real-world coordinates</string>
+		<key>focus_shift</key>
+		<string>additional translation used by autoTrack</string>
+		<key>rotation</key>
+		<string>orientation of display
+
+</string>
+		<key>perspective</key>
+		<string>flag to enable perspective view in 3D. By default, cytosim uses a orthographic projection to view the 3D space, but it will use a 3D perspective if &apos;perspective==true&apos;. This is only meaningful in 3D mode.</string>
+		<key>back_color</key>
+		<string>color of background</string>
+		<key>front_color</key>
+		<string>color used to highlight objects</string>
+		<key>buffered</key>
+		<string>flag to use a double buffer for smoother rendering (default=1). http://en.wikipedia.org/wiki/Multiple_buffering#Double_buffering_in_computer_graphics</string>
+		<key>slice {simul}</key>
+		<string>modifies the display to show only the front, the back or a slice of the world. Possible values are: off (0), front (1), back (2), slice (3).</string>
+		<key>depth_test</key>
+		<string>flag to enable OpenGL depth buffer (default=1). This is useful for 3D rendering. http://en.wikipedia.org/wiki/Z-buffering</string>
+		<key>depth_clamp</key>
+		<string>flag to perform depth-clamp (default=false). http://www.opengl.org/registry/specs/NV/depth_clamp.txt</string>
+		<key>stencil</key>
+		<string>flag to enable OpenGL stencil buffer (default=0)</string>
+		<key>multisample</key>
+		<string>if &gt; 0, enables OpenGL full scene anti-aliasing (default=0)
+
+This defines the number of samples used to build an image. Higher values result in nicer (but slower) display. http://en.wikipedia.org/wiki/Multisample_anti-aliasing.Many graphic cards only support 8 samples max, so try 4 or 8.</string>
+		<key>retina</key>
+		<string>flag to enable native device resolution on mac osx. This works only if you use Renaud Blanch&apos;s modified GLUT http://iihm.imag.fr/blanch/software/glut-macosx</string>
+		<key>clip_plane_mode</key>
+		<string>on/off flags for clipping (defined as clip_plane?). defines the planes for view slices (up to 4 named clip_plane0 to clip_plane4). clip_plane? = BOOL, VECTOR, REAL. The Boolean enables the clipping plane. The plane is specified by a normal vector n (VECTOR) and a scalar a (REAL). The visible half-space corresponds to n.pos + a &gt; 0 . Example: To define a slice perpendicular to the X-axis of width 2: set system display
+{
+   clip_plane1 = 1,  1 0 0, 1
+   clip_plane2 = 1, -1 0 0, 1
+} </string>
+		<key>clip_plane_vector</key>
+		<string>direction perpendicular to clipping plane (defined as clip_plane?[1])</string>
+		<key>clip_plane_scalar</key>
+		<string>scalar offset defining the equation of the clipping plane (defined as clip_plane?[2])</string>
+		<key>draw_axes</key>
+		<string>flag for displaying the X Y and Z axes</string>
+		<key>axes_size</key>
+		<string>length of axes (set as draw_axes[1], default=1)</string>
+		<key>scale_bar_size</key>
+		<string>size of scale-bar in sim-world units (set as scale_bar[0]).</string>
+		<key>scale_bar_color</key>
+		<string>color of the scale bar (set as scale_bar[1])</string>
+		<key>scale_bar_mode</key>
+		<string>display flag for scale-bar (default=0, set as scale_bar[2])</string>
+		<key>fog_type</key>
+		<string>characteristics of OpenGL fog (also known as fog[0])</string>
+		<key>fog_param</key>
+		<string>density of fog (also known as fog[1])</string>
+		<key>fog_color</key>
+		<string>color of fog (also known as fog[2])</string>
+		<key>track_fibers</key>
+		<string>automatically adjust view to keep fibers in window. Possible values: 0 : off, 1 : translate to track the center of gravity of the cloud of fiber-points, 2 : rotate to align the principal direction of the fiber, 3 : translate and rotate ( 1 and 2 are combined ), 4 : rotate to align two principal directions, 5 : translate and rotate ( 1 and 4 are combined ). The translation defined by focus is applied after this adjustment.</string>
+		<key>window_position DIC</key>
+		<dict>
+			<key>X</key>
+			<string>top left view corner position, X. From the TopLeft of the screen.</string>
+			<key>Y</key>
+			<string>top left view corner position, Y. From the TopLeft of the screen.</string>
+		</dict>
+		<key>window_size DIC</key>
+		<dict>
+			<key>width</key>
+			<string>window width</string>
+			<key>height</key>
+			<string>window height</string>
+		</dict>
+		<key>label</key>
+		<string>string at start of message (if none is specified, no message is shown)</string>
+		<key>memo</key>
+		<string>text displayed in center of window</string>
+		<key>draw_memo</key>
+		<string>flag to display information on screen</string>
+	</dict>
+</dict>
+</plist>

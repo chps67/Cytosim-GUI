@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nucleator (set parameters) DIC</key>
+	<dict>
+		<key>rate</key>
+		<string>rate for nucleation (also known as nucleate[0])</string>
+		<key>fiber type</key>
+		<string>type of fiber that is nucleated (also known as nucleate[1])</string>
+		<key>fiber_spec {nucleator}</key>
+		<string>specifications of a new fiber activity (also known as nucleate[2]) i.e. growing, classic, dynamic or treadmilling</string>
+		<key>nucleation_angle</key>
+		<string>angle of newly made fiber, relative to mother filament for Nucleator in Couple</string>
+		<key>specificity {nucleator}</key>
+		<string>specifies the direction of the new Fiber. The specificity can be: off (default), parallel, antiparallel. With &apos;specificity=none&apos;, the direction will follow the value of &apos;orientation&apos;, specified within the spec nucleation[2].</string>
+		<key>hold_end</key>
+		<string>defines if nucleator attaches to fibers that it creates [none, minus_end, plus_end]. Possible values for hold_end: off, plus_end, minus_end. Note that a nucleator remains innactive as long as it is bound to a fiber. Thus, setting hold_end = minus_end in combination with a detachment rate of zero will limit nucleation to one fiber at a time. (default value is minus_end)</string>
+		<key>track_end</key>
+		<string>If track_end is set to plus_end or minus_end, the hand will stay always positionned at the given fiber end, even if this end is growing or shrinking. Possible values are off, plus_end, minus_end.</string>
+		<key>addictive</key>
+		<string>if true, set the Dynamic State of the nearest filament end to STATE_RED (shrinking) upon detachment</string>
+	</dict>
+</dict>
+</plist>

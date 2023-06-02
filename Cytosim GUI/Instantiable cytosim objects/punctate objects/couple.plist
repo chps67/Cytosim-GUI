@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>couple (set parameters) DIC</key>
+	<dict>
+		<key>hand1</key>
+		<string></string>
+		<key>hand2</key>
+		<string></string>
+		<key>stiffness</key>
+		<integer>0</integer>
+		<key>length {couple}</key>
+		<integer>0</integer>
+		<key>diffusion</key>
+		<integer>0</integer>
+		<key>fast_diffusion</key>
+		<integer>0</integer>
+		<key>trans_activated</key>
+		<integer>0</integer>
+		<key>stiff</key>
+		<integer>0</integer>
+		<key>specificity</key>
+		<integer>0</integer>
+		<key>confine</key>
+		<integer>0</integer>
+		<key>confine_space</key>
+		<string></string>
+		<key>activity {couple}</key>
+		<string></string>
+		<key>duo DIC</key>
+		<dict>
+			<key>deactivation_rate</key>
+			<integer>0</integer>
+			<key>activation_space</key>
+			<string></string>
+			<key>vulnerable</key>
+			<integer>0</integer>
+		</dict>
+		<key>fork DIC</key>
+		<dict>
+			<key>angle</key>
+			<real>0</real>
+			<key>angular_stiffness</key>
+			<real>0</real>
+		</dict>
+	</dict>
+	<key>couple (new parameters) DIC</key>
+	<dict>
+		<key>attach1</key>
+		<string></string>
+		<key>attach2</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

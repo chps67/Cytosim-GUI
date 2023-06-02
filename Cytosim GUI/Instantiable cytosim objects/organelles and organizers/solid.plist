@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>solid (set parameters) DIC</key>
+	<dict>
+		<key>drag</key>
+		<integer>0</integer>
+		<key>viscosity</key>
+		<integer>0</integer>
+		<key>steric</key>
+		<integer>0</integer>
+		<key>steric_range</key>
+		<integer>0</integer>
+		<key>confine {solid}</key>
+		<string></string>
+		<key>confine_stiffness</key>
+		<integer>0</integer>
+		<key>confine_space</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

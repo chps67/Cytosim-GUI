@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>World display DIC</key>
+	<dict>
+		<key>style {world}</key>
+		<real>0</real>
+		<key>tile</key>
+		<real>0</real>
+		<key>fold</key>
+		<real>0</real>
+		<key>point_size</key>
+		<real>0</real>
+		<key>link_width</key>
+		<real>0</real>
+		<key>line_width</key>
+		<real>0</real>
+		<key>point_value</key>
+		<real>0</real>
+		<key>couple_select</key>
+		<real>0</real>
+		<key>single_select</key>
+		<real>0</real>
+		<key>draw_links</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

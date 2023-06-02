@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fiber display DIC</key>
+	<dict>
+		<key>style</key>
+		<integer>0</integer>
+		<key>visible {display}</key>
+		<integer>0</integer>
+		<key>color</key>
+		<integer>0</integer>
+		<key>back_color</key>
+		<integer>0</integer>
+		<key>hide_color</key>
+		<integer>0</integer>
+		<key>coloring</key>
+		<integer>0</integer>
+		<key>line_width</key>
+		<integer>0</integer>
+		<key>line_style</key>
+		<integer>0</integer>
+		<key>line_caps</key>
+		<integer>0</integer>
+		<key>point_size</key>
+		<integer>0</integer>
+		<key>point_style {fiber}</key>
+		<integer>0</integer>
+		<key>point_interval</key>
+		<integer>0</integer>
+		<key>end_style</key>
+		<dict>
+			<key>end_style {plus end}</key>
+			<string>0</string>
+			<key>end_style {minus end}</key>
+			<string>0</string>
+		</dict>
+		<key>end_color {fiber}</key>
+		<string></string>
+		<key>end_size</key>
+		<dict>
+			<key>end_size {plus end}</key>
+			<string></string>
+			<key>end_size {minus end}</key>
+			<string></string>
+		</dict>
+		<key>lattice_style</key>
+		<integer>0</integer>
+		<key>lattice_scale</key>
+		<integer>0</integer>
+		<key>lattice_rescale</key>
+		<false/>
+		<key>label_style {fiber}</key>
+		<integer>0</integer>
+		<key>speckle_size</key>
+		<integer>0</integer>
+		<key>speckle_style {fiber}</key>
+		<integer>0</integer>
+		<key>speckle_interval</key>
+		<integer>0</integer>
+		<key>exclude</key>
+		<integer>0</integer>
+		<key>exclude_axis</key>
+		<string></string>
+		<key>mask</key>
+		<integer>0</integer>
+		<key>mask_bitfield</key>
+		<integer>0</integer>
+		<key>tension_scale</key>
+		<integer>0</integer>
+		<key>force_scale</key>
+		<integer>0</integer>
+		<key>force_color</key>
+		<integer>0</integer>
+		<key>explode</key>
+		<integer>0</integer>
+		<key>explode_range</key>
+		<integer>0</integer>
+		<key>draw_average</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

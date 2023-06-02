@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>World display DIC</key>
+	<dict>
+		<key>style {world}</key>
+		<string> Style 1 used OpenGL lines and points. It is suitable for 2D work. Style 2 is a faster display, also suitable for 2D. Style 3 draw real tubes and uses OpenGL lighting for rendering. It is nice for 3D.</string>
+		<key>tile</key>
+		<string>This is only useful if the main Space is periodic, strip or cylinderP. In this case, the whole system will be displayed multiple times, shifted appropriately in the directions that are periodic.</string>
+		<key>fold</key>
+		<string>if true, translate objects to place them in the root cell for periodic boundary conditions</string>
+		<key>point_size</key>
+		<string>default diameter of points.</string>
+		<key>link_width</key>
+		<string>default width of hookean links</string>
+		<key>line_width</key>
+		<string>default width of lines</string>
+		<key>point_value</key>
+		<string>if set &gt; 0, this defines the unit size used for `point_size` and `line_width`. `point_size` and `line_width` are usually set in pixels, but if `point_value` is set, these specifications are interpreted as multiples of `point_value`, which itself is given in simulation unit (i.e. real distance). For example, if you set `line_width=5` and `point_value=0.01`, the fibers will be displayed with a diameter of 0.050 (i.e. 50 nanometers).</string>
+		<key>couple_select</key>
+		<string>Selection bitfield for couples</string>
+		<key>single_select</key>
+		<string>selection bitfield for Singles</string>
+		<key>draw_links</key>
+		<string>flag to display Meca&apos;s links</string>
+	</dict>
+</dict>
+</plist>

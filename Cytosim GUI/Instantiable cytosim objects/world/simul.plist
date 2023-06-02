@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>simul (set parameters) DIC</key>
+	<dict>
+		<key>time_step</key>
+		<real>0.05</real>
+		<key>viscosity</key>
+		<real>1</real>
+		<key>kT</key>
+		<real>0.0042</real>
+		<key>steric parameters DIC</key>
+		<dict>
+			<key>steric</key>
+			<integer>0</integer>
+			<key>steric_stiffness_push</key>
+			<integer>0</integer>
+			<key>steric_stiffness_pull</key>
+			<integer>0</integer>
+			<key>steric_max_range</key>
+			<integer>0</integer>
+		</dict>
+		<key>tolerance</key>
+		<real>0.05</real>
+		<key>acceptable_prob</key>
+		<real>0.5</real>
+		<key>binding_grid_step</key>
+		<integer>0</integer>
+		<key>skip_free_couple</key>
+		<false/>
+		<key>precondition</key>
+		<false/>
+		<key>dim</key>
+		<integer>2</integer>
+	</dict>
+	<key>simul (run parameters) DIC</key>
+	<dict>
+		<key>nb_steps</key>
+		<real>0</real>
+		<key>duration</key>
+		<real>0</real>
+		<key>solve</key>
+		<string>on</string>
+		<key>event</key>
+		<string>none</string>
+		<key>nb_frames</key>
+		<integer>0</integer>
+		<key>prune</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

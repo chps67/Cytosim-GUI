@@ -1,0 +1,36 @@
+
+/* Class = "NSToolbarItem"; label = "Block (Un)Comment"; ObjectID = "EC8-JR-nMX"; */
+"EC8-JR-nMX.label" = "Block (Un)Comment";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Block (Un)Comment"; ObjectID = "EC8-JR-nMX"; */
+"EC8-JR-nMX.paletteLabel" = "Block (Un)Comment";
+
+/* Class = "NSTextFieldCell"; title = "Your document contents here"; ObjectID = "JDq-Ah-v2f"; */
+"JDq-Ah-v2f.title" = "Your document contents here";
+
+/* Class = "NSToolbarItem"; label = "Shift Left"; ObjectID = "Jet-d7-MTH"; */
+"Jet-d7-MTH.label" = "Shift Left";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Shift Left"; ObjectID = "Jet-d7-MTH"; */
+"Jet-d7-MTH.paletteLabel" = "Shift Left";
+
+/* Class = "NSToolbarItem"; label = "Syntax color"; ObjectID = "QCQ-9Z-TR9"; */
+"QCQ-9Z-TR9.label" = "Syntax color";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Syntax color"; ObjectID = "QCQ-9Z-TR9"; */
+"QCQ-9Z-TR9.paletteLabel" = "Syntax color";
+
+/* Class = "NSToolbarItem"; label = "Shift Right"; ObjectID = "sQI-Pf-1l8"; */
+"sQI-Pf-1l8.label" = "Shift Right";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Shift Right"; ObjectID = "sQI-Pf-1l8"; */
+"sQI-Pf-1l8.paletteLabel" = "Shift Right";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "xOd-HO-29H"; */
+"xOd-HO-29H.title" = "Window";
+
+/* Class = "NSToolbarItem"; label = "Insert code"; ObjectID = "yoO-aD-0Fj"; */
+"yoO-aD-0Fj.label" = "Insert code";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Insert code"; ObjectID = "yoO-aD-0Fj"; */
+"yoO-aD-0Fj.paletteLabel" = "Insert code";

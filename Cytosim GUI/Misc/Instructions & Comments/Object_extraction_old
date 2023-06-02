@@ -1,0 +1,268 @@
+MAKES USE OF GREP SYNTAX
+
+//-(void) extractObjects {
+//
+//    [self.configObjects removeAllObjects];
+//
+//    NSCharacterSet* spc = [NSCharacterSet characterSetWithCharactersInString:@" \t"];
+//    NSCharacterSet* digits = [NSCharacterSet characterSetWithCharactersInString:@"0.123456789"];
+//
+//    // remove all the comments and empty lines and puts the results into self.trimmedConfigString
+//    [self removeComments];
+//    [self removeBlankLines];
+//    // split the remaining lines
+//    NSArray* lines = [self.trimmedConfigString componentsSeparatedByString:@"\n"];
+//    NSInteger wholeLength = self.trimmedConfigString.length;
+//
+//    // find the lines that start with 'set', then extract what is between { and }
+//    // and extract each parameter
+//
+//    for (int k=0; k<lines.count; k++) {
+//
+//        NSString* aLine = [lines objectAtIndex:k];
+//        NSRange lineRange = [self.trimmedConfigString rangeOfString:aLine];
+//        NSString* sub = [self.trimmedConfigString substringWithRange:NSMakeRange(lineRange.location, wholeLength - lineRange.location)];
+//        NSArray* words = [aLine componentsSeparatedByString:@" "];
+//        NSString* firstWord = words.firstObject;
+//
+//        if ([firstWord isEqualToString:@"set"]) {
+//
+//            VConfigObject* object = [[VConfigObject alloc]init];
+//            object.objType = [words objectAtIndex:1];
+//            object.objName = [words objectAtIndex:2];
+//            NSRange objectRange = [self.configString rangeOfString:aLine];
+//            objectRange.length += 1;            // to include lost '\n'
+//
+//            // search for a pair of { }
+//            // the trick is that if there are two nested  { {} } sets, regex will identify the range
+//            // between the first opening and the first closing braces...(bof)
+//
+//            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([^}]+)\\}" options:0 error:nil];
+//            NSArray *matches = [regex matchesInString:sub options:0 range:NSMakeRange(0, sub.length)];
+//
+//            if (matches) {
+//                if (matches.count >0) {
+//
+//                    NSTextCheckingResult *r = [matches firstObject];
+//                    NSRange paramRange = r.range;
+//                    objectRange.length += paramRange.length;    // the full object range goes up to the '}'
+//                    object.objRange = objectRange;
+//
+//                    paramRange.location += 1;   // remove the opening '{'
+//                    paramRange.length -= 2;     // and the closing '}'
+//
+//                    // if the object contains a display = {...} instruction it should be removed also
+//                    // because for the moment, we only care about sim configuration here.
+//
+//                    NSString* objString = [sub substringWithRange:paramRange];
+//                    if ([objString containsString:@"display"]) {
+//                        NSRange subRange = [objString rangeOfString:@"display"];
+//                        NSRange endRange = [objString rangeOfString:@"}"];
+//                        if (endRange.length >0) {
+//                            subRange.length = endRange.location - subRange.location;
+//                        } else {
+//                            subRange.length = objectRange.location + objectRange.length - subRange.location;
+//                        }
+//                        NSString* subStr = [objString substringToIndex:subRange.location];
+//                        paramRange = [sub rangeOfString:subStr];
+//                    }
+//
+//                    NSString* paramBlock = [sub substringWithRange:paramRange];
+//                    NSArray* paramArray = [paramBlock componentsSeparatedByString:@"\n"];
+//                    NSMutableArray* suppCParam = nil;
+//
+//                    for (NSString* param in paramArray){
+//
+//                        if (([param containsString:@"="]) && (![param containsString:@"display"])) {
+//
+//                            NSRange paramRange = [self.configString rangeOfString:param];
+//                            NSArray* members = [param componentsSeparatedByString:@"="];
+//                            NSMutableArray* mutMembers = [NSMutableArray arrayWithArray:members];
+//                            VConfigParameter* cParam = [[VConfigParameter alloc]init];
+//                            cParam.ownerName = object.objName;
+//
+//                            NSString* name = mutMembers.firstObject;
+//                            name = [name stringByTrimmingCharactersInSet:spc];
+//                            cParam.paramName = name;
+//                            cParam.ownerIsInstance = NO;
+//
+//                            NSString* value = mutMembers.lastObject;
+//                            value = [value stringByTrimmingCharactersInSet:spc];
+//                            NSNumber* valNum = nil;
+//                            NSString* valStr = @"";
+//
+//                            if ([value containsString:@","]) {
+//
+//                                // manage multiple values under paramName[0], paramName[1] etc...
+//                                NSMutableArray* multiVal = (NSMutableArray*)[value componentsSeparatedByString:@","];
+//                                NSInteger cnt = multiVal.count - 1;
+//                                suppCParam = [NSMutableArray arrayWithCapacity: 0]; // all the values fater the first comma
+//                                for (int m=0; m < cnt; m++) {
+//                                    VConfigParameter* coPa = [[VConfigParameter alloc]init];
+//                                    coPa.ownerName = object.objName;
+//                                    [suppCParam addObject:coPa];
+//                                }
+//
+//                                // copy the root param's name first
+//                                NSString* tempS = cParam.paramName;
+//
+//                                // trim spaces and get the values
+//
+//
+//                                for (NSInteger k = 0; k < multiVal.count; k ++) {
+//
+//                                    NSString* t = (NSString*)[multiVal objectAtIndex:k];
+//                                    t = [t  stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString: @" "]];
+//                                    [multiVal replaceObjectAtIndex:k withObject:t];
+//
+//                                    NSRange digitRange = [t rangeOfCharacterFromSet:digits];
+//
+//                                    if (digitRange.location != NSNotFound) {
+//                                        valNum = [NSNumber numberWithFloat:t.floatValue];
+//                                        valStr = valNum.stringValue;
+//                                    } else {
+//                                        valStr = t;
+//                                    }
+//
+//                                    VConfigParameter* cP = nil;
+//
+//                                    // add [k] after the name
+//                                    (k==0) ? (cP = cParam) : (cP = [suppCParam objectAtIndex:k-1]);
+//
+//                                    NSString* indexStr = [[NSNumber numberWithInteger:k] stringValue];
+//                                    indexStr = [@[@"[",indexStr,@"]"] componentsJoinedByString:@""];
+//                                    cP.paramName = [tempS stringByAppendingString:indexStr];
+//                                    cP.paramNumValue = valNum;
+//                                    cP.paramStringValue = valStr;
+//                                }
+//
+//                                //cParam.paramNumValue = @-1000;
+//                                //cParam.paramStringValue = value;
+//
+//                                cParam.ownerIsInstance = NO;
+//                                cParam.paramRange = paramRange; // should be somewhere within the object's range
+//                                [object.objParameters addObject:cParam];
+//                                for (VConfigParameter* cfp in suppCParam) {
+//                                    [object.objParameters addObject:cfp];
+//                                }
+//
+//                            } else { // no ','
+//
+//                                NSRange digitRange = [value rangeOfCharacterFromSet:digits];
+//
+//                                if (digitRange.location != NSNotFound) {
+//                                    cParam.paramNumValue = [NSNumber numberWithFloat:value.floatValue];
+//                                    cParam.paramStringValue = cParam.paramNumValue.stringValue;
+//                                } else {
+//                                    cParam.paramNumValue = valNum;
+//                                    cParam.paramStringValue = value;
+//                                }
+//
+//                                cParam.paramRange = paramRange; // should be somewhere within the object's range
+//                                [object.objParameters addObject:cParam];
+//
+//                            }
+//
+//                        }
+//                    }
+//                }
+//            }
+//
+//            [self.configObjects addObject:object];
+//        }
+//    }
+//}
+//
+////======================================================================================
+//
+//-(void) extractInstances {
+//
+//    [self.configInstances removeAllObjects];
+//
+//    NSCharacterSet* spc = [NSCharacterSet characterSetWithCharactersInString:@" \t"];
+//    NSCharacterSet* digits = [NSCharacterSet characterSetWithCharactersInString:@"0.123456789"];
+//
+//    // split the remaining lines
+//    NSArray* lines = [self.trimmedConfigString componentsSeparatedByString:@"\n"];
+//    NSInteger wholeLength = self.trimmedConfigString.length;
+//
+//    // find the lines that start with 'new', then extract what is between { and }
+//    // and extract each parameter
+//
+//    for (int k=0; k<lines.count; k++) {
+//
+//        NSString* aLine = [lines objectAtIndex:k];
+//        NSRange lineRange = [self.trimmedConfigString rangeOfString:aLine];
+//        NSString* sub = [self.trimmedConfigString substringWithRange:NSMakeRange(lineRange.location, wholeLength - lineRange.location)];
+//        NSArray* words = [aLine componentsSeparatedByString:@" "];
+//        NSString* firstWord = words.firstObject;
+//
+//        if ([firstWord isEqualToString:@"new"]) {
+//
+//            VConfigInstance* instance = [[VConfigInstance alloc]init];
+//            if (words.count == 2) {
+//                instance.instanceNumber = @1;
+//                instance.instanceName = [words objectAtIndex:1];
+//            }
+//            if (words.count == 3) {
+//                NSNumberFormatter* form = [[NSNumberFormatter alloc]init];
+//                NSLocale* en_loc = [[NSLocale alloc] initWithLocaleIdentifier: @"en"];
+//                [form setLocale:en_loc];
+//                NSNumber* num = [form numberFromString:[words objectAtIndex:1]];
+//                if (num != nil) {
+//                    instance.instanceNumber = num;
+//                }
+//                instance.instanceName = [words objectAtIndex:2];
+//            }
+//
+//            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([^}]+)\\}" options:0 error:nil];
+//            NSArray *matches = [regex matchesInString:sub options:0 range:NSMakeRange(0, sub.length)];
+//            if (matches) {
+//                if (matches.count >0) {
+//                    NSTextCheckingResult *r = [matches firstObject];
+//                    NSRange paramRange = r.range;
+//                    paramRange.location += 1;   // remove the opening '{'
+//                    paramRange.length -= 2;     // and the closing '}'
+//                    NSString* paramBlock = [sub substringWithRange:paramRange];
+//                    NSArray* paramArray = [paramBlock componentsSeparatedByString:@"\n"];
+//
+//                    for (NSString* param in paramArray){
+//                        if (([param containsString:@"="]) && (![param containsString:@"display"])) {
+//                            NSArray* members = [param componentsSeparatedByString:@"="];
+//                            NSMutableArray* mutMembers = [NSMutableArray arrayWithArray:members];
+//                            VConfigParameter* cParam = [[VConfigParameter alloc]init];
+//
+//                            NSString* name = mutMembers.firstObject;
+//                            name = [name stringByTrimmingCharactersInSet:spc];
+//                            cParam.paramName = name;
+//                            cParam.ownerIsInstance = YES;
+//
+//                            NSString* value = mutMembers.lastObject;
+//                            value = [value stringByTrimmingCharactersInSet:spc];
+//
+//                            NSRange digitRange = [value rangeOfCharacterFromSet:digits];
+//
+//                            if (digitRange.location != NSNotFound) {
+//                                cParam.paramNumValue = [NSNumber numberWithFloat:value.floatValue];
+//                                cParam.paramStringValue = cParam.paramNumValue.stringValue;
+//                            } else {
+//                                cParam.paramNumValue = @-1000;
+//                                cParam.paramStringValue = value;
+//                            }
+//                            [instance.instanceParameters addObject:cParam];
+//                        }
+//                    }
+//                }
+//            }
+//
+//            [self.configInstances addObject:instance];
+//        }
+//    }
+//
+//}
+
+
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+

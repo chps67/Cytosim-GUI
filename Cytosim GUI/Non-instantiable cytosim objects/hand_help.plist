@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hand (set parameters) DIC</key>
+	<dict>
+		<key>binding_rate</key>
+		<string>rate of attachment when the Hand is within `binding_range`.This has units of 1/second. The molecular binding_rate of conventional kinesin is 4.7 +/- 2.4 /s</string>
+		<key>binding_range</key>
+		<string>maximum distance at which the Hand can bind (also known as `binding[1]`)</string>
+		<key>binding_key</key>
+		<string>The binding to a fiber is allowed only if the keys of the Hand and Fiber match. The test uses a BITWISE-AND of the two keys. If binding_key = 0, nothing binds.</string>
+		<key>unbinding_rate</key>
+		<string>detachment rate in the absence of load. This defines a detachment opportunity that is proportional to time. RATE = unbinding_rate * exp( FORCE / unbinding_force ). where FORCE is the norm of the tension in the link holding the Hand, and `unbinding_rate&apos; and `unbinding_force&apos; are two parameters. By setting `unbinding_force=inf&apos;, unbinding is made independent of load.</string>
+		<key>unbinding_force</key>
+		<string>characteristic force of unbinding (also known as `unbinding[1]`). See unbinding_rate for details.</string>
+		<key>bind_also_end {hand}</key>
+		<string>if true, the Hand can also bind directly to the tip of fibers. Values  are `off`, `minus_end`, `plus_end` and `both_ends`; affects Hands that are located at a position for which the orthogonal projection on the fiber backbone is beyond one of the end. In this case, the attachement will occur only if `bind_also_end` is set and matches this end. Attachment will occur at the end of the fiber, if the distance is shorter than `binding_range`.</string>
+		<key>bind_only_end {hand}</key>
+		<string>if true, the Hand can bind only near the ends of the fibers. This parameter can be &apos;none&apos;, &apos;plus_end&apos;, &apos;minus_end&apos; or &apos;both_ends&apos;. Binding is allowed on positions located within a distance &apos;bind_end_range&apos; from the specified end (&apos;bind_end_range&apos; is specified as `bind_only_end[1]`).</string>
+		<key>bind_end_range</key>
+		<string>cutoff associated with `bind_only_end` where hand may bind (set as `bind_only_end[1]`)</string>
+		<key>hold_growing_end</key>
+		<string>Real number. if false (0), the Hand will detach immediately upon reaching a growing or a static fiber end. A Hand may reach the tip of the fiber on which it is bound, because it has moved, and `hold_growing_end` will determine the probability of detachment in this case. A value of 0 leads to immediate detachment. With a value of 1, the hand will remain attached</string>
+		<key>hold_shrinking_end</key>
+		<string>The same as hold_growing_end for shrinking ends...</string>
+		<key>activity {hand}</key>
+		<string>Basic hand implements `bind`. Derived classes can take the following values: &apos;move&apos; (motor), &apos;nucleate&apos; (nucleator),  &apos;slide&apos; (slider), &apos;track&apos; (tracker), &apos;rescue&apos; (rescuer), &apos;regulate&apos; (regulator), &apos;cut&apos; (cutter), &apos;chew&apos; (chewer), &apos;mighty&apos; (mighty) or &apos;act&apos; (actor)</string>
+	</dict>
+</dict>
+</plist>

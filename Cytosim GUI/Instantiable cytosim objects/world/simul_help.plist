@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>simul (set parameters) DIC</key>
+	<dict>
+		<key>time_step</key>
+		<string>Should never exceed 0.2. It controls the precision of the simulation, at the expense of computation. A smaller time step is always preferable, provided that the time to run the simulation remains acceptable. Always check that 2 simulations with time_step and time_step/2 give the same result.</string>
+		<key>viscosity</key>
+		<string>Ambient viscosity expressed in pN/s/µm2. Default value = 1. Examples: water = 0.001, C.elegans embryo, S. pombe or cultivated cells =  are within the interval 0.5-1, D. melanogaster embryo ~0.3 </string>
+		<key>kT</key>
+		<string>Energy of Brownian motion in the system = Temperature * Boltzman constant. At 0°C, kT = 0.0039, at 39°C, kT = 0.0043. Default = 0.0042.</string>
+		<key>steric parameters DIC</key>
+		<dict>
+			<key>steric</key>
+			<string>A flag to control the engine that implement steric interactions between objects. Set to 0 or to 1.</string>
+			<key>steric_stiffness_push</key>
+			<string>Stiffness for repulsive steric interaction. Generally set to a number between 10 and 100. Expressed in pN/µm.</string>
+			<key>steric_stiffness_pull</key>
+			<string>Stiffness for attractive steric interaction. Expressed in pN/µm.</string>
+			<key>steric_max_range</key>
+			<string>Lattice size used to determine steric interactions. The maximum distance at which an object may interact with a sibling is its diameter. Generally, `steric_max_range` should be greater or equal to the sum of the radiuses, of any two object that may interact. If the parameter is not set, cytosim attempts to calculate `steric_max_range` automatically.</string>
+		</dict>
+		<key>tolerance</key>
+		<string>Desired precision in the motion of objects. Should range in the interval 0.0-0.1. A lower value is at the expense of computation time. Default value = 0.05.</string>
+		<key>acceptable_prob</key>
+		<string>User-defined limit to prevent overflow (values &gt;1 !) in the probabilities of event occurence. Default value = 0.5.</string>
+		<key>binding_grid_step</key>
+		<string>Lattice size used to determine the attachment of Hand to Fiber.</string>
+		<key>skip_free_couple</key>
+		<string>If `true` free couples are not saved/read to/from file. Default = False (0).</string>
+		<key>precondition</key>
+		<string>Flag that defines preconditioning when solving systems of equations. This parameter can affect the performance greatly by reducing the number of iterations needed to reach convergence. Try the different accepted values of precondition: 0 = do not use, 1 = use a block preconditionner.</string>
+		<key>dim</key>
+		<string>Most often 2 or 3. Accepts values in the range 1..3.</string>
+	</dict>
+	<key>simul (run parameters) DIC</key>
+	<dict>
+		<key>nb_steps</key>
+		<string>Number of simulation steps. The duration of each step is specified below</string>
+		<key>duration</key>
+		<string>When specified, `nb_steps` is set to `ceil(duration/time_step)`</string>
+		<key>solve</key>
+		<string>Define the type of method used for the mechanics. `off`  Objects are immobile, `on` The mechanics is solved fully (default), `auto` Same as &apos;on&apos; but preconditionning method is set automatically, or  `horizontal` The mechanics is solved only allowing motion in the X-direction.</string>
+		<key>event</key>
+		<string> Syntax = RATE, ( CODE )  default = `none`. Custom code executed stochastically with prescribed rate. The CODE is a string containing cytosim commands and enclosed with parenthesis and this code will be executed at stochastic times with the specified rate.</string>
+		<key>nb_frames</key>
+		<string>Number of frames kept in the simulation directory within objects.cmo and properties.cmo files. Optionally, nb_frames  = INTEGER, ( CODE )</string>
+		<key>prune</key>
+		<string>If `true` (1) Print only parameters that are different from default
+</string>
+	</dict>
+</dict>
+</plist>

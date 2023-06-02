@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>rescuer (set parameters) DIC</key>
+	<dict>
+		<key>rescue_prob</key>
+		<string>This parameter is used when the shrinking end of the fiber is reaching the position of the Rescuer. The parameter determines the probability of the two possible outcome : the fiber nearest end state is set to STATE_GREEN or the fiber continues to shrink, and the Rescuer detaches</string>
+	</dict>
+</dict>
+</plist>

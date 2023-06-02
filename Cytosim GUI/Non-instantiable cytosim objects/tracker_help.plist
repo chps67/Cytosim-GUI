@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tracker (set parameters) DIC</key>
+	<dict>
+		<key>track_end</key>
+		<string>option to track a specified end [minus-end, plus_end, nearest_end]</string>
+		<key>bind_only_growing_end</key>
+		<string>if true, bind only to growing fiber ends</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>View display DIC</key>
+	<dict>
+		<key>zoom</key>
+		<integer>0</integer>
+		<key>view_size</key>
+		<string></string>
+		<key>auto_scale</key>
+		<integer>1</integer>
+		<key>focus {simul}</key>
+		<string></string>
+		<key>focus_shift</key>
+		<string></string>
+		<key>rotation</key>
+		<string></string>
+		<key>perspective</key>
+		<integer>0</integer>
+		<key>back_color</key>
+		<string></string>
+		<key>front_color</key>
+		<string></string>
+		<key>buffered</key>
+		<integer>1</integer>
+		<key>slice {simul}</key>
+		<integer>0</integer>
+		<key>depth_test</key>
+		<integer>0</integer>
+		<key>depth_clamp</key>
+		<integer>0</integer>
+		<key>stencil</key>
+		<integer>0</integer>
+		<key>multisample</key>
+		<string></string>
+		<key>retina</key>
+		<string></string>
+		<key>clip_plane_mode</key>
+		<integer>0</integer>
+		<key>clip_plane_vector</key>
+		<real>0</real>
+		<key>clip_plane_scalar</key>
+		<real>0</real>
+		<key>draw_axes</key>
+		<integer>0</integer>
+		<key>axes_size</key>
+		<real>0</real>
+		<key>scale_bar_size</key>
+		<real>0</real>
+		<key>scale_bar_color</key>
+		<string></string>
+		<key>scale_bar_mode</key>
+		<integer>0</integer>
+		<key>fog_type</key>
+		<real>0</real>
+		<key>fog_param</key>
+		<real>0</real>
+		<key>fog_color</key>
+		<string>0</string>
+		<key>track_fibers</key>
+		<real>0</real>
+		<key>window_position DIC</key>
+		<dict>
+			<key>X</key>
+			<real>0</real>
+			<key>Y</key>
+			<real>0</real>
+		</dict>
+		<key>window_size DIC</key>
+		<dict>
+			<key>width</key>
+			<integer>0</integer>
+			<key>height</key>
+			<real>0</real>
+		</dict>
+		<key>label</key>
+		<string></string>
+		<key>memo</key>
+		<string></string>
+		<key>draw_memo</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>solid (set parameters) DIC</key>
+	<dict>
+		<key>drag</key>
+		<string>drag of the bead, defining how easy it is to move the solid or bead ( force = drag * speed ). drag = 6 * M_PI * viscosity * radius
+real SolidProp::drag
+drag of the bead, defining how easy it is to move the bead ( force = drag * speed )
+
+If drag is not specified, its value is calculated using Stokes&apos; law, using the effective viscosity: </string>
+		<key>viscosity</key>
+		<string>Set the effective viscosity to lower or increase the drag coefficient of a particular class of beads/solid.
+Example: It possible to put the majority of the drag coefficient of an aster at its center, by reducing the effecitve viscosity of the fibers, and conserving (or increasing) the viscosity of the solid which forms its core. If unspecified, the global simul:viscosity is used.</string>
+		<key>steric</key>
+		<string>Number used to include steric interactions if ≠ 0</string>
+		<key>steric_range</key>
+		<string>distance added to radius to set the steric interaction distance</string>
+		<key>confine {solid}</key>
+		<string>value to confine the object. Most objects will accept: off (default), on/surface, inside, outside or all_inside.</string>
+		<key>confine_stiffness</key>
+		<string>confinement stiffness (also known as confine[1])</string>
+		<key>confine_space</key>
+		<string>name of space used for confinement (also known as confine[2])</string>
+	</dict>
+</dict>
+</plist>

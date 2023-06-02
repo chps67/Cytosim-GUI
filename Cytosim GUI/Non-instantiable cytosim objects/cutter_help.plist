@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cutter (set parameters) DIC</key>
+	<dict>
+		<key>cutting_rate</key>
+		<string>rate of cutting event</string>
+		<key>new_end_state</key>
+		<string>dynamic state of newly created Fiber ends. new_end_state[0] is for the new PLUS_END, new_end_state[1] is for the new MINUS_END</string>
+	</dict>
+</dict>
+</plist>

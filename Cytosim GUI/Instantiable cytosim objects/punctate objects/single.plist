@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>single (set parameters) DIC</key>
+	<dict>
+		<key>hand</key>
+		<string></string>
+		<key>stiffness</key>
+		<integer>0</integer>
+		<key>length</key>
+		<integer>0</integer>
+		<key>diffusion</key>
+		<integer>0</integer>
+		<key>fast_diffusion</key>
+		<integer>0</integer>
+		<key>speed</key>
+		<integer>0</integer>
+		<key>confine</key>
+		<integer>0</integer>
+		<key>confine_stiffness</key>
+		<integer>0</integer>
+		<key>confine_space</key>
+		<integer>0</integer>
+		<key>activity {single}</key>
+		<string>diffuse</string>
+	</dict>
+	<key>single (new parameters)</key>
+	<dict>
+		<key>base DIC</key>
+		<dict>
+			<key>OBJECT</key>
+			<string></string>
+			<key>POINT</key>
+			<string></string>
+		</dict>
+		<key>attach DIC</key>
+		<dict>
+			<key>FIBER</key>
+			<string></string>
+			<key>ABCISSA</key>
+			<integer>0</integer>
+			<key>REFERENCE</key>
+			<string></string>
+		</dict>
+	</dict>
+</dict>
+</plist>

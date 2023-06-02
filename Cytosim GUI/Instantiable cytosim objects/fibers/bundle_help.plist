@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bundle (set properties) DIC</key>
+	<dict>
+		<key>stiffness {bundle}</key>
+		<string>stiffness of the links that connect the overlapping fibers</string>
+		<key>overlap</key>
+		<string>length of the zone where fibers overlap</string>
+		<key>focus</key>
+		<string>designates which end of the fiber is towards the center</string>
+		<key>fiber_rate</key>
+		<string>rate for creating fiber in empty slots
+
+</string>
+		<key>fiber_type</key>
+		<string>name of Fiber in the Bundle</string>
+	</dict>
+</dict>
+</plist>

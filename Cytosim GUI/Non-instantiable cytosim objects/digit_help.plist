@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>digit (set parameters) DIC</key>
+	<dict>
+		<key>step_size</key>
+		<string>in µm</string>
+		<key>step_shift</key>
+		<string>Specifies the position occupied with the lattice (between 0.0 and step_size)</string>
+		<key>stall_force</key>
+		<string>Force at which speed reaches zero (must be &gt; 0)</string>
+		<key>unloaded_speed</key>
+		<string>Speed of the motor when its load is zero. A positive value specifies a plus-end directed motor, a negative value specifies a minus-end directed motor</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>binaryDirectory</key>
+	<string>Location of the Cytosim binaries folder. &apos;chose...&apos; or drop from the finder. Selecting an item opens it in the Finder.</string>
+	<key>workingDirectory</key>
+	<string>Location of the Cytosim working directory. This is where to put your configuration (.cym) files and where Cytosim GUI will create simulation folders and accessory files. &apos;chose...&apos; or drop from the finder. Selecting an item opens it in the Finder.</string>
+	<key>autoSimDirectory</key>
+	<string>Causes Cytosim GUI to create a new folder that will store the results of a simulation or that of a report, plus a copy of accessory files like a polygon coordinates</string>
+	<key>simDirectory</key>
+	<string>Location of a directory that contains a previous simulation. Coupled to the &apos;Play from sim dir&apos; button in the Run Control palette. &apos;chose...&apos; or drop from the finder. Selecting an item opens it in the Finder. If the directory already contains data and the user runs \&apos;Sim\&apos; the contents will be overwritten.</string>
+	<key>varDirectory</key>
+	<string>Location of a directory to explore after a &apos;Sim batch run&apos;. &apos;chose...&apos; or drop from the finder. Selecting an item opens it in the Finder.</string>
+	<key>dimension</key>
+	<string>Selects the Sim version to be launched from the topmost open configuration (.cym) file.</string>
+	<key>sim</key>
+	<string>Runs &apos;Sim&apos; in the background. Records it in the directory set as &apos;Sim&apos; in the Directory Overview palette.</string>
+	<key>playFromSimDirectory</key>
+	<string>Runs &apos;Play&apos; after a previous simulation. Extracts the data from the &apos;Sim&apos; directory specified in the Directory settings palette.</string>
+	<key>playLive</key>
+	<string>Directly plays a simulation on the screen but does not automatically creates a directory or record data into it. Much slower than &apos;Sim&apos;.</string>
+	<key>playHelp</key>
+	<string>Opens a palette that recapitulates all the &apos;Play&apos; commands that are presented upon a right click in the Play window.</string>
+	<key>disclosureButton</key>
+	<string>Opens or closes the bottom of the Run Control palette to display or mask the controls for batch runs.</string>
+	<key>taskList</key>
+	<string>Shows the list of concurrent tasks by order of post (no more than 4 at a time). Selecting an item makes it the current task</string>
+	<key>stopCurrentTask</key>
+	<string>Stops the task selected in the task list.</string>
+	<key>pauseCurrentTask</key>
+	<string>Pauses the task selected in the task list.</string>
+	<key>resumeCurrentTask</key>
+	<string>Resumes the task selected in the task list.</string>
+	<key>sendMessageToPlayTask</key>
+	<string>Opens a palette to send messages to Sim running tasks</string>
+	<key>showVariations</key>
+	<string>Opens the variation window of the current document</string>
+	<key>runSimTask</key>
+	<string>Runs the batch of Sim tasks defined in the Variations window. The folder hierarchy that holds the results will appear in the variations directory menu of the Directory Overview palette.</string>
+	<key>playWindowWidth</key>
+	<string>Defines the width of the Play window generated during the Sim batch run</string>
+	<key>playWindowHeight</key>
+	<string>Defines the height of the Play window generated during the Sim batch run</string>
+	<key>runPlayTask</key>
+	<string>Runs the batch of Play tasks read recursively from the variations directory and its sub-folders (no more than 4 at a time). The Play windows will present the size defined before the Sim batch run</string>
+	<key>taskProgress</key>
+	<string>Progress bar showing the proportion of completed tasks.</string>
+	<key>stopAllTasks</key>
+	<string>Stops all the tasks that appear in the task list and all the tasks that wait for being called during a batch run.</string>
+</dict>
+</plist>

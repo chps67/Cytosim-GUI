@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Point display DIC</key>
+	<dict>
+		<key>visible {display}</key>
+		<integer>1</integer>
+		<key>color</key>
+		<integer>0</integer>
+		<key>color2</key>
+		<integer>0</integer>
+		<key>coloring</key>
+		<integer>0</integer>
+		<key>size</key>
+		<integer>0</integer>
+		<key>width</key>
+		<integer>0</integer>
+		<key>shape {display}</key>
+		<string></string>
+		<key>style</key>
+		<integer>0</integer>
+		<key>symbol</key>
+		<string></string>
+		<key>symbol_color</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

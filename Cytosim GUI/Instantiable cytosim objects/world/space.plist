@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>space (set parameters) DIC</key>
+	<dict>
+		<key>shape</key>
+		<string>circle</string>
+	</dict>
+	<key>space (new parameters) DIC</key>
+	<dict>
+		<key>radius</key>
+		<integer>0</integer>
+		<key>file</key>
+		<string></string>
+		<key>height {space}</key>
+		<integer>0</integer>
+		<key>scale</key>
+		<integer>0</integer>
+		<key>length DIC</key>
+		<dict>
+			<key>length X</key>
+			<integer>0</integer>
+			<key>length Y</key>
+			<integer>0</integer>
+			<key>length Z</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

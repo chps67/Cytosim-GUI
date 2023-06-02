@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>couple (set parameters) DIC</key>
+	<dict>
+		<key>hand1</key>
+		<string>name of first Hand in Couple</string>
+		<key>hand2</key>
+		<string>name of second Hand in Couple</string>
+		<key>stiffness</key>
+		<string>tiffness of link between the two Hands while linking (pN/µm)</string>
+		<key>length {couple}</key>
+		<string>resting length of the link (µm)</string>
+		<key>diffusion</key>
+		<string>diffusion coefficient while unattached (µm^2/s)</string>
+		<key>fast_diffusion</key>
+		<string>0: disabled. The unattached Couple move randomly, with the specified diffusion constant. 1: attach Couple along the length of filaments It is assumed that free Couples are uniformly distributed, and they are not represented. In this mode, the Couple diffusion constant is not relevant. 2: attach Couple only at growing PLUS_ENDS. Hand1 of Couple is directly attached to the plus tips of growing fibers. The number of attachments is proportional to the new polymer mass, which is `time_step * growing_speed`, but occurs otherwise equally to every filaments. Enabling fast_diffusion makes the model simpler, since the fraction of bound/free Couples can then be calculated analytically. This also avoid the accumulation of motors in aster and other organized structures, which are stronger in a 2D geometry, compared to 3D. Thus one may wish to enable `fast_diffusion` in a 2D simulation to better represent a 3D system</string>
+		<key>trans_activated</key>
+		<string>Both Hands of a Couple are normally equally active. With this feature, the activity of Hand2 is conditioned on Hand1 being attached. This is very useful for example to make a nucleator that nucleates only after it has docked on an existing filament.</string>
+		<key>stiff</key>
+		<string>Setting `stiff` to 0 allows the two hands from the Couple to bind nearby positions on the same fiber. In such a degenerate configuration, the link is unproductive as it cannot produce force, but the feature may be useful to combine activities such as cutting and motors</string>
+		<key>specificity</key>
+		<string> Set to limit the binding to only certain configurations:  - `off`  : no restriction (default) - `parallel`  : parallel filaments with an angle below 60 degrees  - `antiparallel`    : anti-parallel filaments with an angle below 60 degrees - `not_parallel`    : anti-parallel filaments with an angle below 120 degrees - `not_antiparallel`: parallel filaments with an angle below 120 degrees  - `orthogonal` : filaments with an angle between 60 and 120 degrees</string>
+		<key>confine</key>
+		<string>Confinement can be `off`, `inside` (default) or `surface`</string>
+		<key>confine_space</key>
+		<string>name of space used for confinement (also known as `confine[2]`)</string>
+		<key>activity {couple}</key>
+		<string>One of diffuse, crosslink, bridge, duo, slide, fork</string>
+		<key>duo DIC</key>
+		<dict>
+			<key>deactivation_rate</key>
+			<string>rate of deactivation</string>
+			<key>activation_space</key>
+			<string>name of the Space inside which the Duo is activated</string>
+			<key>vulnerable</key>
+			<string>if true, the deactivation clock runs at all time</string>
+		</dict>
+		<key>fork DIC</key>
+		<dict>
+			<key>angle</key>
+			<string>Resting angle in radian (set as `torque[0]`)</string>
+			<key>angular_stiffness</key>
+			<string>Stiffness of the angular link, in Torque per radians (pN.µm/radian) (set as `torque[1]`)</string>
+		</dict>
+	</dict>
+	<key>couple (new parameters) DIC</key>
+	<dict>
+		<key>attach1</key>
+		<string>= FIBER, REAL, REFERENCE     FIBER designates the fiber: `fiber1` of `fiber2` correspond to fibers directly `first` or `last` to the oldest and youngest fiber, `last-1` the penultimate, etc..  REAL is the abscissa of the attachment point.  If the abscissa is not specified, and random position along the fiber will be selected. - REFERENCE can be `minus_end`, `center` or `plus_end` (default = `origin`). This defines from which position the abscissa is measured.</string>
+		<key>attach2</key>
+		<string>= FIBER, REAL, REFERENCE     FIBER designates the fiber:  `fiber1` of `fiber2` correspond to fibers directly  `first` or `last` to the oldest and youngest fiber,  `last-1` the penultimate, etc.. REAL is the abscissa of the attachment point.  If the abscissa is not specified, and random position along the fiber will be selected.  REFERENCE can be `minus_end`, `center` or `plus_end` (default = `origin`). This defines from which position the abscissa is measured.</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nucleator (set parameters) DIC</key>
+	<dict>
+		<key>rate</key>
+		<integer>0</integer>
+		<key>fiber_type</key>
+		<string></string>
+		<key>fiber_spec {nucleator}</key>
+		<string></string>
+		<key>nucleation_angle</key>
+		<integer>0</integer>
+		<key>specificity {nucleator}</key>
+		<string></string>
+		<key>hold_end</key>
+		<string></string>
+		<key>track_end</key>
+		<string></string>
+		<key>addictive</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

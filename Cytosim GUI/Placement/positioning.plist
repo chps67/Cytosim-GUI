@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>position DIC</key>
+	<dict>
+		<key>primitive DIC</key>
+		<dict>
+			<key>vector</key>
+			<string></string>
+			<key>inside</key>
+			<string></string>
+			<key>edge</key>
+			<string></string>
+			<key>surface</key>
+			<string></string>
+			<key>line</key>
+			<string></string>
+			<key>sphere</key>
+			<string></string>
+			<key>ball</key>
+			<string></string>
+			<key>disc</key>
+			<string></string>
+			<key>discXZ</key>
+			<string></string>
+			<key>discYZ</key>
+			<string></string>
+			<key>equator</key>
+			<string></string>
+			<key>circle</key>
+			<string></string>
+			<key>cylinder</key>
+			<string></string>
+			<key>ellipse</key>
+			<string></string>
+			<key>arc</key>
+			<string></string>
+			<key>stripe</key>
+			<string></string>
+			<key>square</key>
+			<string></string>
+			<key>rectangle</key>
+			<string></string>
+			<key>gradient</key>
+			<string></string>
+			<key>exponential</key>
+			<string></string>
+		</dict>
+		<key>transformation DIC</key>
+		<dict>
+			<key>at</key>
+			<string></string>
+			<key>add</key>
+			<string></string>
+			<key>align</key>
+			<string></string>
+			<key>turn</key>
+			<string></string>
+			<key>blur</key>
+			<string></string>
+			<key>to</key>
+			<string></string>
+			<key>or</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>rotation DIC</key>
+	<dict>
+		<key>random</key>
+		<string></string>
+		<key>identity</key>
+		<string></string>
+		<key>angle</key>
+		<string></string>
+		<key>degree</key>
+		<string></string>
+		<key>quat</key>
+		<string></string>
+	</dict>
+	<key>direction DIC</key>
+	<dict>
+		<key>vector</key>
+		<string></string>
+		<key>parallel</key>
+		<string></string>
+		<key>orthogonal</key>
+		<string></string>
+		<key>vertical parallel Y</key>
+		<string></string>
+		<key>radial</key>
+		<string></string>
+		<key>antiradial</key>
+		<string></string>
+		<key>circular</key>
+		<string></string>
+		<key>tangent {space}</key>
+		<string></string>
+		<key>normal {space}</key>
+		<string></string>
+		<key>inward {space}</key>
+		<string></string>
+		<key>outward {space}</key>
+		<string></string>
+	</dict>
+	<key>placement DIC</key>
+	<dict>
+		<key>inside</key>
+		<string></string>
+		<key>anywhere</key>
+		<string></string>
+		<key>outside</key>
+		<string></string>
+		<key>surface</key>
+		<string></string>
+	</dict>
+	<key>nb_trials</key>
+	<integer>0</integer>
+</dict>
+</plist>

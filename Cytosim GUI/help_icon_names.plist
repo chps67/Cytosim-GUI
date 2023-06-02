@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>confine {fiber}</key>
+	<dict>
+		<key>off {fiber confine}</key>
+		<integer>0</integer>
+		<key>inside</key>
+		<integer>1</integer>
+		<key>outside</key>
+		<integer>2</integer>
+		<key>surface</key>
+		<integer>3</integer>
+		<key>plus_end</key>
+		<integer>4</integer>
+		<key>minus_end</key>
+		<integer>5</integer>
+		<key>both_ends</key>
+		<integer>6</integer>
+	</dict>
+	<key>confine {couple}</key>
+	<dict>
+		<key>off {couple confine}</key>
+		<integer>0</integer>
+		<key>inside</key>
+		<integer>1</integer>
+		<key>surface</key>
+		<integer>2</integer>
+	</dict>
+	<key>confine {solid}</key>
+	<dict>
+		<key>off</key>
+		<integer>0</integer>
+		<key>surface</key>
+		<integer>3</integer>
+		<key>inside</key>
+		<integer>1</integer>
+		<key>outside</key>
+		<integer>2</integer>
+		<key>all_inside</key>
+		<integer>6</integer>
+	</dict>
+	<key>activity {hand}</key>
+	<dict>
+		<key>bind</key>
+		<string></string>
+		<key>move</key>
+		<string></string>
+		<key>track</key>
+		<string></string>
+		<key>nucleate</key>
+		<string></string>
+		<key>slide {activity hand}</key>
+		<string></string>
+		<key>rescue</key>
+		<string></string>
+		<key>cut</key>
+		<string></string>
+		<key>chew</key>
+		<string></string>
+	</dict>
+	<key>bind_also_end {hand}</key>
+	<dict>
+		<key>none {hand bind_also_end}</key>
+		<string></string>
+		<key>minus_end {hand bind_also_end}</key>
+		<string></string>
+		<key>plus_end {hand bind_also_end}</key>
+		<string></string>
+		<key>both_ends {hand bind_also_end}</key>
+		<string></string>
+	</dict>
+	<key>bind_only_end {hand}</key>
+	<dict>
+		<key>none {hand bind_only_end}</key>
+		<string></string>
+		<key>minus_end {hand bind_only_end}</key>
+		<string></string>
+		<key>plus_end {hand bind_only_end}</key>
+		<string></string>
+		<key>both_ends {hand bind_only_end}</key>
+		<string></string>
+	</dict>
+	<key>activity {couple}</key>
+	<dict>
+		<key>diffuse</key>
+		<integer>0</integer>
+		<key>crosslink</key>
+		<integer>1</integer>
+		<key>bridge</key>
+		<integer>2</integer>
+		<key>duo</key>
+		<integer>3</integer>
+		<key>slide</key>
+		<integer>4</integer>
+		<key>fork</key>
+		<integer>5</integer>
+	</dict>
+	<key>activity {single}</key>
+	<dict>
+		<key>diffuse</key>
+		<integer>0</integer>
+		<key>fixed</key>
+		<integer>1</integer>
+	</dict>
+	<key>activity {fiber}</key>
+	<dict>
+		<key>none</key>
+		<integer>0</integer>
+		<key>treadmill {fiber}</key>
+		<integer>1</integer>
+		<key>grow</key>
+		<integer>2</integer>
+		<key>classic</key>
+		<integer>3</integer>
+		<key>dynamic</key>
+		<integer>4</integer>
+	</dict>
+	<key>specificity {couple}</key>
+	<dict>
+		<key>off {couple specificity}</key>
+		<integer>0</integer>
+		<key>parallel</key>
+		<integer>1</integer>
+		<key>antiparallel</key>
+		<integer>2</integer>
+		<key>not_parallel</key>
+		<integer>3</integer>
+		<key>orthogonal</key>
+		<integer>4</integer>
+	</dict>
+	<key>drag_model</key>
+	<dict>
+		<key>dragCoefficientSurface()</key>
+		<integer>0</integer>
+		<key>dragCoefficientCylinder()</key>
+		<integer>1</integer>
+	</dict>
+	<key>shape {space}</key>
+	<dict>
+		<key>rectangle</key>
+		<integer>0</integer>
+		<key>circle</key>
+		<integer>1</integer>
+		<key>ellipse</key>
+		<integer>2</integer>
+		<key>capsule</key>
+		<integer>3</integer>
+		<key>torus</key>
+		<integer>4</integer>
+		<key>banana</key>
+		<integer>5</integer>
+		<key>polygon</key>
+		<integer>6</integer>
+		<key>rectangle {3D}</key>
+		<integer>7</integer>
+		<key>sphere</key>
+		<integer>8</integer>
+		<key>ellipse {3D}</key>
+		<integer>9</integer>
+		<key>dice</key>
+		<integer>10</integer>
+		<key>cylinder</key>
+		<integer>11</integer>
+		<key>cylinderZ</key>
+		<integer>12</integer>
+		<key>polygon {3D}</key>
+		<integer>13</integer>
+		<key>polygonZ</key>
+		<integer>14</integer>
+	</dict>
+	<key>confine {space}</key>
+	<dict>
+		<key>inside</key>
+		<integer>0</integer>
+		<key>outside</key>
+		<integer>0</integer>
+	</dict>
+	<key>fiber_spec {nucleator}</key>
+	<dict>
+		<key>grow {nucleator}</key>
+		<integer>0</integer>
+		<key>classic {nucleator}</key>
+		<integer>0</integer>
+		<key>dynamic {nucleator}</key>
+		<integer>1</integer>
+		<key>treadmill {nucleator}</key>
+		<integer>2</integer>
+	</dict>
+	<key>specificity {nucleator}</key>
+	<dict>
+		<key>none {nucleator}</key>
+		<integer>0</integer>
+		<key>parallel {nucleator}</key>
+		<integer>0</integer>
+		<key>antiparallel {nucleator}</key>
+		<integer>1</integer>
+	</dict>
+	<key>slice {simul}</key>
+	<dict>
+		<key>off {simul}</key>
+		<string></string>
+		<key>front {simul}</key>
+		<string></string>
+		<key>back {simul}</key>
+		<string></string>
+		<key>slice {simul_2}</key>
+		<string></string>
+	</dict>
+	<key>style {world}</key>
+	<dict>
+		<key>1 {world}</key>
+		<string></string>
+		<key>2 {world}</key>
+		<string></string>
+		<key>3 {world}</key>
+		<string></string>
+	</dict>
+	<key>visible {display}</key>
+	<dict>
+		<key>hidden</key>
+		<string></string>
+		<key>opaque</key>
+		<string></string>
+	</dict>
+	<key>shape {display}</key>
+	<dict>
+		<key>c</key>
+		<string></string>
+		<key>h</key>
+		<string></string>
+		<key>s</key>
+		<string></string>
+	</dict>
+	<key>point_style {fiber}</key>
+	<dict>
+		<key>0 {point_style}</key>
+		<string></string>
+		<key>1 {point_style}</key>
+		<string></string>
+		<key>2 {point_style}</key>
+		<string></string>
+		<key>3 {point_style}</key>
+		<string></string>
+	</dict>
+	<key>end_style {minus end}</key>
+	<dict>
+		<key>0 {end_style}</key>
+		<string></string>
+		<key>1 {end_style}</key>
+		<string></string>
+		<key>2 {end_style}</key>
+		<string></string>
+		<key>3 {end_style}</key>
+		<string></string>
+		<key>4 {end_style}</key>
+		<string></string>
+		<key>5 {end_style}</key>
+		<string></string>
+	</dict>
+	<key>end_style {plus end} </key>
+	<dict>
+		<key>0 {end_style}</key>
+		<string></string>
+		<key>1 {end_style}</key>
+		<string></string>
+		<key>2 {end_style}</key>
+		<string></string>
+		<key>3 {end_style}</key>
+		<string></string>
+		<key>4 {end_style}</key>
+		<string></string>
+		<key>5 {end_style}</key>
+		<string></string>
+	</dict>
+	<key>end_color {fiber}</key>
+	<dict>
+		<key>0 {end_color}</key>
+		<string></string>
+		<key>1 {end_color}</key>
+		<string></string>
+		<key>4 {end_color}</key>
+		<string></string>
+	</dict>
+	<key>label_style {fiber}</key>
+	<dict>
+		<key>0 {label_style}</key>
+		<string></string>
+		<key>1 {label_style}</key>
+		<string></string>
+		<key>2 {label_style}</key>
+		<string></string>
+	</dict>
+	<key>speckle_style {fiber}</key>
+	<dict>
+		<key>0 {speckle_style}</key>
+		<string></string>
+		<key>1 {speckle_style}</key>
+		<string></string>
+		<key>2 {speckle_style}</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

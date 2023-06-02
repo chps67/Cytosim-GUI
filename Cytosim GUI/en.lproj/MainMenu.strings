@@ -1,0 +1,1227 @@
+
+/* Class = "NSMenu"; title = "Setup"; ObjectID = "04q-LP-Uoa"; */
+"04q-LP-Uoa.title" = "Setup";
+
+/* Class = "NSTextFieldCell"; title = "Toggle the visibility flags of Hands"; ObjectID = "0Aa-6X-bWY"; */
+"0Aa-6X-bWY.title" = "Toggle the visibility flags of Hands";
+
+/* Class = "NSTextFieldCell"; title = "Setup Flags"; ObjectID = "0Kc-L4-eDL"; */
+"0Kc-L4-eDL.title" = "Setup Flags";
+
+/* Class = "NSTextFieldCell"; title = "Decrease; Increase point size of visible Hands"; ObjectID = "11d-Aa-2FR"; */
+"11d-Aa-2FR.title" = "Decrease; Increase point size of visible Hands";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "19k-GC-MSr"; */
+"19k-GC-MSr.title" = "Item 2";
+
+/* Class = "NSMenuItem"; title = "single:NAME"; ObjectID = "1Fg-D2-MiH"; */
+"1Fg-D2-MiH.title" = "single:NAME";
+
+/* Class = "NSTextFieldCell"; title = "i"; ObjectID = "1GF-aX-KZe"; */
+"1GF-aX-KZe.title" = "i";
+
+/* Class = "NSTextFieldCell"; title = "!"; ObjectID = "1Oe-fu-Jal"; */
+"1Oe-fu-Jal.title" = "!";
+
+/* Class = "NSMenuItem"; title = "Customize Toolbar…"; ObjectID = "1UK-8n-QPP"; */
+"1UK-8n-QPP.title" = "Customize Toolbar…";
+
+/* Class = "NSMenuItem"; title = "Cytosim GUI"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Cytosim GUI";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "1b7-l0-nxx"; */
+"1b7-l0-nxx.title" = "Find";
+
+/* Class = "NSMenuItem"; title = "Shift Left"; ObjectID = "1p0-jc-tnk"; */
+"1p0-jc-tnk.title" = "Shift Left";
+
+/* Class = "NSMenuItem"; title = "Lower"; ObjectID = "1tx-W0-xDw"; */
+"1tx-W0-xDw.title" = "Lower";
+
+/* Class = "NSTextFieldCell"; title = "Decrease; Increase line width of visible Hands"; ObjectID = "27M-Oa-6xm"; */
+"27M-Oa-6xm.title" = "Decrease; Increase line width of visible Hands";
+
+/* Class = "NSTabViewItem"; label = "Keyboard commands"; ObjectID = "2AB-ec-gUC"; */
+"2AB-ec-gUC.label" = "Keyboard commands";
+
+/* Class = "NSWindow"; title = "Set Directory"; ObjectID = "2H7-zX-6Fp"; */
+"2H7-zX-6Fp.title" = "Set Directory";
+
+/* Class = "NSMenuItem"; title = "Raise"; ObjectID = "2h7-ER-AoG"; */
+"2h7-ER-AoG.title" = "Raise";
+
+/* Class = "NSTextFieldCell"; title = "s"; ObjectID = "2kJ-Nu-gaM"; */
+"2kJ-Nu-gaM.title" = "s";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "2lx-HG-cdi"; */
+"2lx-HG-cdi.title" = "Label";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "2oI-Rn-ZJC"; */
+"2oI-Rn-ZJC.title" = "Transformations";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "38X-WV-Qj7"; */
+"38X-WV-Qj7.title" = "0";
+
+/* Class = "NSTextFieldCell"; title = "v"; ObjectID = "38q-8j-RTJ"; */
+"38q-8j-RTJ.title" = "v";
+
+/* Class = "NSMenuItem"; title = "sim 3D"; ObjectID = "3Hq-Al-Eeq"; */
+"3Hq-Al-Eeq.title" = "sim 3D";
+
+/* Class = "NSMenu"; title = "Spelling"; ObjectID = "3IN-sU-3Bg"; */
+"3IN-sU-3Bg.title" = "Spelling";
+
+/* Class = "NSMenuItem"; title = "Use Default"; ObjectID = "3Om-Ey-2VK"; */
+"3Om-Ey-2VK.title" = "Use Default";
+
+/* Class = "NSTextFieldCell"; title = "6"; ObjectID = "3cO-MU-7eL"; */
+"3cO-MU-7eL.title" = "6";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "3rS-ZA-NoH"; */
+"3rS-ZA-NoH.title" = "Speech";
+
+/* Class = "NSMenuItem"; title = "Tighten"; ObjectID = "46P-cB-AYj"; */
+"46P-cB-AYj.title" = "Tighten";
+
+/* Class = "NSMenuItem"; title = "couple:state"; ObjectID = "4E2-md-k4Z"; */
+"4E2-md-k4Z.title" = "couple:state";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "4EN-yA-p0u"; */
+"4EN-yA-p0u.title" = "Find";
+
+/* Class = "NSMenuItem"; title = "Enter Full Screen"; ObjectID = "4J7-dP-txa"; */
+"4J7-dP-txa.title" = "Enter Full Screen";
+
+/* Class = "NSTextFieldCell"; title = "No URL"; ObjectID = "4Ll-P6-t6Q"; */
+"4Ll-P6-t6Q.title" = "No URL";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "4N5-Fn-36F"; */
+"4N5-Fn-36F.title" = "Item 1";
+
+/* Class = "NSTextFieldCell"; title = "@  #"; ObjectID = "4O4-jo-sPr"; */
+"4O4-jo-sPr.title" = "@  #";
+
+/* Class = "NSMenuItem"; title = "fiber:moments"; ObjectID = "4cI-Bg-bZA"; */
+"4cI-Bg-bZA.title" = "fiber:moments";
+
+/* Class = "NSTextFieldCell"; title = "<  >"; ObjectID = "4jA-K4-GHy"; */
+"4jA-K4-GHy.title" = "<  >";
+
+/* Class = "NSMenuItem"; title = "fiber:hand"; ObjectID = "4mF-0K-DEd"; */
+"4mF-0K-DEd.title" = "fiber:hand";
+
+/* Class = "NSMenuItem"; title = "Quit Cytosim GUI"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit Cytosim GUI";
+
+/* Class = "NSWindow"; title = "Debug Info"; ObjectID = "4vY-PF-YiV"; */
+"4vY-PF-YiV.title" = "Debug Info";
+
+/* Class = "NSTextFieldCell"; title = "O"; ObjectID = "51R-d0-0FR"; */
+"51R-d0-0FR.title" = "O";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "5QF-Oa-p0T"; */
+"5QF-Oa-p0T.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Copy Style"; ObjectID = "5Vv-lz-BsD"; */
+"5Vv-lz-BsD.title" = "Copy Style";
+
+/* Class = "NSTextFieldCell"; title = "Play slower / Play faster"; ObjectID = "5hx-2j-iJh"; */
+"5hx-2j-iJh.title" = "Play slower / Play faster";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "5jg-yc-ifs"; */
+"5jg-yc-ifs.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "About Cytosim GUI"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About Cytosim GUI";
+
+/* Class = "NSMenuItem"; title = "couple:force"; ObjectID = "5ll-hN-nsL"; */
+"5ll-hN-nsL.title" = "couple:force";
+
+/* Class = "NSTextFieldCell"; title = "Decrease / increase line width (ALT: point size)"; ObjectID = "5po-O3-PCu"; */
+"5po-O3-PCu.title" = "Decrease / increase line width (ALT: point size)";
+
+/* Class = "NSTextFieldCell"; title = "Toggle between different bead/sphere display style"; ObjectID = "685-Kk-Psw"; */
+"685-Kk-Psw.title" = "Toggle between different bead/sphere display style";
+
+/* Class = "NSMenuItem"; title = "couple:anatomy"; ObjectID = "6Oi-9P-kUC"; */
+"6Oi-9P-kUC.title" = "couple:anatomy";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "6dh-zS-Vam"; */
+"6dh-zS-Vam.title" = "Redo";
+
+/* Class = "NSMenuItem"; title = "simul"; ObjectID = "6ei-wy-IT9"; */
+"6ei-wy-IT9.title" = "simul";
+
+/* Class = "NSButtonCell"; title = "log scale"; ObjectID = "6fk-yU-4HR"; */
+"6fk-yU-4HR.title" = "log scale";
+
+/* Class = "NSButtonCell"; title = "Play live"; ObjectID = "6kX-r2-bui"; */
+"6kX-r2-bui.title" = "Play live";
+
+/* Class = "NSTextFieldCell"; title = "Numbers"; ObjectID = "72O-iT-pdk"; */
+"72O-iT-pdk.title" = "Numbers";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "78Y-hA-62v"; */
+"78Y-hA-62v.title" = "Correct Spelling Automatically";
+
+/* Class = "NSTextFieldCell"; title = "Comments"; ObjectID = "7Ml-sk-bBC"; */
+"7Ml-sk-bBC.title" = "Comments";
+
+/* Class = "NSMenuItem"; title = "Simulation Directory"; ObjectID = "7UD-I4-2yQ"; */
+"7UD-I4-2yQ.title" = "Simulation Directory";
+
+/* Class = "NSTextFieldCell"; title = "Object Type"; ObjectID = "7dC-qq-gHn"; */
+"7dC-qq-gHn.title" = "Object Type";
+
+/* Class = "NSMenuItem"; title = "fiber"; ObjectID = "7dF-OU-0WH"; */
+"7dF-OU-0WH.title" = "fiber";
+
+/* Class = "NSTextFieldCell"; title = "Parameters"; ObjectID = "7kQ-CS-GAs"; */
+"7kQ-CS-GAs.title" = "Parameters";
+
+/* Class = "NSTextFieldCell"; title = "Address another type of fibers for modifications"; ObjectID = "7lh-9I-Jq4"; */
+"7lh-9I-Jq4.title" = "Address another type of fibers for modifications";
+
+/* Class = "NSTextFieldCell"; title = "Invert colors"; ObjectID = "7q0-lE-kCb"; */
+"7q0-lE-kCb.title" = "Invert colors";
+
+/* Class = "NSMenuItem"; title = "fiber:displacement"; ObjectID = "8CT-ot-Ek4"; */
+"8CT-ot-Ek4.title" = "fiber:displacement";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "8bP-yQ-btV"; */
+"8bP-yQ-btV.title" = "Item 2";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "8iw-o5-Rbo"; */
+"8iw-o5-Rbo.title" = "Label";
+
+/* Class = "NSMenu"; title = "Writing Direction"; ObjectID = "8mr-sm-Yjd"; */
+"8mr-sm-Yjd.title" = "Writing Direction";
+
+/* Class = "NSTextFieldCell"; title = "Object"; ObjectID = "9Hl-Kj-umD"; */
+"9Hl-Kj-umD.title" = "Object";
+
+/* Class = "NSMenuItem"; title = "Automatic"; ObjectID = "9Lw-gO-sEX"; */
+"9Lw-gO-sEX.title" = "Automatic";
+
+/* Class = "NSMenuItem"; title = "fiber:segment"; ObjectID = "9Qv-Yh-ZBN"; */
+"9Qv-Yh-ZBN.title" = "fiber:segment";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "9iK-Qq-y7b"; */
+"9iK-Qq-y7b.title" = "Label";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "9ic-FL-obx"; */
+"9ic-FL-obx.title" = "Substitutions";
+
+/* Class = "NSTextFieldCell"; title = "Toggle scale bar"; ObjectID = "9mX-dN-IYX"; */
+"9mX-dN-IYX.title" = "Toggle scale bar";
+
+/* Class = "NSMenu"; title = "Analyze"; ObjectID = "9sQ-8N-fag"; */
+"9sQ-8N-fag.title" = "Analyze";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "9yt-4B-nSM"; */
+"9yt-4B-nSM.title" = "Smart Copy/Paste";
+
+/* Class = "NSTextFieldCell"; title = "No URL"; ObjectID = "A8c-8T-9Ah"; */
+"A8c-8T-9Ah.title" = "No URL";
+
+/* Class = "NSButtonCell"; title = "Enter debugger"; ObjectID = "AGN-vv-1ID"; */
+"AGN-vv-1ID.title" = "Enter debugger";
+
+/* Class = "NSMenuItem"; title = "Live"; ObjectID = "ATV-BQ-U4C"; */
+"ATV-BQ-U4C.title" = "Live";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSTextFieldCell"; title = "8  9"; ObjectID = "AcW-VA-fio"; */
+"AcW-VA-fio.title" = "8  9";
+
+/* Class = "NSTextFieldCell"; title = "z"; ObjectID = "Al3-NT-q6Q"; */
+"Al3-NT-q6Q.title" = "z";
+
+/* Class = "NSMenuItem"; title = "couple:NAME"; ObjectID = "AuA-fr-r9O"; */
+"AuA-fr-r9O.title" = "couple:NAME";
+
+/* Class = "NSTextFieldCell"; title = "Sim Dir. URL"; ObjectID = "B7V-qd-g6g"; */
+"B7V-qd-g6g.title" = "Sim Dir. URL";
+
+/* Class = "NSButtonCell"; title = "Play help..."; ObjectID = "BFe-GZ-qMP"; */
+"BFe-GZ-qMP.title" = "Play help...";
+
+/* Class = "NSMenuItem"; title = "Play"; ObjectID = "BGc-DY-WCe"; */
+"BGc-DY-WCe.title" = "Play";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Preferences…";
+
+/* Class = "NSTextFieldCell"; title = "Sim (no visualization)"; ObjectID = "BUY-7U-Yrp"; */
+"BUY-7U-Yrp.title" = "Sim (no visualization)";
+
+/* Class = "NSMenuItem"; title = "\tLeft to Right"; ObjectID = "BgM-ve-c93"; */
+"BgM-ve-c93.title" = "\tLeft to Right";
+
+/* Class = "NSTextFieldCell"; title = "Togle slice view"; ObjectID = "Bt9-k6-R8v"; */
+"Bt9-k6-R8v.title" = "Togle slice view";
+
+/* Class = "NSMenuItem"; title = "Save As…"; ObjectID = "Bw7-FT-i3A"; */
+"Bw7-FT-i3A.title" = "Save As…";
+
+/* Class = "NSTextFieldCell"; title = "Visualize live (no recording)"; ObjectID = "Bxb-44-6YI"; */
+"Bxb-44-6YI.title" = "Visualize live (no recording)";
+
+/* Class = "NSButtonCell"; title = "okForPlay"; ObjectID = "C4K-N4-jQg"; */
+"C4K-N4-jQg.title" = "okForPlay";
+
+/* Class = "NSTableColumn"; headerCell.title = "Parameter"; ObjectID = "C4c-CP-ABw"; */
+"C4c-CP-ABw.headerCell.title" = "Parameter";
+
+/* Class = "NSButtonCell"; title = "Play from sim dir."; ObjectID = "C4d-rE-JzC"; */
+"C4d-rE-JzC.title" = "Play from sim dir.";
+
+/* Class = "NSMenuItem"; title = "single:all"; ObjectID = "D6T-Re-P6m"; */
+"D6T-Re-P6m.title" = "single:all";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "Close";
+
+/* Class = "NSMenuItem"; title = "comment"; ObjectID = "Dn9-gI-imj"; */
+"Dn9-gI-imj.title" = "comment";
+
+/* Class = "NSButtonCell"; title = "autoSimDirectory"; ObjectID = "Dqx-Cy-PMQ"; */
+"Dqx-Cy-PMQ.title" = "autoSimDirectory";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "Dv1-io-Yv7"; */
+"Dv1-io-Yv7.title" = "Spelling and Grammar";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "E2h-h1-3b5"; */
+"E2h-h1-3b5.title" = "Cancel";
+
+/* Class = "NSMenuItem"; title = "fiber:lattice"; ObjectID = "EYM-r0-u7c"; */
+"EYM-r0-u7c.title" = "fiber:lattice";
+
+/* Class = "NSTextFieldCell"; title = "Change the Couple selection mode"; ObjectID = "EqQ-c8-hSg"; */
+"EqQ-c8-hSg.title" = "Change the Couple selection mode";
+
+/* Class = "NSMenuItem"; title = "fiber:binder"; ObjectID = "F1j-WW-TpR"; */
+"F1j-WW-TpR.title" = "fiber:binder";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Cytosim GUI Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Cytosim GUI Help";
+
+/* Class = "NSTextFieldCell"; title = "Toggle auto-tracking: 't':nematic / 'T':polar mode"; ObjectID = "FQB-vW-Cu9"; */
+"FQB-vW-Cu9.title" = "Toggle auto-tracking: 't':nematic / 'T':polar mode";
+
+/* Class = "NSTextFieldCell"; title = "Command"; ObjectID = "FYn-b1-q8s"; */
+"FYn-b1-q8s.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Text"; ObjectID = "Fal-I4-PZk"; */
+"Fal-I4-PZk.title" = "Text";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "FeM-D8-WVr"; */
+"FeM-D8-WVr.title" = "Substitutions";
+
+/* Class = "NSWindow"; title = "Log"; ObjectID = "G3a-Bh-rxe"; */
+"G3a-Bh-rxe.title" = "Log";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "G5C-AF-Jge"; */
+"G5C-AF-Jge.title" = "Item 3";
+
+/* Class = "NSTextFieldCell"; title = "m  M"; ObjectID = "G6E-YD-98A"; */
+"G6E-YD-98A.title" = "m  M";
+
+/* Class = "NSMenuItem"; title = "Bold"; ObjectID = "GB9-OM-e27"; */
+"GB9-OM-e27.title" = "Bold";
+
+/* Class = "NSMenu"; title = "Format"; ObjectID = "GEO-Iw-cKr"; */
+"GEO-Iw-cKr.title" = "Format";
+
+/* Class = "NSTextFieldCell"; title = "r  R"; ObjectID = "GI8-vg-cQq"; */
+"GI8-vg-cQq.title" = "r  R";
+
+/* Class = "NSMenuItem"; title = "Use Default"; ObjectID = "GUa-eO-cwY"; */
+"GUa-eO-cwY.title" = "Use Default";
+
+/* Class = "NSTextFieldCell"; title = "4 $"; ObjectID = "Gd9-CJ-abq"; */
+"Gd9-CJ-abq.title" = "4 $";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "GgC-MS-5LK"; */
+"GgC-MS-5LK.title" = "Item 3";
+
+/* Class = "NSMenuItem"; title = "Font"; ObjectID = "Gi5-1S-RQB"; */
+"Gi5-1S-RQB.title" = "Font";
+
+/* Class = "NSMenuItem"; title = "solid:hand"; ObjectID = "Goz-dI-WEK"; */
+"Goz-dI-WEK.title" = "solid:hand";
+
+/* Class = "NSTextFieldCell"; title = "Document"; ObjectID = "Gtd-fd-wWI"; */
+"Gtd-fd-wWI.title" = "Document";
+
+/* Class = "NSMenuItem"; title = "Writing Direction"; ObjectID = "H1b-Si-o9J"; */
+"H1b-Si-o9J.title" = "Writing Direction";
+
+/* Class = "NSMenu"; title = "Play"; ObjectID = "H5R-0T-Voz"; */
+"H5R-0T-Voz.title" = "Play";
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "View";
+
+/* Class = "NSTextFieldCell"; title = "t  T"; ObjectID = "H8h-JB-qjB"; */
+"H8h-JB-qjB.title" = "t  T";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "HFQ-gK-NFA"; */
+"HFQ-gK-NFA.title" = "Text Replacement";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "HFo-cy-zxI"; */
+"HFo-cy-zxI.title" = "Show Spelling and Grammar";
+
+/* Class = "NSMenuItem"; title = "change"; ObjectID = "HRU-ZA-MrC"; */
+"HRU-ZA-MrC.title" = "change";
+
+/* Class = "NSWindow"; title = "Run Control"; ObjectID = "Hg8-Fc-gJw"; */
+"Hg8-Fc-gJw.title" = "Run Control";
+
+/* Class = "NSButtonCell"; title = "Clear All"; ObjectID = "HmJ-qd-6NM"; */
+"HmJ-qd-6NM.title" = "Clear All";
+
+/* Class = "NSTextFieldCell"; title = "Start / Stop animation or replay"; ObjectID = "Hu6-Hh-Dez"; */
+"Hu6-Hh-Dez.title" = "Start / Stop animation or replay";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
+"HyV-fh-RgO.title" = "View";
+
+/* Class = "NSMenuItem"; title = "Subscript"; ObjectID = "I0S-gh-46l"; */
+"I0S-gh-46l.title" = "Subscript";
+
+/* Class = "NSTextFieldCell"; title = "Change the Single selection mode"; ObjectID = "I0b-SD-q3i"; */
+"I0b-SD-q3i.title" = "Change the Single selection mode";
+
+/* Class = "NSButtonCell"; title = "Default for dark mode"; ObjectID = "I28-YO-jJu"; */
+"I28-YO-jJu.title" = "Default for dark mode";
+
+/* Class = "NSMenuItem"; title = "fiber:length"; ObjectID = "I4x-h1-CUZ"; */
+"I4x-h1-CUZ.title" = "fiber:length";
+
+/* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
+"IAo-SY-fd9.title" = "Open…";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "IDZ-fa-ous"; */
+"IDZ-fa-ous.title" = "Item 1";
+
+/* Class = "NSMenuItem"; title = "Block (Un)Comment"; ObjectID = "ILh-fe-rGf"; */
+"ILh-fe-rGf.title" = "Block (Un)Comment";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "ITB-A7-7FC"; */
+"ITB-A7-7FC.title" = "Label";
+
+/* Class = "NSButtonCell"; title = "Insert Snippet"; ObjectID = "IwD-Pb-llG"; */
+"IwD-Pb-llG.title" = "Insert Snippet";
+
+/* Class = "NSMenuItem"; title = "Justify"; ObjectID = "J5U-5w-g23"; */
+"J5U-5w-g23.title" = "Justify";
+
+/* Class = "NSTextFieldCell"; title = "Rewind to first frame / Restart live simulation"; ObjectID = "J6v-Yf-swY"; */
+"J6v-Yf-swY.title" = "Rewind to first frame / Restart live simulation";
+
+/* Class = "NSMenuItem"; title = "Use None"; ObjectID = "J7y-lM-qPV"; */
+"J7y-lM-qPV.title" = "Use None";
+
+/* Class = "NSTextFieldCell"; title = "Expression"; ObjectID = "JQL-h7-MAU"; */
+"JQL-h7-MAU.title" = "Expression";
+
+/* Class = "NSButtonCell"; title = "2D"; ObjectID = "Jki-29-WuP"; */
+"Jki-29-WuP.title" = "2D";
+
+/* Class = "NSMenuItem"; title = "fiber:distribution"; ObjectID = "KAQ-R7-zYa"; */
+"KAQ-R7-zYa.title" = "fiber:distribution";
+
+/* Class = "NSMenuItem"; title = "fiber:age"; ObjectID = "KNP-8H-FhI"; */
+"KNP-8H-FhI.title" = "fiber:age";
+
+/* Class = "NSMenuItem"; title = "Set Working Directory..."; ObjectID = "KRe-YT-WwD"; */
+"KRe-YT-WwD.title" = "Set Working Directory...";
+
+/* Class = "NSTextFieldCell"; title = "SPACE"; ObjectID = "KZ3-dy-alh"; */
+"KZ3-dy-alh.title" = "SPACE";
+
+/* Class = "NSMenuItem"; title = "Revert to Saved"; ObjectID = "KaW-ft-85H"; */
+"KaW-ft-85H.title" = "Revert to Saved";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Show Analyze Palette"; ObjectID = "Ks2-n6-CTa"; */
+"Ks2-n6-CTa.title" = "Show Analyze Palette";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Paste Ruler"; ObjectID = "LVM-kO-fVI"; */
+"LVM-kO-fVI.title" = "Paste Ruler";
+
+/* Class = "NSMenuItem"; title = "\tLeft to Right"; ObjectID = "Lbh-J2-qVU"; */
+"Lbh-J2-qVU.title" = "\tLeft to Right";
+
+/* Class = "NSWindow"; title = "Code insertion"; ObjectID = "Lzr-rK-49X"; */
+"Lzr-rK-49X.title" = "Code insertion";
+
+/* Class = "NSTextFieldCell"; title = "b"; ObjectID = "MHX-gz-UKU"; */
+"MHX-gz-UKU.title" = "b";
+
+/* Class = "NSTextFieldCell"; title = "Copy and paste the tasks written in green in the application Terminal to run them again and get more information in case of failure"; ObjectID = "MXE-On-ccg"; */
+"MXE-On-ccg.title" = "Copy and paste the tasks written in green in the application Terminal to run them again and get more information in case of failure";
+
+/* Class = "NSMenuItem"; title = "Copy Ruler"; ObjectID = "MkV-Pr-PK5"; */
+"MkV-Pr-PK5.title" = "Copy Ruler";
+
+/* Class = "NSTextFieldCell"; title = "1"; ObjectID = "N6g-08-8JK"; */
+"N6g-08-8JK.title" = "1";
+
+/* Class = "NSTextFieldCell"; title = "Command"; ObjectID = "N9A-nk-Oqi"; */
+"N9A-nk-Oqi.title" = "Command";
+
+/* Class = "NSMenuItem"; title = "Shift Right"; ObjectID = "NEs-Pl-LEo"; */
+"NEs-Pl-LEo.title" = "Shift Right";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "\tDefault"; ObjectID = "Nop-cj-93Q"; */
+"Nop-cj-93Q.title" = "\tDefault";
+
+/* Class = "NSWindow"; title = "Syntax Coloring"; ObjectID = "Nqz-Gp-eBI"; */
+"Nqz-Gp-eBI.title" = "Syntax Coloring";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "Nt6-kd-cMa"; */
+"Nt6-kd-cMa.title" = "Label";
+
+/* Class = "NSWindow"; title = "Report"; ObjectID = "O13-8T-Imd"; */
+"O13-8T-Imd.title" = "Report";
+
+/* Class = "NSMenu"; title = "Simulation Directory"; ObjectID = "O3n-VI-E1N"; */
+"O3n-VI-E1N.title" = "Simulation Directory";
+
+/* Class = "NSMenuItem"; title = "mark"; ObjectID = "O83-Q2-uEN"; */
+"O83-Q2-uEN.title" = "mark";
+
+/* Class = "NSMenuItem"; title = "fiber:dynamic"; ObjectID = "OWu-rE-wht"; */
+"OWu-rE-wht.title" = "fiber:dynamic";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimize";
+
+/* Class = "NSMenuItem"; title = "Baseline"; ObjectID = "OaQ-X3-Vso"; */
+"OaQ-X3-Vso.title" = "Baseline";
+
+/* Class = "NSMenuItem"; title = "Hide Cytosim GUI"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide Cytosim GUI";
+
+/* Class = "NSTextFieldCell"; title = "Object names"; ObjectID = "Ost-Ia-slD"; */
+"Ost-Ia-slD.title" = "Object names";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "OwM-mh-QMV"; */
+"OwM-mh-QMV.title" = "Find Previous";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "Oyz-dy-DGm"; */
+"Oyz-dy-DGm.title" = "Stop Speaking";
+
+/* Class = "NSTextFieldCell"; title = "of the current running task"; ObjectID = "P0B-Ju-1Ex"; */
+"P0B-Ju-1Ex.title" = "of the current running task";
+
+/* Class = "NSTextFieldCell"; title = "w  e"; ObjectID = "P2F-WJ-aVA"; */
+"P2F-WJ-aVA.title" = "w  e";
+
+/* Class = "NSTextFieldCell"; title = "Read parameter file / Print display parameters"; ObjectID = "P3g-7z-wbt"; */
+"P3g-7z-wbt.title" = "Read parameter file / Print display parameters";
+
+/* Class = "NSMenuItem"; title = "Show Log Window"; ObjectID = "PBc-6z-wu8"; */
+"PBc-6z-wu8.title" = "Show Log Window";
+
+/* Class = "NSMenuItem"; title = "Bigger"; ObjectID = "Ptp-SP-VEL"; */
+"Ptp-SP-VEL.title" = "Bigger";
+
+/* Class = "NSMenuItem"; title = "Show Fonts"; ObjectID = "Q5e-8K-NDq"; */
+"Q5e-8K-NDq.title" = "Show Fonts";
+
+/* Class = "NSButtonCell"; title = "3D"; ObjectID = "Qbk-sb-X8F"; */
+"Qbk-sb-X8F.title" = "3D";
+
+/* Class = "NSTextFieldCell"; title = "y  Y"; ObjectID = "QcP-qv-e5h"; */
+"QcP-qv-e5h.title" = "y  Y";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoom";
+
+/* Class = "NSButtonCell"; title = "Default for light mode"; ObjectID = "R5D-bh-33O"; */
+"R5D-bh-33O.title" = "Default for light mode";
+
+/* Class = "NSMenuItem"; title = "\tRight to Left"; ObjectID = "RB4-Sm-HuC"; */
+"RB4-Sm-HuC.title" = "\tRight to Left";
+
+/* Class = "NSMenuItem"; title = "From Simulation Directory"; ObjectID = "RJ5-77-uSZ"; */
+"RJ5-77-uSZ.title" = "From Simulation Directory";
+
+/* Class = "NSMenuItem"; title = "Show Control Palette"; ObjectID = "RqH-Pm-DJr"; */
+"RqH-Pm-DJr.title" = "Show Control Palette";
+
+/* Class = "NSMenuItem"; title = "Superscript"; ObjectID = "Rqc-34-cIF"; */
+"Rqc-34-cIF.title" = "Superscript";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "Ruw-6m-B2m"; */
+"Ruw-6m-B2m.title" = "Select All";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "S0p-oC-mLd"; */
+"S0p-oC-mLd.title" = "Jump to Selection";
+
+/* Class = "NSTabViewItem"; label = "Beads - Solids - Spheres"; ObjectID = "SOb-vb-Xni"; */
+"SOb-vb-Xni.label" = "Beads - Solids - Spheres";
+
+/* Class = "NSMenuItem"; title = "new"; ObjectID = "SPl-fZ-QDW"; */
+"SPl-fZ-QDW.title" = "new";
+
+/* Class = "NSTextFieldCell"; title = "ALT-8  ALT-9"; ObjectID = "SRs-hH-0T3"; */
+"SRs-hH-0T3.title" = "ALT-8  ALT-9";
+
+/* Class = "NSTextFieldCell"; title = "l  L"; ObjectID = "SWp-HM-GzQ"; */
+"SWp-HM-GzQ.title" = "l  L";
+
+/* Class = "NSTextFieldCell"; title = "No URL"; ObjectID = "SZF-ZJ-UDF"; */
+"SZF-ZJ-UDF.title" = "No URL";
+
+/* Class = "NSMenuItem"; title = "Play help ..."; ObjectID = "SuH-Te-b5o"; */
+"SuH-Te-b5o.title" = "Play help ...";
+
+/* Class = "NSTextFieldCell"; title = "Decrease/Increase Tension/Lattice / Explode"; ObjectID = "TDO-BZ-Olb"; */
+"TDO-BZ-Olb.title" = "Decrease/Increase Tension/Lattice / Explode";
+
+/* Class = "NSMenuItem"; title = "spindle:indice"; ObjectID = "TIx-Zr-99y"; */
+"TIx-Zr-99y.title" = "spindle:indice";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Window";
+
+/* Class = "NSTextFieldCell"; title = "Change point size"; ObjectID = "TzS-6S-466"; */
+"TzS-6S-466.title" = "Change point size";
+
+/* Class = "NSMenuItem"; title = "fiber:end"; ObjectID = "UBr-Xq-8yL"; */
+"UBr-Xq-8yL.title" = "fiber:end";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "UEZ-Bs-lqG"; */
+"UEZ-Bs-lqG.title" = "Capitalize";
+
+/* Class = "NSMenuItem"; title = "fiber:energy"; ObjectID = "UQr-mb-dog"; */
+"UQr-mb-dog.title" = "fiber:energy";
+
+/* Class = "NSMenuItem"; title = "fiber:confine_force"; ObjectID = "URv-Pb-j1T"; */
+"URv-Pb-j1T.title" = "fiber:confine_force";
+
+/* Class = "NSTextFieldCell"; title = "Edit expression to send non-numeric property or complex multiple values separated by commas"; ObjectID = "VIE-6e-WtV"; */
+"VIE-6e-WtV.title" = "Edit expression to send non-numeric property or complex multiple values separated by commas";
+
+/* Class = "NSMenuItem"; title = "Center"; ObjectID = "VIY-Ag-zcb"; */
+"VIY-Ag-zcb.title" = "Center";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Italic"; ObjectID = "Vjx-xi-njq"; */
+"Vjx-xi-njq.title" = "Italic";
+
+/* Class = "NSMenuItem"; title = "single"; ObjectID = "Voj-l6-LVn"; */
+"Voj-l6-LVn.title" = "single";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "Vrm-W1-iOE"; */
+"Vrm-W1-iOE.title" = "Item 2";
+
+/* Class = "NSButtonCell"; title = "Report"; ObjectID = "W2o-bJ-4sb"; */
+"W2o-bJ-4sb.title" = "Report";
+
+/* Class = "NSTextFieldCell"; title = "Double period (num. steps per display) / Do one simul. step and stop"; ObjectID = "W42-gM-cyy"; */
+"W42-gM-cyy.title" = "Double period (num. steps per display) / Do one simul. step and stop";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "W48-6f-4Dl"; */
+"W48-6f-4Dl.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Simulation"; ObjectID = "WIO-2t-FGj"; */
+"WIO-2t-FGj.title" = "Simulation";
+
+/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "WPf-ni-Kzu"; */
+"WPf-ni-Kzu.headerCell.title" = "Value";
+
+/* Class = "NSMenuItem"; title = "Underline"; ObjectID = "WRG-CD-K1S"; */
+"WRG-CD-K1S.title" = "Underline";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "WSm-Q5-ktW"; */
+"WSm-Q5-ktW.title" = "OK";
+
+/* Class = "NSMenuItem"; title = "New"; ObjectID = "Was-JA-tGl"; */
+"Was-JA-tGl.title" = "New";
+
+/* Class = "NSButtonCell"; title = "Chose Directory..."; ObjectID = "Wcu-g0-xjV"; */
+"Wcu-g0-xjV.title" = "Chose Directory...";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "WeT-3V-zwk"; */
+"WeT-3V-zwk.title" = "Paste and Match Style";
+
+/* Class = "NSMenuItem"; title = "single"; ObjectID = "WuP-Tk-jXf"; */
+"WuP-Tk-jXf.title" = "single";
+
+/* Class = "NSTextFieldCell"; title = "A  a"; ObjectID = "WxP-et-AZK"; */
+"WxP-et-AZK.title" = "A  a";
+
+/* Class = "NSWindow"; title = "Message to running task"; ObjectID = "X1L-PR-FTB"; */
+"X1L-PR-FTB.title" = "Message to running task";
+
+/* Class = "NSMenuItem"; title = "inventory"; ObjectID = "XGb-gr-9RA"; */
+"XGb-gr-9RA.title" = "inventory";
+
+/* Class = "NSMenuItem"; title = "couple"; ObjectID = "XIp-2K-GUC"; */
+"XIp-2K-GUC.title" = "couple";
+
+/* Class = "NSMenuItem"; title = "space"; ObjectID = "XIy-V4-Iz9"; */
+"XIy-V4-Iz9.title" = "space";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "Xnp-Rc-JHf"; */
+"Xnp-Rc-JHf.title" = "Item 1";
+
+/* Class = "NSTextFieldCell"; title = "g G"; ObjectID = "Xot-8n-NHI"; */
+"Xot-8n-NHI.title" = "g G";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "Xz5-n4-O0W"; */
+"Xz5-n4-O0W.title" = "Find…";
+
+/* Class = "NSTextFieldCell"; title = "Stop"; ObjectID = "YCd-1n-Wlh"; */
+"YCd-1n-Wlh.title" = "Stop";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "YEy-JH-Tfz"; */
+"YEy-JH-Tfz.title" = "Find and Replace…";
+
+/* Class = "NSMenuItem"; title = "\tDefault"; ObjectID = "YGs-j5-SAR"; */
+"YGs-j5-SAR.title" = "\tDefault";
+
+/* Class = "NSTextFieldCell"; title = "Change display of tips: off / plus / both / minus"; ObjectID = "YlT-eU-XSC"; */
+"YlT-eU-XSC.title" = "Change display of tips: off / plus / both / minus";
+
+/* Class = "NSMenuItem"; title = "fiber:force"; ObjectID = "Ylq-t7-6EY"; */
+"Ylq-t7-6EY.title" = "fiber:force";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "Ynk-f8-cLZ"; */
+"Ynk-f8-cLZ.title" = "Start Speaking";
+
+/* Class = "NSMenuItem"; title = "Align Left"; ObjectID = "ZM1-6Q-yy1"; */
+"ZM1-6Q-yy1.title" = "Align Left";
+
+/* Class = "NSMenuItem"; title = "field"; ObjectID = "ZXa-yv-buJ"; */
+"ZXa-yv-buJ.title" = "field";
+
+/* Class = "NSTextFieldCell"; title = "a"; ObjectID = "Zil-HH-l4r"; */
+"Zil-HH-l4r.title" = "a";
+
+/* Class = "NSMenuItem"; title = "Paragraph"; ObjectID = "ZvO-Gk-QUH"; */
+"ZvO-Gk-QUH.title" = "Paragraph";
+
+/* Class = "NSTextFieldCell"; title = "f  F"; ObjectID = "a88-Zm-ziL"; */
+"a88-Zm-ziL.title" = "f  F";
+
+/* Class = "NSTextFieldCell"; title = "Property"; ObjectID = "aEM-ri-gyq"; */
+"aEM-ri-gyq.title" = "Property";
+
+/* Class = "NSMenuItem"; title = "cut"; ObjectID = "aH7-8W-s8q"; */
+"aH7-8W-s8q.title" = "cut";
+
+/* Class = "NSTextFieldCell"; title = "Object"; ObjectID = "aNH-eO-7fQ"; */
+"aNH-eO-7fQ.title" = "Object";
+
+/* Class = "NSMenuItem"; title = "digit"; ObjectID = "aR2-5r-HHR"; */
+"aR2-5r-HHR.title" = "digit";
+
+/* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
+"aTl-1u-JFS.title" = "Print…";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Window";
+
+/* Class = "NSMenu"; title = "Font"; ObjectID = "aXa-aM-Jaq"; */
+"aXa-aM-Jaq.title" = "Font";
+
+/* Class = "NSMenuItem"; title = "Use Default"; ObjectID = "agt-UL-0e3"; */
+"agt-UL-0e3.title" = "Use Default";
+
+/* Class = "NSTextFieldCell"; title = "Analyze"; ObjectID = "b0H-5K-lLY"; */
+"b0H-5K-lLY.title" = "Analyze";
+
+/* Class = "NSTextFieldCell"; title = "help"; ObjectID = "baf-ZQ-OgJ"; */
+"baf-ZQ-OgJ.title" = "help";
+
+/* Class = "NSMenuItem"; title = "Show Colors"; ObjectID = "bgn-CT-cEk"; */
+"bgn-CT-cEk.title" = "Show Colors";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "File";
+
+/* Class = "NSMenuItem"; title = "organizer"; ObjectID = "bka-Ve-jZ6"; */
+"bka-Ve-jZ6.title" = "organizer";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "bkv-lV-kBH"; */
+"bkv-lV-kBH.title" = "Label";
+
+/* Class = "NSMenuItem"; title = "Setup"; ObjectID = "boB-q9-fD0"; */
+"boB-q9-fD0.title" = "Setup";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "buJ-ug-pKt"; */
+"buJ-ug-pKt.title" = "Use Selection for Find";
+
+/* Class = "NSTextFieldCell"; title = "Save current image / Play and save all images"; ObjectID = "bwX-SY-8it"; */
+"bwX-SY-8it.title" = "Save current image / Play and save all images";
+
+/* Class = "NSMenuItem"; title = "fiber:speckle"; ObjectID = "bxr-al-Esx"; */
+"bxr-al-Esx.title" = "fiber:speckle";
+
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "c8a-y6-VQd"; */
+"c8a-y6-VQd.title" = "Transformations";
+
+/* Class = "NSTextFieldCell"; title = "To get the warnings after a live 'Play' run, stop it from the 'play' application : Right-click ->Quit Menu Item or simply type 'q'"; ObjectID = "cD6-dZ-6Iz"; */
+"cD6-dZ-6Iz.title" = "To get the warnings after a live 'Play' run, stop it from the 'play' application : Right-click ->Quit Menu Item or simply type 'q'";
+
+/* Class = "NSMenuItem"; title = "Use None"; ObjectID = "cDB-IK-hbR"; */
+"cDB-IK-hbR.title" = "Use None";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "cY0-Fw-I4h"; */
+"cY0-Fw-I4h.title" = "0";
+
+/* Class = "NSMenuItem"; title = "Use the Directory of a Previous Simulation..."; ObjectID = "coV-d0-1cy"; */
+"coV-d0-1cy.title" = "Use the Directory of a Previous Simulation...";
+
+/* Class = "NSMenuItem"; title = "Selection"; ObjectID = "cqv-fj-IhA"; */
+"cqv-fj-IhA.title" = "Selection";
+
+/* Class = "NSTextFieldCell"; title = "Show previous  / Show next frame"; ObjectID = "ctk-Kw-9x6"; */
+"ctk-Kw-9x6.title" = "Show previous  / Show next frame";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "cwL-P1-jid"; */
+"cwL-P1-jid.title" = "Smart Links";
+
+/* Class = "NSTableColumn"; headerCell.title = "Use"; ObjectID = "cyR-GE-Z7U"; */
+"cyR-GE-Z7U.headerCell.title" = "Use";
+
+/* Class = "NSMenuItem"; title = "No Working Directory"; ObjectID = "d01-b5-r4O"; */
+"d01-b5-r4O.title" = "No Working Directory";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "d06-Xu-a6R"; */
+"d06-Xu-a6R.title" = "Label";
+
+/* Class = "NSTextFieldCell"; title = "Working Dir. URL"; ObjectID = "d5z-RK-JZP"; */
+"d5z-RK-JZP.title" = "Working Dir. URL";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "d9M-CD-aMd"; */
+"d9M-CD-aMd.title" = "Make Lower Case";
+
+/* Class = "NSMenu"; title = "Text"; ObjectID = "d9c-me-L2H"; */
+"d9c-me-L2H.title" = "Text";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "dDC-yJ-84v"; */
+"dDC-yJ-84v.title" = "Item 3";
+
+/* Class = "NSButtonCell"; title = "okForLivePlay"; ObjectID = "dM2-RZ-GiZ"; */
+"dM2-RZ-GiZ.title" = "okForLivePlay";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "File";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "dRJ-4n-Yzg"; */
+"dRJ-4n-Yzg.title" = "Undo";
+
+/* Class = "NSMenuItem"; title = "Analyze"; ObjectID = "dqR-Lv-Dy5"; */
+"dqR-Lv-Dy5.title" = "Analyze";
+
+/* Class = "NSTextFieldCell"; title = "Toggle fiber coloring / hide Right or left-pointing"; ObjectID = "eJJ-8B-AyS"; */
+"eJJ-8B-AyS.title" = "Toggle fiber coloring / hide Right or left-pointing";
+
+/* Class = "NSTextFieldCell"; title = "Running Task :"; ObjectID = "eJc-Fn-1wE"; */
+"eJc-Fn-1wE.title" = "Running Task :";
+
+/* Class = "NSTextFieldCell"; title = "Launch and Control Tasks Concurrently"; ObjectID = "eKF-JD-4LB"; */
+"eKF-JD-4LB.title" = "Launch and Control Tasks Concurrently";
+
+/* Class = "NSButtonCell"; title = "okForReport"; ObjectID = "eR8-qf-Ori"; */
+"eR8-qf-Ori.title" = "okForReport";
+
+/* Class = "NSTextFieldCell"; title = "c  d"; ObjectID = "em1-rz-Vzk"; */
+"em1-rz-Vzk.title" = "c  d";
+
+/* Class = "NSTextFieldCell"; title = "Value"; ObjectID = "fFK-0F-9xy"; */
+"fFK-0F-9xy.title" = "Value";
+
+/* Class = "NSMenuItem"; title = "sim 2D"; ObjectID = "fMC-RJ-mf1"; */
+"fMC-RJ-mf1.title" = "sim 2D";
+
+/* Class = "NSMenuItem"; title = "fiber:link"; ObjectID = "fRc-Ox-og5"; */
+"fRc-Ox-og5.title" = "fiber:link";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "fWa-ij-buc"; */
+"fWa-ij-buc.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Start live mode"; ObjectID = "fWw-0U-eRy"; */
+"fWw-0U-eRy.title" = "Start live mode";
+
+/* Class = "NSTextFieldCell"; title = "Modify parameters"; ObjectID = "fXG-yE-qan"; */
+"fXG-yE-qan.title" = "Modify parameters";
+
+/* Class = "NSMenuItem"; title = "couple:configuration"; ObjectID = "feG-qw-FPn"; */
+"feG-qw-FPn.title" = "couple:configuration";
+
+/* Class = "NSButtonCell"; title = "Save Log"; ObjectID = "g0a-Ge-FcR"; */
+"g0a-Ge-FcR.title" = "Save Log";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "gVA-U4-sdL"; */
+"gVA-U4-sdL.title" = "Paste";
+
+/* Class = "NSMenuItem"; title = "property"; ObjectID = "gWz-3h-u5W"; */
+"gWz-3h-u5W.title" = "property";
+
+/* Class = "NSMenuItem"; title = "couple:link"; ObjectID = "ghl-Eo-oqL"; */
+"ghl-Eo-oqL.title" = "couple:link";
+
+/* Class = "NSTextFieldCell"; title = "Commands"; ObjectID = "gnS-5M-QrK"; */
+"gnS-5M-QrK.title" = "Commands";
+
+/* Class = "NSMenuItem"; title = "fiber:confinement"; ObjectID = "h2V-lW-Ssb"; */
+"h2V-lW-Ssb.title" = "fiber:confinement";
+
+/* Class = "NSTextFieldCell"; title = "Right click / Ctrl click to show the menus of the 'play' application"; ObjectID = "h5o-rL-MEd"; */
+"h5o-rL-MEd.title" = "Right click / Ctrl click to show the menus of the 'play' application";
+
+/* Class = "NSTextFieldCell"; title = "7  ALT-7"; ObjectID = "h8m-8V-J7d"; */
+"h8m-8V-J7d.title" = "7  ALT-7";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "hQb-2v-fYv"; */
+"hQb-2v-fYv.title" = "Smart Quotes";
+
+/* Class = "NSTextFieldCell"; title = "o  p"; ObjectID = "hVy-c2-EKG"; */
+"hVy-c2-EKG.title" = "o  p";
+
+/* Class = "NSMenuItem"; title = "fiber"; ObjectID = "hWW-Hd-4CR"; */
+"hWW-Hd-4CR.title" = "fiber";
+
+/* Class = "NSMenuItem"; title = "fiber:tension"; ObjectID = "hjp-tX-khs"; */
+"hjp-tX-khs.title" = "fiber:tension";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "hz2-CU-CR7"; */
+"hz2-CU-CR7.title" = "Check Document Now";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Smaller"; ObjectID = "i1d-Er-qST"; */
+"i1d-Er-qST.title" = "Smaller";
+
+/* Class = "NSButtonCell"; title = "Message to task..."; ObjectID = "i9U-LV-0SQ"; */
+"i9U-LV-0SQ.title" = "Message to task...";
+
+/* Class = "NSTextFieldCell"; title = "Reset view (zoom, translation, rotation...)"; ObjectID = "iWE-M0-Pjw"; */
+"iWE-M0-Pjw.title" = "Reset view (zoom, translation, rotation...)";
+
+/* Class = "NSButtonCell"; title = "Check"; ObjectID = "ibq-OD-nBA"; */
+"ibq-OD-nBA.title" = "Check";
+
+/* Class = "NSMenu"; title = "Baseline"; ObjectID = "ijk-EB-dga"; */
+"ijk-EB-dga.title" = "Baseline";
+
+/* Class = "NSTextFieldCell"; title = "Object name"; ObjectID = "irO-NH-nhA"; */
+"irO-NH-nhA.title" = "Object name";
+
+/* Class = "NSTextFieldCell"; title = "ALT-SPACE"; ObjectID = "j34-Mn-2f0"; */
+"j34-Mn-2f0.title" = "ALT-SPACE";
+
+/* Class = "NSMenuItem"; title = "Kern"; ObjectID = "jBQ-r6-VK2"; */
+"jBQ-r6-VK2.title" = "Kern";
+
+/* Class = "NSMenuItem"; title = "\tRight to Left"; ObjectID = "jFq-tB-4Kx"; */
+"jFq-tB-4Kx.title" = "\tRight to Left";
+
+/* Class = "NSMenuItem"; title = "Report..."; ObjectID = "jVX-jF-rle"; */
+"jVX-jF-rle.title" = "Report...";
+
+/* Class = "NSMenuItem"; title = "fiber:cluster"; ObjectID = "jcv-nn-hLS"; */
+"jcv-nn-hLS.title" = "fiber:cluster";
+
+/* Class = "NSMenuItem"; title = "Format"; ObjectID = "jxT-CU-nIS"; */
+"jxT-CU-nIS.title" = "Format";
+
+/* Class = "NSMenuItem"; title = "Automatic Simulation Directory"; ObjectID = "k3f-MI-zmn"; */
+"k3f-MI-zmn.title" = "Automatic Simulation Directory";
+
+/* Class = "NSWindow"; title = "Cytosim 'Play' help keys"; ObjectID = "k9E-pL-Jum"; */
+"k9E-pL-Jum.title" = "Cytosim 'Play' help keys";
+
+/* Class = "NSMenuItem"; title = "spindle:profile"; ObjectID = "kG0-dR-hR3"; */
+"kG0-dR-hR3.title" = "spindle:profile";
+
+/* Class = "NSMenuItem"; title = "Show Sidebar"; ObjectID = "kIP-vf-haE"; */
+"kIP-vf-haE.title" = "Show Sidebar";
+
+/* Class = "NSTextFieldCell"; title = "Launch the Configuration of the top window"; ObjectID = "l2v-PT-egr"; */
+"l2v-PT-egr.title" = "Launch the Configuration of the top window";
+
+/* Class = "NSMenuItem"; title = "couple:hands"; ObjectID = "lem-zw-DyO"; */
+"lem-zw-DyO.title" = "couple:hands";
+
+/* Class = "NSMenuItem"; title = "sphere"; ObjectID = "lyq-eA-0jP"; */
+"lyq-eA-0jP.title" = "sphere";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "mK6-2p-4JG"; */
+"mK6-2p-4JG.title" = "Check Grammar With Spelling";
+
+/* Class = "NSMenuItem"; title = "bead:single"; ObjectID = "mW0-BQ-cSr"; */
+"mW0-BQ-cSr.title" = "bead:single";
+
+/* Class = "NSButtonCell"; title = "Sim"; ObjectID = "mWT-au-D6E"; */
+"mWT-au-D6E.title" = "Sim";
+
+/* Class = "NSMenuItem"; title = "bead"; ObjectID = "meb-dN-K7l"; */
+"meb-dN-K7l.title" = "bead";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "mkD-qx-i58"; */
+"mkD-qx-i58.title" = "Label";
+
+/* Class = "NSTabViewItem"; label = "Fibers"; ObjectID = "n62-9N-arU"; */
+"n62-9N-arU.label" = "Fibers";
+
+/* Class = "NSMenuItem"; title = "delete"; ObjectID = "nUj-Pp-sF2"; */
+"nUj-Pp-sF2.title" = "delete";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "nvo-SD-yci"; */
+"nvo-SD-yci.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Toggle full screen mode / Maximize window size"; ObjectID = "o6O-fC-FFd"; */
+"o6O-fC-FFd.title" = "Toggle full screen mode / Maximize window size";
+
+/* Class = "NSMenuItem"; title = "Ligatures"; ObjectID = "o6e-r0-MWq"; */
+"o6e-r0-MWq.title" = "Ligatures";
+
+/* Class = "NSTableColumn"; headerCell.title = "Symbol"; ObjectID = "oBo-ve-94S"; */
+"oBo-ve-94S.headerCell.title" = "Symbol";
+
+/* Class = "NSTextFieldCell"; title = "Binary Dir. URL"; ObjectID = "oUO-rT-Bp3"; */
+"oUO-rT-Bp3.title" = "Binary Dir. URL";
+
+/* Class = "NSMenu"; title = "Open Recent"; ObjectID = "oas-Oc-fiZ"; */
+"oas-Oc-fiZ.title" = "Open Recent";
+
+/* Class = "NSButtonCell"; title = "Linear scale"; ObjectID = "ocg-ro-8KB"; */
+"ocg-ro-8KB.title" = "Linear scale";
+
+/* Class = "NSMenuItem"; title = "Loosen"; ObjectID = "ogc-rX-tC1"; */
+"ogc-rX-tC1.title" = "Loosen";
+
+/* Class = "NSTextFieldCell"; title = "Decrease; increase fiber_end display size"; ObjectID = "p6L-tf-q34"; */
+"p6L-tf-q34.title" = "Decrease; increase fiber_end display size";
+
+/* Class = "NSTextFieldCell"; title = "2  3"; ObjectID = "p8e-cK-c5W"; */
+"p8e-cK-c5W.title" = "2  3";
+
+/* Class = "NSTextFieldCell"; title = "Chose the folder or drop it from the Finder"; ObjectID = "pA0-8p-rCz"; */
+"pA0-8p-rCz.title" = "Chose the folder or drop it from the Finder";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "pa3-QI-u2k"; */
+"pa3-QI-u2k.title" = "Delete";
+
+/* Class = "NSMenuItem"; title = "Save…"; ObjectID = "pxx-59-PXV"; */
+"pxx-59-PXV.title" = "Save…";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "q09-fT-Sye"; */
+"q09-fT-Sye.title" = "Find Next";
+
+/* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
+"qIS-W8-SiK.title" = "Page Setup…";
+
+/* Class = "NSMenuItem"; title = "fiber:sample"; ObjectID = "qVg-dZ-jtS"; */
+"qVg-dZ-jtS.title" = "fiber:sample";
+
+/* Class = "NSMenuItem"; title = "solid"; ObjectID = "qwc-bI-DZe"; */
+"qwc-bI-DZe.title" = "solid";
+
+/* Class = "NSMenuItem"; title = "fiber:intersection"; ObjectID = "r9n-L7-1Gt"; */
+"r9n-L7-1Gt.title" = "fiber:intersection";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "rbD-Rh-wIN"; */
+"rbD-Rh-wIN.title" = "Check Spelling While Typing";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "rgM-f4-ycn"; */
+"rgM-f4-ycn.title" = "Smart Dashes";
+
+/* Class = "NSMenu"; title = "Run"; ObjectID = "rjH-S5-I4U"; */
+"rjH-S5-I4U.title" = "Run";
+
+/* Class = "NSTextFieldCell"; title = "Change speckle display / change lattice display"; ObjectID = "s9P-BX-7yT"; */
+"s9P-BX-7yT.title" = "Change speckle display / change lattice display";
+
+/* Class = "NSMenuItem"; title = "fiber:position"; ObjectID = "s9g-rO-ePs"; */
+"s9g-rO-ePs.title" = "fiber:position";
+
+/* Class = "NSMenuItem"; title = "bead:all"; ObjectID = "sFA-uA-oNB"; */
+"sFA-uA-oNB.title" = "bead:all";
+
+/* Class = "NSTextFieldCell"; title = "Run"; ObjectID = "sm0-5R-mWE"; */
+"sm0-5R-mWE.title" = "Run";
+
+/* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "snW-S8-Cw5"; */
+"snW-S8-Cw5.title" = "Show Toolbar";
+
+/* Class = "NSMenuItem"; title = "single:position:NAME"; ObjectID = "t0l-iU-h5u"; */
+"t0l-iU-h5u.title" = "single:position:NAME";
+
+/* Class = "NSTextFieldCell"; title = "report various informations on display window"; ObjectID = "tAv-DV-LEi"; */
+"tAv-DV-LEi.title" = "report various informations on display window";
+
+/* Class = "NSTextFieldCell"; title = "Punctuation"; ObjectID = "tMQ-BR-aiz"; */
+"tMQ-BR-aiz.title" = "Punctuation";
+
+/* Class = "NSTextFieldCell"; title = "Visualize previous sim"; ObjectID = "tPG-zT-CaH"; */
+"tPG-zT-CaH.title" = "Visualize previous sim";
+
+/* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "tRr-pd-1PS"; */
+"tRr-pd-1PS.title" = "Data Detectors";
+
+/* Class = "NSMenuItem"; title = "Open Recent"; ObjectID = "tXI-mr-wws"; */
+"tXI-mr-wws.title" = "Open Recent";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "tYh-42-r22"; */
+"tYh-42-r22.title" = "Label";
+
+/* Class = "NSMenu"; title = "Kern"; ObjectID = "tlD-Oa-oAM"; */
+"tlD-Oa-oAM.title" = "Kern";
+
+/* Class = "NSTextFieldCell"; title = "`"; ObjectID = "tyj-Mx-yea"; */
+"tyj-Mx-yea.title" = "`";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "uCY-wF-XmL"; */
+"uCY-wF-XmL.title" = "%";
+
+/* Class = "NSMenu"; title = "Cytosim GUI"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Cytosim GUI";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "uRl-iY-unG"; */
+"uRl-iY-unG.title" = "Cut";
+
+/* Class = "NSButtonCell"; title = "okForSim"; ObjectID = "uZJ-tq-0MY"; */
+"uZJ-tq-0MY.title" = "okForSim";
+
+/* Class = "NSMenuItem"; title = "run"; ObjectID = "ugj-Rl-Sp2"; */
+"ugj-Rl-Sp2.title" = "run";
+
+/* Class = "NSMenuItem"; title = "Run"; ObjectID = "ums-lz-uGT"; */
+"ums-lz-uGT.title" = "Run";
+
+/* Class = "NSMenuItem"; title = "Paste Style"; ObjectID = "vKC-jM-MkH"; */
+"vKC-jM-MkH.title" = "Paste Style";
+
+/* Class = "NSMenuItem"; title = "Show Ruler"; ObjectID = "vLm-3I-IUL"; */
+"vLm-3I-IUL.title" = "Show Ruler";
+
+/* Class = "NSTextFieldCell"; title = "100"; ObjectID = "vND-hG-4X4"; */
+"vND-hG-4X4.title" = "100";
+
+/* Class = "NSMenuItem"; title = "Clear Menu"; ObjectID = "vNY-rz-j42"; */
+"vNY-rz-j42.title" = "Clear Menu";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "vR7-Fo-Ovv"; */
+"vR7-Fo-Ovv.title" = "Label";
+
+/* Class = "NSMenuItem"; title = "set"; ObjectID = "vYH-t1-CnB"; */
+"vYH-t1-CnB.title" = "set";
+
+/* Class = "NSTextFieldCell"; title = "From the Current Simulation Directory"; ObjectID = "vat-Hh-OSO"; */
+"vat-Hh-OSO.title" = "From the Current Simulation Directory";
+
+/* Class = "NSTextFieldCell"; title = "Number of objects"; ObjectID = "vhg-J4-ft5"; */
+"vhg-J4-ft5.title" = "Number of objects";
+
+/* Class = "NSTextFieldCell"; title = "Play reverse"; ObjectID = "viG-00-poq"; */
+"viG-00-poq.title" = "Play reverse";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "vmV-6d-7jI"; */
+"vmV-6d-7jI.title" = "Make Upper Case";
+
+/* Class = "NSMenuItem"; title = "parameter"; ObjectID = "vuZ-rj-Fzk"; */
+"vuZ-rj-Fzk.title" = "parameter";
+
+/* Class = "NSTextFieldCell"; title = "5"; ObjectID = "vvs-JF-H9J"; */
+"vvs-JF-H9J.title" = "5";
+
+/* Class = "NSMenuItem"; title = "delete"; ObjectID = "vyT-kI-2QV"; */
+"vyT-kI-2QV.title" = "delete";
+
+/* Class = "NSMenu"; title = "Ligatures"; ObjectID = "w0m-vy-SC9"; */
+"w0m-vy-SC9.title" = "Ligatures";
+
+/* Class = "NSTextFieldCell"; title = "Delete all mouse-controlled handles / Release handle"; ObjectID = "w4L-2H-hPj"; */
+"w4L-2H-hPj.title" = "Delete all mouse-controlled handles / Release handle";
+
+/* Class = "NSMenuItem"; title = "No Binaries Directory"; ObjectID = "wE6-ft-2EE"; */
+"wE6-ft-2EE.title" = "No Binaries Directory";
+
+/* Class = "NSTextFieldCell"; title = "Mask a fraction of the fibers / Change mask value"; ObjectID = "wFL-FZ-g3a"; */
+"wFL-FZ-g3a.title" = "Mask a fraction of the fibers / Change mask value";
+
+/* Class = "NSMenu"; title = "Simulation"; ObjectID = "wWv-iM-GjS"; */
+"wWv-iM-GjS.title" = "Simulation";
+
+/* Class = "NSMenuItem"; title = "hand"; ObjectID = "wXG-4m-GTh"; */
+"wXG-4m-GTh.title" = "hand";
+
+/* Class = "NSMenuItem"; title = "Align Right"; ObjectID = "wb2-vD-lq4"; */
+"wb2-vD-lq4.title" = "Align Right";
+
+/* Class = "NSTabViewItem"; label = "Simulation"; ObjectID = "wbH-UK-Bfd"; */
+"wbH-UK-Bfd.label" = "Simulation";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "x3v-GG-iWU"; */
+"x3v-GG-iWU.title" = "Copy";
+
+/* Class = "NSMenuItem"; title = "couple"; ObjectID = "xEk-8P-RBL"; */
+"xEk-8P-RBL.title" = "couple";
+
+/* Class = "NSMenuItem"; title = "Use All"; ObjectID = "xQD-1f-W4t"; */
+"xQD-1f-W4t.title" = "Use All";
+
+/* Class = "NSTextFieldCell"; title = "Document name"; ObjectID = "xfd-BU-yyf"; */
+"xfd-BU-yyf.title" = "Document name";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "xrE-MZ-jX0"; */
+"xrE-MZ-jX0.title" = "Speech";
+
+/* Class = "NSTextFieldCell"; title = "Setup"; ObjectID = "y81-x2-YzH"; */
+"y81-x2-YzH.title" = "Setup";
+
+/* Class = "NSMenuItem"; title = "time"; ObjectID = "yGV-jb-ECd"; */
+"yGV-jb-ECd.title" = "time";
+
+/* Class = "NSMenuItem"; title = "Set Binaries Directory..."; ObjectID = "yOS-AZ-0HJ"; */
+"yOS-AZ-0HJ.title" = "Set Binaries Directory...";
+
+/* Class = "NSTextFieldCell"; title = "Objects"; ObjectID = "yuN-gI-Za3"; */
+"yuN-gI-Za3.title" = "Objects";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "z6F-FW-3nz"; */
+"z6F-FW-3nz.title" = "Show Substitutions";
+
+/* Class = "NSTextFieldCell"; title = "Change display: line / color-coded tension / hide"; ObjectID = "zVU-Oj-FO6"; */
+"zVU-Oj-FO6.title" = "Change display: line / color-coded tension / hide";
+
+/* Class = "NSMenuItem"; title = "couple:active"; ObjectID = "ze5-xi-i8t"; */
+"ze5-xi-i8t.title" = "couple:active";
+
+/* Class = "NSTabViewItem"; label = "Singles - Couples "; ObjectID = "znx-En-M9u"; */
+"znx-En-M9u.label" = "Singles - Couples ";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "zst-Fw-Jy4"; */
+"zst-Fw-Jy4.title" = "Label";
+
+/* Class = "NSButtonCell"; title = "Send Message"; ObjectID = "zv1-ot-1s3"; */
+"zv1-ot-1s3.title" = "Send Message";
