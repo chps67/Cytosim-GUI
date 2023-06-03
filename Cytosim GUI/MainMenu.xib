@@ -3566,7 +3566,7 @@ Gw
                             <constraint firstAttribute="width" constant="462" id="7yV-FB-2uh"/>
                         </constraints>
                     </box>
-                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0XI-Bw-CBj">
+                    <popUpButton hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0XI-Bw-CBj">
                         <rect key="frame" x="427" y="16" width="96" height="25"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Itd-gu-fit" id="5rr-mI-Szc">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -3658,7 +3658,7 @@ Gw
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView identifier="MyCheckCellView" id="RCO-TB-UG9">
-                                                    <rect key="frame" x="8" y="0.0" width="43" height="52"/>
+                                                    <rect key="frame" x="8" y="0.0" width="44" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e41-zN-gRh">
@@ -3749,11 +3749,11 @@ Gw
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView identifier="MyValueCellView" id="OZs-8e-BP3">
-                                                    <rect key="frame" x="328" y="0.0" width="124" height="45"/>
+                                                    <rect key="frame" x="328" y="0.0" width="123" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bb7-7n-Nki">
-                                                            <rect key="frame" x="0.0" y="19" width="128" height="16"/>
+                                                            <rect key="frame" x="0.0" y="19" width="127" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="nvo-SD-yci">
                                                                 <font key="font" metaFont="system"/>
@@ -3854,7 +3854,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="ld5-fo-NDs">
                                                 <rect key="frame" x="1" y="1" width="722" height="638"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czN-wK-mI8" customClass="VModelDrawingView">
                                                         <rect key="frame" x="0.0" y="-130" width="1024" height="768"/>
@@ -4107,7 +4107,7 @@ Gw
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g91-UG-eZ8">
+                    <popUpButton hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g91-UG-eZ8">
                         <rect key="frame" x="337" y="16" width="77" height="25"/>
                         <popUpButtonCell key="cell" type="push" title="set" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="vYH-t1-CnB" id="Xny-0t-mIm">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -4211,7 +4211,7 @@ Gw
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="TaH-A0-c9F">
                             <rect key="frame" x="1" y="1" width="595" height="494"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DA1-HK-qhs" customClass="VPolygonDrawingView">
                                     <rect key="frame" x="0.0" y="446" width="143" height="121"/>
