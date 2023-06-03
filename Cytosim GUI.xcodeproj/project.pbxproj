@@ -84,6 +84,7 @@
 		83DEC26628C03A4900A45B2B /* single.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835FF8B428BE9CB500F9CCB0 /* single.plist */; };
 		83DEC26728C03A4900A45B2B /* space_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835FF8AC28BE9CB400F9CCB0 /* space_help.plist */; };
 		83DEC26828C03A4900A45B2B /* space.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835FF8AF28BE9CB400F9CCB0 /* space.plist */; };
+		83EF071C2A2BE3910019AFE4 /* Cytosim-GUI.md in Resources */ = {isa = PBXBuildFile; fileRef = 83EF071B2A2BE3910019AFE4 /* Cytosim-GUI.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +195,7 @@
 		83D03A1C28A95C6B00F160A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83DC88C028AB9C7C0024BF2B /* OrderedDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
 		83DC88C228AB9C7C0024BF2B /* OrderedDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
+		83EF071B2A2BE3910019AFE4 /* Cytosim-GUI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Cytosim-GUI.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 				83D03A1B28A95C6B00F160A8 /* Info.plist */,
 				830A63062900388800F0E351 /* Cytosim_GUI.entitlements */,
 				83D03A1C28A95C6B00F160A8 /* main.m */,
+				83EF071B2A2BE3910019AFE4 /* Cytosim-GUI.md */,
 			);
 			path = "Cytosim GUI";
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				83CF260629EED1AB000F6EB0 /* nucleator_help.plist in Resources */,
 				83DEC25D28C03A4900A45B2B /* display_point_help.plist in Resources */,
 				833031E629F3E877003E0AE5 /* aster_help.plist in Resources */,
+				83EF071C2A2BE3910019AFE4 /* Cytosim-GUI.md in Resources */,
 				83CF260429EECA71000F6EB0 /* motor_help.plist in Resources */,
 				833031D429F3AA68003E0AE5 /* display_world.plist in Resources */,
 				83A668E12A29BF2600268D42 /* rescuer_help.plist in Resources */,
