@@ -31,6 +31,7 @@
     // It is not clear why, but this NSDocupentController subclass will actually
     // replace the default controller and prevent do restoration....even though
     // the instance created is not used or stored in an VAppDelegate's variable
+        
 }
 
 
@@ -491,8 +492,6 @@
         
         // FIFO mechanism
         NSURL* injectURL = self.batchSimURLs.firstObject;
-        NSString* injectFile = injectURL.lastPathComponent;
-        //NSLog(@"%@", injectFile);
         [self.batchSimURLs removeObjectAtIndex:0];
         
         // launch sim task at given URL
@@ -1486,7 +1485,7 @@
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         dispatch_queue_t main = dispatch_get_main_queue();
 
-        NSWorkspace* ws = [NSWorkspace sharedWorkspace];
+        //NSWorkspace* ws = [NSWorkspace sharedWorkspace];
         //NSArray* __block prevAppsRunning = [ws runningApplications];
 
         dispatch_async(queue,

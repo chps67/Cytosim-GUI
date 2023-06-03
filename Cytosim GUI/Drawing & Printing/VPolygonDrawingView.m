@@ -251,7 +251,7 @@
     float oldZoomFactor = self.currentPolygonZoom;
     float newZoomFactor = del.polygonZoom.floatValue;
     if (newZoomFactor != 1.0) {
-        float halfPos = del.polygonScale.floatValue * del.polygonNumMicrons.floatValue / 2.0;
+        //float halfPos = del.polygonScale.floatValue * del.polygonNumMicrons.floatValue / 2.0;
         NSPoint baryCenter = NSZeroPoint;
         for (int k=0; k<self.numPoints; k++) {
             baryCenter.x += self.polygon[k].x;
@@ -461,7 +461,7 @@
 
 /*==================================================================================*/
 
--(IBAction) changeColor:(id)sender {
+-(IBAction) choseNewColor:(id)sender {
     NSColorPanel* theColors = [NSColorPanel sharedColorPanel];
     [theColors makeKeyAndOrderFront:self];
 }
@@ -652,13 +652,13 @@
 
 - (void) mouseUp:(NSEvent *)theEvent {
     
-    BOOL alt=NO, shift=NO, dblClick=NO, cmd = NO;
+    BOOL alt=NO, shift=NO, cmd = NO;
     NSUInteger modifiers =[theEvent modifierFlags];
     shift = (modifiers & NSEventModifierFlagShift) !=0;
     alt = (modifiers & NSEventModifierFlagOption) !=0;
     cmd = (modifiers & NSEventModifierFlagCommand) !=0;
 
-    NSPoint upPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    //NSPoint upPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     
     if (self.dragHandle == YES)
         self.dragHandle = NO;

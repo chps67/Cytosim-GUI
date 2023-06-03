@@ -106,5 +106,7 @@
     return code;
 }
 
-
+- (void) updateWithOutlineItem: (VOutlineItem*) item {
+    
+}
 @end

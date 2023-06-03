@@ -374,13 +374,9 @@
     
     NSString*       tx = @"";   // text that sits between a command and the next '{'
 
-    NSString*       com = @"";
-    NSString*       obj = @"";
-
     NSScanner*      scanner = [NSScanner scannerWithString:textStorage.string];
     NSRange         fullRange, comRange, objRange, txRange;
     NSUInteger      startLoc, endLoc;
-    NSUInteger      aLoc;
     VAppDelegate*   del = (VAppDelegate*)NSApp.delegate;
 
     NSArray*        commands = [NSArray arrayWithObjects:@"set", @"change", @"new", @"add", @"delete", @"mark",

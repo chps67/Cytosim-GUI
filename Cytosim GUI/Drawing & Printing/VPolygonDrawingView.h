@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) stringToPolygon:(NSString*) theString;
 -(void) scalePolygon;
 -(void) doPrint;
--(IBAction) changeColor:(id)sender;
+-(IBAction) choseNewColor:(id) sender;
 @end
 
 NS_ASSUME_NONNULL_END

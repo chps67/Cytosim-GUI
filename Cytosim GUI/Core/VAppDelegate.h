@@ -271,7 +271,6 @@ enum urlType {
 - (IBAction)    resumeTask:(id)sender;
 - (IBAction)    changeCurRunningTask:(id)sender;
 - (IBAction)    stopAllTasks:(id)sender;
-- (void)        saveConfigFileIntoSimDirectory;
 - (IBAction)    batchSim:(id)sender;
 - (IBAction)    batchPlay:(id)sender;
 - (IBAction)    batchNextGroup:(id)sender;

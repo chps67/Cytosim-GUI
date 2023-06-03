@@ -19,8 +19,8 @@
     // [super restoreWindowWithIdentifier:identifier state:state completionHandler:completionHandler];
 }
 
--(BOOL)validateToolbarItem:(NSToolbarItem *)toolbarItem {
-    return YES;
-}
+//-(BOOL) validateToolbarItem:(NSToolbarItem *)toolbarItem {
+//    return YES;
+//}
 
 @end
