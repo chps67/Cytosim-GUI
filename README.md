@@ -13,5 +13,6 @@ The application is completely written in Objective C and needs Apple XCode to be
 ## *** Please cite this page if you use Cytosim with Cytosim-GUI ***
 
 
-# For detailed instructions on how to compile and operate Cytosim-GUI, please refer to the Cytosim-GUI.md file in the Cytosim GUI folder of this repository.
+# For detailed instructions on how to compile and operate Cytosim-GUI, please refer to the Cytosim-GUI.md file in the Cytosim GUI folder of this repository. 
+# The Cytosim-GUI.md file also contains useful hints to compile the Cytosim command tools with XCode upstream of their use with Cytosim-GUI.
 
