@@ -428,6 +428,7 @@
 		83D03A0C28A95C6900F160A8 /* Cytosim GUI */ = {
 			isa = PBXGroup;
 			children = (
+				83EF071B2A2BE3910019AFE4 /* Cytosim-GUI.md */,
 				83CF262429EFEDDC000F6EB0 /* Drawing & Printing */,
 				83CF262229EFECAB000F6EB0 /* Core */,
 				83CF262329EFED92000F6EB0 /* Configuration */,
@@ -446,7 +447,6 @@
 				83D03A1B28A95C6B00F160A8 /* Info.plist */,
 				830A63062900388800F0E351 /* Cytosim_GUI.entitlements */,
 				83D03A1C28A95C6B00F160A8 /* main.m */,
-				83EF071B2A2BE3910019AFE4 /* Cytosim-GUI.md */,
 			);
 			path = "Cytosim GUI";
 			sourceTree = "<group>";
