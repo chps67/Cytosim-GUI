@@ -26,7 +26,6 @@
     self = [super init];
     if (self) {
         // Add your subclass-specific initialization here.
-        self.needsColorEdition = NO;
     }
     return self;
 }
@@ -71,11 +70,6 @@
         //[self.configTextView insertText:self.configModel.configString replacementRange: prevRange];
         [self.configTextView scrollRangeToVisible:prevRange];
 
-        // This delegate function is called only after we exit 'awakeFromNib' so
-        // call it once to ensure proper text first coloring
-//        NSRange wholeRange = {0, self.configTextView.string.length};
-//        [self textStorage:self.configTextView.textStorage didProcessEditing:NSTextStorageEditedCharacters range:wholeRange changeInLength:self.configTextView.string.length];
-
     } else {
         NSString* template = [del.configObjectCreator templateText];
         self.configModel = [[VConfigurationModel alloc]init];
@@ -83,8 +77,6 @@
         self.configModel.configString = [NSString stringWithString:template];
         NSRange prevRange = NSMakeRange(0, 0);
         [self.configTextView  insertText:self.configModel.configString replacementRange: prevRange];
-//        NSRange wholeRange = {0, self.configTextView.string.length};
-//        [self textStorage:self.configTextView.textStorage didProcessEditing:NSTextStorageEditedCharacters range:wholeRange changeInLength:self.configTextView.string.length];
     }
     
     
@@ -105,13 +97,34 @@
     self.configTextView.automaticQuoteSubstitutionEnabled = NO;
     self.configTextView.automaticDashSubstitutionEnabled = NO;
     
-    self.needsColorEdition = YES;
+    self.wantsSyntaxColor = YES;
+    
+    // BEWARE strange Bug ahead !
+    // instantation and allocation of a new NSLayoutManager and its attemp of manual recording via [self.configTextView.textStorage addLayoutManager:] fails
+    // and therefore does not allow text coloring!
+    //NSLayoutManager* lMgr = [[NSLayoutManager alloc]init];
+    //[self.configTextView.textStorage addLayoutManager:lMgr];
+    //NSTextStorage* stor = lMgr.textStorage;
+    
+    // this call actually creates and retains (!!) a layout manager into textStorage, which is required for text coloring in [self textStorage didProcessEditing...]
+    NSRange aRange = [self.configTextView.layoutManager glyphRangeForBoundingRect:self.scrollView.documentVisibleRect inTextContainer:self.configTextView.textContainer];
+
+    NSArray* items = self.toolbar.items;
+    NSToolbarItem* colorItem = nil;
+    for (NSToolbarItem* item in items) {
+        if ([item.label containsString:@"Text"]) {
+            colorItem = item;
+        }
+    }
+    if (colorItem) {
+        colorItem.image = [NSImage imageNamed:@"grayA"];
+    }
     if ([del runInDarkMode]) {
         [del colorsForDarkMode:self];
     } else {
         [del colorsForLightMode:self];
     }
-    
+      
     // Config file opening happens while the VParamVariationsManager has not been created
     // It's mandatory to wait for the call to awakeFromNib to have it attached from IB.
     // Then, the presence of parameter variations can put the 'canRunSimBatch' flag to YES
@@ -123,6 +136,23 @@
     }
     
     [self buildNavigationPoUpMenu];
+    
+    // ---- get informed when the visible text changes
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshColoring:) name:
+     NSScrollViewDidEndLiveScrollNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshColoring:) name:
+     NSWindowDidEndLiveResizeNotification object:nil];
+
+}
+
+//-----------------------------------------------------------------------------
+
+-(void) refreshColoring:(NSNotification*) aNotif {
+    if (self.wantsSyntaxColor) {
+        // pass an edited range of 0
+        NSRange emptyRange = NSMakeRange(0,0);
+        [self textStorage:self.configTextView.textStorage didProcessEditing:NSTextStorageEditedAttributes range:emptyRange changeInLength:0];
+    }
 }
 
 //-----------------------------------------------------------------------------
@@ -307,28 +337,6 @@
 #pragma mark ______ Syntax Coloring _______
 //-----------------------------------------------------------------------------
 
-/*
- Code by 'Holex' from https://stackoverflow.com/questions/8533691/how-to-get-all-nsrange-of-a-particular-character-in-a-nsstring
-*/
-
-- (BOOL)highlightString:(NSString *)string inText:(NSMutableAttributedString *)attributedString withColour:(NSColor*)color {
-    NSError *error;
-    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:string options:NSRegularExpressionIgnoreMetacharacters error:&error];
-    if (error == nil) {
-        [regexp enumerateMatchesInString:attributedString.string options:NSMatchingReportProgress range:NSMakeRange(0, attributedString.string.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-            if (result.numberOfRanges > 0) {
-                for (int i = 0; i < result.numberOfRanges; i++) {
-                    [attributedString addAttribute:NSForegroundColorAttributeName value:color range:[result rangeAtIndex:i]];
-                }
-            }
-        }];
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
-
-//-----------------------------------------------------------------------------
 
 - (NSString*) stringAfterString:(NSString*)string InString:(NSString*)wholeString {
     NSString* answerString = nil;
@@ -354,28 +362,25 @@
 #pragma mark --- NSTextView NSTextStorageDelegate and NSTextDelegate methods
 //-----------------------------------------------------------------------------
 
-//- (void)textDidChange:(NSNotification *)notification {
-//   // NSLog(@"called after the text actually changed");
-//}
-//
-//- (void)textStorage:(NSTextStorage *)textStorage willProcessEditing:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta {
-//
-//    NSLog(@"called BEFORE the text actually changed");
-//}
-//
-//- (void)processEditing {
-//    NSLog(@"called when?");
-//}
+- (void)textDidChange:(NSNotification *)notification {
+    if (self.wantsSyntaxColor) {
+        // pass an edited range of 0
+        NSRange emptyRange = NSMakeRange(0,0);
+        [self textStorage:self.configTextView.textStorage didProcessEditing:NSTextStorageEditedAttributes range:emptyRange changeInLength:0];
+    }
+}
 
 - (void)textStorage:(NSTextStorage *)textStorage didProcessEditing:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta {
     
-    if (! self.needsColorEdition)
+    if (delta <0)
         return;
+    
+    NSMutableAttributedString* targetString = textStorage;
     
     NSString*       tx = @"";   // text that sits between a command and the next '{'
 
-    NSScanner*      scanner = [NSScanner scannerWithString:textStorage.string];
-    NSRange         fullRange, comRange, objRange, txRange;
+    NSScanner*      scanner = [NSScanner scannerWithString:targetString.string];
+    NSRange         comRange, objRange, txRange;
     NSUInteger      startLoc, endLoc;
     VAppDelegate*   del = (VAppDelegate*)NSApp.delegate;
 
@@ -387,8 +392,18 @@
                                 @"bundle", @"aster", @"solid", @"bead", @"sphere", nil];
 
     // reset all text attributes to parameters' color
-    fullRange = NSMakeRange(0, textStorage.string.length);
-    [textStorage addAttribute:NSForegroundColorAttributeName value:del.parametersColorWell.color range:fullRange];
+    NSArray* layoutManagerList = [textStorage layoutManagers];
+    NSRange range = NSMakeRange(0, [targetString length]);
+    for (NSLayoutManager* layoutManager in layoutManagerList)
+    {
+        [layoutManager setDelegate:self];
+        [layoutManager removeTemporaryAttribute:NSForegroundColorAttributeName forCharacterRange:range];
+    }
+    
+    
+    if (! self.wantsSyntaxColor)
+        return;
+
 
     // commands, objects and object names
     for (NSString* command in commands) {
@@ -400,12 +415,13 @@
                 comRange.length = command.length;
                 NSString *upStr = @"", *downStr = @"";
                 NSRange aRange = NSMakeRange(comRange.location -1, 1);
-                upStr = [textStorage.string substringWithRange:aRange];
+                upStr = [targetString.string substringWithRange:aRange];
                 aRange = NSMakeRange(comRange.location+comRange.length, 1);
-                downStr = [textStorage.string substringWithRange:aRange];
+                downStr = [targetString.string substringWithRange:aRange];
 
                 if (([downStr isEqualToString:@" "])) {
-                    [textStorage addAttribute:NSForegroundColorAttributeName value:del.commandsColorWell.color range:comRange];
+                    for (NSLayoutManager* layoutManager in layoutManagerList)
+                        [layoutManager addTemporaryAttributes:[NSDictionary dictionaryWithObject:del.commandsColorWell.color forKey:NSForegroundColorAttributeName] forCharacterRange:comRange];
                     downStr = @"";
                 }
 
@@ -414,20 +430,22 @@
                         endLoc = scanner.scanLocation;
                         txRange.location = comRange.location + comRange.length;
                         txRange.length = endLoc - txRange.location;
-                        tx = [textStorage.string substringWithRange:txRange];
+                        tx = [targetString.string substringWithRange:txRange];
                         NSMutableArray* words = (NSMutableArray*)[tx componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                         [words removeObject:@""];
                         NSString* lastWord = words.lastObject;
                         aRange = [tx rangeOfString:lastWord];
                         aRange.location += txRange.location;
-                        [textStorage addAttribute:NSForegroundColorAttributeName value:del.namesColorWell.color range:aRange];
+                        for (NSLayoutManager* layoutManager in layoutManagerList)
+                            [layoutManager addTemporaryAttributes:[NSDictionary dictionaryWithObject:del.namesColorWell.color forKey:NSForegroundColorAttributeName] forCharacterRange:aRange];
 
                         for (NSString* o in objects) {
                             if ([tx containsString:o]) {
                                 objRange = [tx rangeOfString:o];
                                 objRange.location += txRange.location;
                                 objRange.length = o.length;
-                                [textStorage addAttribute:NSForegroundColorAttributeName value:del.objectsColorWell.color range:objRange];
+                                for (NSLayoutManager* layoutManager in layoutManagerList)
+                                    [layoutManager addTemporaryAttributes:[NSDictionary dictionaryWithObject:del.objectsColorWell.color forKey:NSForegroundColorAttributeName] forCharacterRange:objRange];
                             }
                         }
                     }
@@ -447,12 +465,13 @@
                 NSUInteger endLoc = scanner.scanLocation;
                 txRange.location = startLoc;
                 txRange.length = endLoc-startLoc;
-                [textStorage addAttribute:NSForegroundColorAttributeName value:del.numbersColorWell.color range:txRange];
+                for (NSLayoutManager* layoutManager in layoutManagerList)
+                    [layoutManager addTemporaryAttributes:[NSDictionary dictionaryWithObject:del.numbersColorWell.color forKey:NSForegroundColorAttributeName] forCharacterRange:txRange];
             }
         }
     }
     scanner.scanLocation = 0;
-    
+
     // punctuation
     NSCharacterSet* puncSet = [NSCharacterSet characterSetWithCharactersInString:@",(;){}"];
     while ([scanner scanUpToCharactersFromSet:puncSet intoString:nil]) {
@@ -462,7 +481,8 @@
                 endLoc = scanner.scanLocation;
                 txRange.location = startLoc;
                 txRange.length = endLoc-startLoc;
-                [textStorage addAttribute:NSForegroundColorAttributeName value:del.punctuationColorWell.color range:txRange];
+                for (NSLayoutManager* layoutManager in layoutManagerList)
+                    [layoutManager addTemporaryAttributes:[NSDictionary dictionaryWithObject:del.punctuationColorWell.color forKey:NSForegroundColorAttributeName] forCharacterRange:txRange];
             }
         }
     }
@@ -472,17 +492,17 @@
     NSString* aLine;
     txRange.location = 0;
     txRange.length = 0;
-    
+
     while ([scanner scanUpToString:@"\n" intoString:&aLine]) {
-        
+
         if (!scanner.isAtEnd) {
-            
+
             startLoc = scanner.scanLocation;
-            
+
             if ([aLine hasPrefix:@"%"]) {
                 startLoc -= aLine.length;
                 endLoc = startLoc+aLine.length;
-                
+
                 if ([aLine containsString:@"{"]) {
                     if ([scanner scanUpToString:@"}" intoString:nil]){
                         if (!scanner.isAtEnd) {
@@ -491,21 +511,18 @@
                     }
                 }
                 txRange = NSMakeRange(startLoc, endLoc-startLoc);
-                
+
             } else if (([aLine containsString:@"%"]) && (![aLine hasPrefix:@"%"])){
                 NSRange startRange = [aLine rangeOfString:@"%"];
                 NSString* subS = [aLine substringFromIndex:startRange.location];
-                txRange = [textStorage.string rangeOfString:subS];
+                txRange = [targetString.string rangeOfString:subS];
             }
         }
-        [textStorage addAttribute:NSForegroundColorAttributeName value:del.commentsColorWell.color range:txRange];
+        //[targetString addAttribute:NSForegroundColorAttributeName value:del.commentsColorWell.color range:txRange];
+        for (NSLayoutManager* layoutManager in layoutManagerList)
+            [layoutManager addTemporaryAttributes:[NSDictionary dictionaryWithObject:del.commentsColorWell.color forKey:NSForegroundColorAttributeName] forCharacterRange:txRange];
+
     }
-
-
-    // The following call will completely reset the variations by re-casting the content of the modified .cym file (takes too much time ?)
-    // A Parse tool has been added in the toolbar to force extraction manually.
-//    [self parseAgain:self];
-//    [self.configModel extractOutlineVariableItems];
 
     // Finally, ensure that any change in parameter value will be directly cast
     // to the parameter variations' window
@@ -726,15 +743,14 @@
 //---------------------------------------------------------------------------------
 
 -(void) scrollRangeToTop:(NSRange) aRange {
-    
     NSRange glyphRange = [self.configTextView.layoutManager glyphRangeForCharacterRange:aRange actualCharacterRange:nil];
     NSRect rect = [self.configTextView.layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:self.configTextView.textContainer];
     NSPoint topText = self.configTextView.textContainerOrigin;
     NSPoint contentOffset = CGPointMake(0, topText.y + rect.origin.y);
-    NSView* cv = self.configTextView.superview;
-    if ([cv isMemberOfClass:[NSClipView class]]) {
-        NSClipView* clip = (NSClipView*)cv;
-        [clip scrollToPoint:contentOffset];
+    [self.clipView scrollToPoint:contentOffset];
+    if (self.wantsSyntaxColor) {
+        NSRange emptyRange = NSMakeRange(0,0);
+        [self textStorage:self.configTextView.textStorage didProcessEditing:NSTextStorageEditedAttributes range:emptyRange changeInLength:0];
     }
 }
 
@@ -745,6 +761,18 @@
     [self.configModel extractObjectsAndInstances];
     [self.configModel extractOutlineVariableItems];
     [self buildNavigationPoUpMenu];
+}
+
+- (IBAction) toggleSyntaxColoring:(id)sender {
+    NSToolbarItem* item = (NSToolbarItem*)sender;
+    self.wantsSyntaxColor = ! self.wantsSyntaxColor;
+    if (self.wantsSyntaxColor){
+        item.image = [NSImage imageNamed:@"grayA"];
+    } else {
+        item.image = [NSImage imageNamed:@"colorA"];
+    }
+    NSRange emptyRange = NSMakeRange(0,0);
+    [self textStorage:self.configTextView.textStorage didProcessEditing:NSTextStorageEditedAttributes range:emptyRange changeInLength:0];
 }
 
 //-----------------------------------------------------------------------------

@@ -189,6 +189,8 @@ enum urlType {
 
 @property (strong) IBOutlet     VConfigObjectCreator*   configObjectCreator;
 
+@property (strong) IBOutlet     NSMenu*                 objectLocalMenu;
+
                     // interactive polygon drawing --------------
 
 @property (strong) IBOutlet     NSWindow*               polygonDrawingWindow;

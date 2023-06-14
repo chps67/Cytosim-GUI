@@ -52,6 +52,7 @@
 		83A668E22A29BF2600268D42 /* hand_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A668DE2A29BF2600268D42 /* hand_help.plist */; };
 		83A668E32A29BF2600268D42 /* rescuer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A668DF2A29BF2600268D42 /* rescuer.plist */; };
 		83A668E42A29BF2600268D42 /* hand.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A668E02A29BF2600268D42 /* hand.plist */; };
+		83B020162A35989C00775C9D /* VProteinAssemblyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B020152A35989C00775C9D /* VProteinAssemblyView.m */; };
 		83B0ED1A28F7145A00AEC97E /* couple.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B0ED1928F7145A00AEC97E /* couple.plist */; };
 		83B0ED1C28F764F800AEC97E /* couple_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83B0ED1B28F7227200AEC97E /* couple_help.plist */; };
 		83B598D329AB9C570013A24A /* NSTask_Inspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B598D229AB9C570013A24A /* NSTask_Inspector.m */; };
@@ -165,6 +166,8 @@
 		83A668DE2A29BF2600268D42 /* hand_help.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hand_help.plist; sourceTree = "<group>"; };
 		83A668DF2A29BF2600268D42 /* rescuer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rescuer.plist; sourceTree = "<group>"; };
 		83A668E02A29BF2600268D42 /* hand.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hand.plist; sourceTree = "<group>"; };
+		83B020142A35989C00775C9D /* VProteinAssemblyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VProteinAssemblyView.h; sourceTree = "<group>"; };
+		83B020152A35989C00775C9D /* VProteinAssemblyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VProteinAssemblyView.m; sourceTree = "<group>"; };
 		83B0ED1928F7145A00AEC97E /* couple.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = couple.plist; sourceTree = "<group>"; };
 		83B0ED1B28F7227200AEC97E /* couple_help.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = couple_help.plist; sourceTree = "<group>"; };
 		83B598D129AB9C570013A24A /* NSTask_Inspector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSTask_Inspector.h; sourceTree = "<group>"; };
@@ -374,6 +377,8 @@
 				830D747328FC4ECF00995468 /* VPolygonDrawingView.m */,
 				831CA39E294FB2040052EF61 /* VModelDrawingView.h */,
 				831CA39F294FB2040052EF61 /* VModelDrawingView.m */,
+				83B020142A35989C00775C9D /* VProteinAssemblyView.h */,
+				83B020152A35989C00775C9D /* VProteinAssemblyView.m */,
 				8386CD1429084A2C00AB7428 /* VPrintableView.h */,
 				8386CD1529084A2C00AB7428 /* VPrintableView.m */,
 			);
@@ -586,6 +591,7 @@
 				8386CD1629084A2C00AB7428 /* VPrintableView.m in Sources */,
 				830D747728FCB09900995468 /* NSBezierPath+QuartzUtilities.m in Sources */,
 				831CA3A0294FB2040052EF61 /* VModelDrawingView.m in Sources */,
+				83B020162A35989C00775C9D /* VProteinAssemblyView.m in Sources */,
 				83A668D62A29BE3300268D42 /* VConfigModelCreator.m in Sources */,
 				83A668D32A29BE3300268D42 /* VParamInterpolationImageView.m in Sources */,
 				83A668B22A29BD6100268D42 /* VAppDelegate.m in Sources */,

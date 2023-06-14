@@ -627,6 +627,7 @@
     NSString* run = @"run STEPS SIMUL_NAME\n{\n    PARAMETERS AND VALUES\n}\n\n";
     NSString* s = [@[comment1, simul, space, space2, obj1, obj2, run] componentsJoinedByString:@""];
 
+//    NSString* s = @"";
     return s;
 }
 

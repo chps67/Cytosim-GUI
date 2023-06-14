@@ -191,6 +191,7 @@
                 <outlet property="numberField" destination="SDm-yd-X0g" id="zW3-WT-qdx"/>
                 <outlet property="numberFieldTitle" destination="mO6-lH-2ng" id="AyI-oT-ayt"/>
                 <outlet property="numbersColorWell" destination="oa8-Qh-n7C" id="jIy-rV-Ka0"/>
+                <outlet property="objectLocalMenu" destination="sdR-AW-KtG" id="1El-1P-ZS9"/>
                 <outlet property="objectsColorWell" destination="Guk-OL-Vrw" id="EbK-db-e41"/>
                 <outlet property="openBackgroundImageButton" destination="HkU-n5-ARA" id="Xwa-9V-P75"/>
                 <outlet property="openPolygonButton" destination="ojI-j5-ThU" id="DjE-Y7-dce"/>
@@ -3875,10 +3876,77 @@ Gw
                                     </subviews>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Protein" identifier="2" id="TZc-6I-Dvw">
-                                <view key="view" id="2pV-HU-8PQ">
+                            <tabViewItem label="Proteins" identifier="2" id="TZc-6I-Dvw">
+                                <view key="view" id="2pV-HU-8PQ" customClass="VProteinAssemblyView">
                                     <rect key="frame" x="10" y="33" width="773" height="675"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ByL-kD-rca">
+                                            <rect key="frame" x="388" y="628" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="03H-GN-q9M">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7eH-S8-JPs">
+                                            <rect key="frame" x="556" y="561" width="181" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="xgd-Kd-o0v">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ee5-5N-DlL">
+                                            <rect key="frame" x="249" y="630" width="124" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Number of domains" id="bMS-Nn-Syk">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jd3-RV-CgM">
+                                            <rect key="frame" x="27" y="561" width="50" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Domain" id="D0t-6b-D4D">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5IH-wq-gG8">
+                                            <rect key="frame" x="454" y="562" width="87" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Domain name" id="odV-Va-cri">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTF-FP-i7R">
+                                            <rect key="frame" x="91" y="555" width="188" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="2Cn-IT-aL1" id="hUj-YS-JUC">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="dVv-YV-S8r">
+                                                    <items>
+                                                        <menuItem title="Item 1" state="on" id="2Cn-IT-aL1"/>
+                                                        <menuItem title="Item 2" id="pEn-lK-Xeg"/>
+                                                        <menuItem title="Item 3" id="14J-d7-rHv"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-w2-sIT">
+                                            <rect key="frame" x="26" y="30" width="714" height="519"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="wDR-AM-AHH"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
                             </tabViewItem>
                         </tabViewItems>
@@ -4549,20 +4617,36 @@ Gw
         </window>
         <menu id="sdR-AW-KtG">
             <items>
-                <menuItem title="Item" id="qjJ-Va-JzH">
+                <menuItem title="Create" enabled="NO" id="M9D-wb-1nW">
+                    <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Item" id="CFf-sm-DFS">
+                <menuItem isSeparatorItem="YES" id="Fbw-Vk-V1q"/>
+                <menuItem title="Hand" id="yS2-Ql-0Lt">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Item" id="AZT-c9-rqB">
+                <menuItem title="Linker" id="i79-Jc-eGl">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Item 3" id="i79-Jc-eGl">
+                <menuItem title="Backbone" id="3Jx-3f-BRU">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="kYm-2J-PdD"/>
+                <menuItem title="Bead" id="uYd-Zj-3ld">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Solid" id="kx5-gH-M1N">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Solid" id="puU-aH-GUd">
+                        <items>
+                            <menuItem title="Add Point" id="Akv-vS-2yF">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="1348" y="800"/>
+            <point key="canvasLocation" x="2011" y="759"/>
         </menu>
     </objects>
     <resources>
