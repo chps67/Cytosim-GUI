@@ -8,6 +8,7 @@
 #import "VPolygonDrawingView.h"
 #import "VAppDelegate.h"
 #import "VPrintableView.h"
+#import "NSBezierPath+QuartzUtilities.h"
 
 @implementation VPolygonDrawingView
 

@@ -9,6 +9,7 @@
 #import "VConfigurationModel.h"
 #import "OrderedDictionary.h"
 #import "VParamVariationsManager.h"
+#import "VConfigModelCreator.h"
 
 @interface VDocument : NSDocument <NSTextViewDelegate, NSTextStorageDelegate, NSTextDelegate, NSLayoutManagerDelegate, NSToolbarDelegate>
 
@@ -28,6 +29,8 @@
 @property (strong)          OrderedDictionary*              paramDic;
 @property (strong) IBOutlet VParamVariationsManager*        paramVarMgr;
 @property (strong)          NSNumber*                       canRunBatchSim;
+
+@property (strong) IBOutlet VConfigModelCreator*            modelCreator;
 
 - (void) replaceWithText:(NSString*) newText;
 - (IBAction) choseTextColors: (id) sender;

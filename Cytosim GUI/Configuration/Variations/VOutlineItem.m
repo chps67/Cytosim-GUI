@@ -12,7 +12,7 @@
 
 @implementation VOutlineItem
 
-@synthesize expandable, parent, children, configParameter;
+@synthesize parent, children, configParameter;
 
 // config object's or instance's title ----------------------------------------
 
@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
         self.expandable = YES;
-        //self.model = nil;     // set upon the extraction in VConfigModel
+        self.useIt = NO;
         
         self.parent = nil;      // set upon the extraction in VConfigModel
         self.children = nil;    // set upon the extraction in VConfigModel
@@ -38,7 +38,7 @@
     self = [super init];
     if (self) {
         self.expandable = YES;
-        //self.model = nil;         // set upon the extraction in VConfigModel
+        self.useIt = NO;
         
         self.parent = nil;          // set upon the extraction in VConfigModel
         self.children = nil;        // set upon the extraction in VConfigModel
@@ -54,8 +54,8 @@
     self = [super init];
     if (self) {
         self.expandable = NO;
-        //self.model = nil;         // set upon the extraction in VConfigModel
-        
+        self.useIt = NO;
+
         self.parent = nil;
         self.children = nil;
         self.configParameter = [param copyWithZone:nil];
@@ -67,8 +67,10 @@
 //------------------------------------------------------------------------------
 
 - (NSInteger) numberOfChildren {
-    //return (self.children.count == 0) ? (-1) : self.children.count; // This is apple's example but returning -1 causes crash when children.count == 0, so just return 0
-    return self.children.count;
+    if ((self.children == nil) || (self.children.count == 0))
+        return -1;
+    else
+        return self.children.count;
 }
 
 //------------------------------------------------------------------------------

@@ -32,7 +32,13 @@
 - (NSInteger)numberOfChildren {
     // As 'numberOfChildren' is called first upon NSOutlineView filling, extract the children and place parents before anything else...
     // [self extractChildren];
-    return (self.children.count == 0) ? (-1) : self.children.count;
+    //
+    //return (self.children.count == 0) ? (-1) : self.children.count;
+    
+    if (self.children.count == 0)
+        return -1; // also returned when self.children == nil
+    else
+        return self.children.count;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------

@@ -189,8 +189,6 @@ enum urlType {
 
 @property (strong) IBOutlet     VConfigObjectCreator*   configObjectCreator;
 
-@property (strong) IBOutlet     NSMenu*                 objectLocalMenu;
-
                     // interactive polygon drawing --------------
 
 @property (strong) IBOutlet     NSWindow*               polygonDrawingWindow;
@@ -239,6 +237,10 @@ enum urlType {
 
 @property (strong)              NSDictionary*           toolTipsDictionary;
 
+                    // Reporting Method --------------
+
+- (void) appendToLogText:(NSString*) aText WithColor:(NSColor*)reqColor;
+
                     // Setup Methods --------------
 
 - (BOOL)        runInDarkMode;
@@ -266,6 +268,7 @@ enum urlType {
 
 - (NSString*)   completeDateStringFromDate:(NSDate*)date;
 - (void)        createSimDirectory;
+- (NSError*)    copySupportingFilesIntoActiveDirectory;
 
 - (IBAction)    launchTask:(id)sender;
 - (IBAction)    stopTask:(id)sender;

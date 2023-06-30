@@ -106,7 +106,7 @@
     //[self.configTextView.textStorage addLayoutManager:lMgr];
     //NSTextStorage* stor = lMgr.textStorage;
     
-    // this call actually creates and retains (!!) a layout manager into textStorage, which is required for text coloring in [self textStorage didProcessEditing...]
+    // this call actually creates and retains (!!) a layout manager into textStorage, which is required for text coloring in [self textStorage didProcessEditing...]. aRange is not used but it's normal.
     NSRange aRange = [self.configTextView.layoutManager glyphRangeForBoundingRect:self.scrollView.documentVisibleRect inTextContainer:self.configTextView.textContainer];
 
     NSArray* items = self.toolbar.items;
@@ -130,7 +130,6 @@
     // Then, the presence of parameter variations can put the 'canRunSimBatch' flag to YES
     // to control the enabling of the button that runs a batch of Sim calls
     if (self.paramVarMgr) {
-        [self.paramVarMgr synchronizeUseBoxes];
         self.paramVarMgr.numSim = [self.paramVarMgr computeNumSimCalls];
         self.paramVarMgr.canRunSimBatch = [NSNumber numberWithBool:[self.paramVarMgr hasVariationsInParameters]];
     }
@@ -143,6 +142,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshColoring:) name:
      NSWindowDidEndLiveResizeNotification object:nil];
 
+    self.modelCreator = [[VConfigModelCreator alloc]init];
 }
 
 //-----------------------------------------------------------------------------
@@ -222,6 +222,10 @@
                     
                     [param.variations collectValues];
                     
+                    // update the useIt flag of the VOutlineItem to display it acording to
+                    // the .cymvar file content
+                    child.useIt = param.variations.active.boolValue;
+                    
                     // round the number of instances
                     if (param.ownerIsInstance) {
                         if ([param.ownerName isEqualToString:@"instance"]) {
@@ -284,6 +288,8 @@
     return configData;
 }
 
+//-----------------------------------------------------------------------------
+
 // Overriding setFileURL ensures to intercept the correct fileURL after the user changed the file's name (saving as...)
 // because is called after 'dataOfType'. This will allow to synchronize the doc's URL stored in VApplication (cymFileURL)
 - (void)setFileURL:(NSURL *)fileURL {
@@ -314,6 +320,8 @@
     return printOp;
 }
 
+//-----------------------------------------------------------------------------
+
 - (void)document:(NSDocument *)document didPrint:(BOOL)didPrintSuccessfull {
     VAppDelegate* del = (VAppDelegate*)(NSApp.delegate);
     if ([del runInDarkMode]) {
@@ -322,6 +330,8 @@
     }
     //[del defaultColors];
 }
+
+//-----------------------------------------------------------------------------
 
 - (IBAction) printConfigurationFile: (id)sender {
     VAppDelegate* del = (VAppDelegate*)(NSApp.delegate);
@@ -370,6 +380,8 @@
     }
 }
 
+//-----------------------------------------------------------------------------
+
 - (void)textStorage:(NSTextStorage *)textStorage didProcessEditing:(NSTextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta {
     
     if (delta <0)
@@ -389,7 +401,7 @@
                                   @"repeat", @"for", @"restart", @"dump", @"save", nil];
 
     NSArray*        objects = [NSArray arrayWithObjects:@"simul", @"space", @"fiber", @"hand", @"single", @"couple",
-                                @"bundle", @"aster", @"solid", @"bead", @"sphere", nil];
+                                @"bundle", @"aster", @"solid", @"bead", @"sphere", @"nucleus", nil];
 
     // reset all text attributes to parameters' color
     NSArray* layoutManagerList = [textStorage layoutManagers];
@@ -698,17 +710,35 @@
     self.configTextView.selectedRange = newRange;
 }
 
+//-----------------------------------------------------------------------------
 
 - (IBAction) openModelBuilder: (id) sender {
     VAppDelegate* del = (VAppDelegate*)NSApp.delegate;
     [del.modelDesignWindow orderFront:self];
 }
 
+//-----------------------------------------------------------------------------
+
 - (IBAction) showVariationsWindow: (id) sender {
     
     [self.variationsWindow makeKeyAndOrderFront:nil];
-    [self.paramVarMgr synchronizeUseBoxes];
+    
+    // selectively expands the items that have a child with the useIt flag checked
+    for (NSInteger k=0; k<self.paramVarMgr.outlineView.numberOfRows; k++) {
+        VOutlineItem* item = [self.paramVarMgr.outlineView itemAtRow:k];
+        if (item.parent == nil) {
+            if (item.children.count >0) {
+                for (VOutlineItem* child in item.children) {
+                    if (child.useIt)
+                        [self.paramVarMgr.outlineView expandItem:item];
+                }
+            }
+        }
+    }
+    [self.paramVarMgr.outlineView reloadData];
 }
+
+//-----------------------------------------------------------------------------
 
 - (NSString*) removeSpacesAtTheEndOfString:(NSString*) s {
     for (NSInteger k = s.length - 1; k > 0; k --) {
@@ -754,6 +784,8 @@
     }
 }
 
+//-----------------------------------------------------------------------------
+
 - (IBAction) parseAgain:(id)sender {
     // Update the model's configString to cast the change
     self.configModel.configString = [NSString stringWithString:self.configTextView.textStorage.string];
@@ -762,6 +794,8 @@
     [self.configModel extractOutlineVariableItems];
     [self buildNavigationPoUpMenu];
 }
+
+//-----------------------------------------------------------------------------
 
 - (IBAction) toggleSyntaxColoring:(id)sender {
     NSToolbarItem* item = (NSToolbarItem*)sender;

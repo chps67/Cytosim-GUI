@@ -50,7 +50,7 @@
     [self initializeDataSource:@"display_view"];
     [self initializeDataSource:@"display_world"];
     [self initializeDataSource:@"display_play"];
-    
+
     [self initializeDataSource:@"positioning"];
 }
 
@@ -216,7 +216,7 @@
     // may take also differ. To distinguish between these possibilities, the name of the parameter
     // is followed by the object's name between curly braces as follows: 'parameter {object}'
     // of course this {...} is trimmed at run time (see trimmedName: below)
-    // To display the possible choices in the image buttonsbelow the outline view,
+    // To display the possible choices in the image buttons below the outline view,
     // the corresponding icon names are stored in the help_icon_names.plist
     
     
@@ -632,7 +632,35 @@
 }
 
 //-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
+-(void) writePropToObject:(VConfigObject*)object {
+    
+    [object.objParameters removeAllObjects];
+    
+    for (VCymParameter* src in self.paramDataSource) {
+        if (src.used) {
+            VConfigParameter* newParam = [[VConfigParameter alloc]initWithName:src.cymKey Type:object.objType Value:src.cymValueObject OwnerName:object.objName Instance:NO InstanceCount:0 HelpString:@""];
+            [object.objParameters addObject:newParam];
+        }
+    }
+}
+
+-(void) readPropFromObject:(VConfigObject*)object {
+    
+    for (VConfigParameter* src in object.objParameters) {
+        if ( ! [src.paramStringValue isEqualToString:@""]) {
+            for (VConfigParameter* dst in self.paramDataSource) {
+                if ([dst.paramName isEqualToString:src.paramName]) {
+                    dst.paramStringValue = src.paramStringValue;
+                }
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 -(NSString*) extractParameterList {
     
     NSString* result = @"";

@@ -286,6 +286,55 @@
 			path = Placement;
 			sourceTree = "<group>";
 		};
+		8351AB212A4C0F1800988F2F /* Variations */ = {
+			isa = PBXGroup;
+			children = (
+				83A668C52A29BE3200268D42 /* VOutlineItem.h */,
+				83A668B72A29BE3200268D42 /* VOutlineItem.m */,
+				83A668C12A29BE3200268D42 /* VParameterVariations.h */,
+				83A668BA2A29BE3200268D42 /* VParameterVariations.m */,
+				83A668BE2A29BE3200268D42 /* VParamInterpolationImageView.h */,
+				83A668C62A29BE3200268D42 /* VParamInterpolationImageView.m */,
+				83A668B82A29BE3200268D42 /* VParamVariationsManager.h */,
+				83A668C02A29BE3200268D42 /* VParamVariationsManager.m */,
+			);
+			path = Variations;
+			sourceTree = "<group>";
+		};
+		8351AB222A4C0F4800988F2F /* Configuration - reading */ = {
+			isa = PBXGroup;
+			children = (
+				83A668BC2A29BE3200268D42 /* VConfigObject.h */,
+				83A668B62A29BE3200268D42 /* VConfigObject.m */,
+				83A668BF2A29BE3200268D42 /* VConfigInstance.h */,
+				83A668C72A29BE3300268D42 /* VConfigInstance.m */,
+				83A668C32A29BE3200268D42 /* VConfigParameter.h */,
+				83A668C82A29BE3300268D42 /* VConfigParameter.m */,
+				83A668B92A29BE3200268D42 /* VConfigurationModel.h */,
+				83A668BB2A29BE3200268D42 /* VConfigurationModel.m */,
+			);
+			path = "Configuration - reading";
+			sourceTree = "<group>";
+		};
+		8351AB232A4C0F7800988F2F /* Configuration - setting */ = {
+			isa = PBXGroup;
+			children = (
+				83A668C92A29BE3300268D42 /* VConfigModelCreator.h */,
+				83A668CA2A29BE3300268D42 /* VConfigModelCreator.m */,
+				83A668BD2A29BE3200268D42 /* VCymParameter.h */,
+				83A668C42A29BE3200268D42 /* VCymParameter.m */,
+				83DC88C028AB9C7C0024BF2B /* OrderedDictionary.h */,
+				83DC88C228AB9C7C0024BF2B /* OrderedDictionary.m */,
+				831CA39E294FB2040052EF61 /* VModelDrawingView.h */,
+				831CA39F294FB2040052EF61 /* VModelDrawingView.m */,
+				83B020142A35989C00775C9D /* VProteinAssemblyView.h */,
+				83B020152A35989C00775C9D /* VProteinAssemblyView.m */,
+				83A668CB2A29BE3300268D42 /* VConfigObjectCreator.h */,
+				83A668C22A29BE3200268D42 /* VConfigObjectCreator.m */,
+			);
+			path = "Configuration - setting";
+			sourceTree = "<group>";
+		};
 		83CF261E29EFB9F9000F6EB0 /* Instantiable cytosim objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,30 +389,9 @@
 		83CF262329EFED92000F6EB0 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				83DC88C028AB9C7C0024BF2B /* OrderedDictionary.h */,
-				83DC88C228AB9C7C0024BF2B /* OrderedDictionary.m */,
-				83A668BF2A29BE3200268D42 /* VConfigInstance.h */,
-				83A668C72A29BE3300268D42 /* VConfigInstance.m */,
-				83A668C92A29BE3300268D42 /* VConfigModelCreator.h */,
-				83A668CA2A29BE3300268D42 /* VConfigModelCreator.m */,
-				83A668BC2A29BE3200268D42 /* VConfigObject.h */,
-				83A668B62A29BE3200268D42 /* VConfigObject.m */,
-				83A668CB2A29BE3300268D42 /* VConfigObjectCreator.h */,
-				83A668C22A29BE3200268D42 /* VConfigObjectCreator.m */,
-				83A668C32A29BE3200268D42 /* VConfigParameter.h */,
-				83A668C82A29BE3300268D42 /* VConfigParameter.m */,
-				83A668B92A29BE3200268D42 /* VConfigurationModel.h */,
-				83A668BB2A29BE3200268D42 /* VConfigurationModel.m */,
-				83A668BD2A29BE3200268D42 /* VCymParameter.h */,
-				83A668C42A29BE3200268D42 /* VCymParameter.m */,
-				83A668C52A29BE3200268D42 /* VOutlineItem.h */,
-				83A668B72A29BE3200268D42 /* VOutlineItem.m */,
-				83A668C12A29BE3200268D42 /* VParameterVariations.h */,
-				83A668BA2A29BE3200268D42 /* VParameterVariations.m */,
-				83A668BE2A29BE3200268D42 /* VParamInterpolationImageView.h */,
-				83A668C62A29BE3200268D42 /* VParamInterpolationImageView.m */,
-				83A668B82A29BE3200268D42 /* VParamVariationsManager.h */,
-				83A668C02A29BE3200268D42 /* VParamVariationsManager.m */,
+				8351AB232A4C0F7800988F2F /* Configuration - setting */,
+				8351AB222A4C0F4800988F2F /* Configuration - reading */,
+				8351AB212A4C0F1800988F2F /* Variations */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -375,10 +403,6 @@
 				830D747528FCB09900995468 /* NSBezierPath+QuartzUtilities.m */,
 				830D747228FC4ECF00995468 /* VPolygonDrawingView.h */,
 				830D747328FC4ECF00995468 /* VPolygonDrawingView.m */,
-				831CA39E294FB2040052EF61 /* VModelDrawingView.h */,
-				831CA39F294FB2040052EF61 /* VModelDrawingView.m */,
-				83B020142A35989C00775C9D /* VProteinAssemblyView.h */,
-				83B020152A35989C00775C9D /* VProteinAssemblyView.m */,
 				8386CD1429084A2C00AB7428 /* VPrintableView.h */,
 				8386CD1529084A2C00AB7428 /* VPrintableView.m */,
 			);

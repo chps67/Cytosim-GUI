@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // NSOutline properties (mandatory)
 @property (assign) BOOL                             expandable;
+@property (assign) BOOL                             useIt;
 @property (retain) VOutlineItem*        _Nullable   parent;         // Parent (for siblings only).
 @property (retain) NSMutableArray*      _Nullable   children;       // Siblings. Although items are retained elsewhere,
                                                                     // set .children with a retain attribute  as it is a mutable object.

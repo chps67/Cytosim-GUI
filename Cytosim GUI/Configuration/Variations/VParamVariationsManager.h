@@ -47,7 +47,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) applyOutlineItemVariationChange;
 - (void) outlineEnableUseCheckBox:(BOOL)enable ForItem:(VOutlineItem*)item;
 - (IBAction) refreshOutline:(id)sender;
-- (void) synchronizeUseBoxes;
 - (NSButton*) checkBoxForItem:(id)item ;
 - (IBAction) editParameterValues:(id)sender;
 - (BOOL) hasVariationsInParameters;

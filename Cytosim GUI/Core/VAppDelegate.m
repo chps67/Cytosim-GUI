@@ -1079,33 +1079,63 @@
         // to ease "sim" lauching when the configuration files contains ref to other files (with extension ".txt")
         // like a polygon definition file, identify such files and copy them into the newly created directory
 
-        NSError* err =nil;
-        NSString* contentString = [NSString stringWithContentsOfURL:self.cymFileURL encoding:NSUTF8StringEncoding error:&err];
-        NSArray* lines =  [contentString componentsSeparatedByString:@"\n"];
-        for (NSString* l in lines) {
-            if ([l containsString:@"file"]) {
-                NSRange equal = [l rangeOfString:@"="];
-                NSRange fNameRange = equal;
-                fNameRange.location++;
-                fNameRange.length = l.length - fNameRange.location;
-                NSString* fileName = [l substringWithRange:fNameRange];
-                fileName = [fileName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
-
-                NSURL* fileURL = [self.workingURL URLByAppendingPathComponent:fileName];
-                NSURL* dstURL = nil;
-                dstURL = [self.simURL URLByAppendingPathComponent:fileName];
-
-                if (! [dstURL isEqualTo:fileURL]) {
-                    [mgr copyItemAtURL:fileURL toURL:dstURL error:&err];
-                }
-            }
-        }
+        NSError* err = [self copySupportingFilesIntoActiveDirectory];
+        
+//        NSError* err =nil;
+//        NSString* contentString = [NSString stringWithContentsOfURL:self.cymFileURL encoding:NSUTF8StringEncoding error:&err];
+//        NSArray* lines =  [contentString componentsSeparatedByString:@"\n"];
+//        for (NSString* l in lines) {
+//            if ([l containsString:@"file"]) {
+//                NSRange equal = [l rangeOfString:@"="];
+//                NSRange fNameRange = equal;
+//                fNameRange.location++;
+//                fNameRange.length = l.length - fNameRange.location;
+//                NSString* fileName = [l substringWithRange:fNameRange];
+//                fileName = [fileName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+//
+//                NSURL* fileURL = [self.workingURL URLByAppendingPathComponent:fileName];
+//                NSURL* dstURL = nil;
+//                dstURL = [self.simURL URLByAppendingPathComponent:fileName];
+//
+//                if (! [dstURL isEqualTo:fileURL]) {
+//                    [mgr copyItemAtURL:fileURL toURL:dstURL error:&err];
+//                }
+//            }
+//        }
+        
     } else {
         self.simURL = nil;
         answerString = @"";
     }
 }
 
+-(NSError*) copySupportingFilesIntoActiveDirectory {
+    
+    NSFileManager* mgr = [NSFileManager defaultManager];
+
+    NSError* err =nil;
+    NSString* contentString = [NSString stringWithContentsOfURL:self.cymFileURL encoding:NSUTF8StringEncoding error:&err];
+    NSArray* lines =  [contentString componentsSeparatedByString:@"\n"];
+    for (NSString* l in lines) {
+        if ([l containsString:@"file"]) {
+            NSRange equal = [l rangeOfString:@"="];
+            NSRange fNameRange = equal;
+            fNameRange.location++;
+            fNameRange.length = l.length - fNameRange.location;
+            NSString* fileName = [l substringWithRange:fNameRange];
+            fileName = [fileName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+
+            NSURL* fileURL = [self.workingURL URLByAppendingPathComponent:fileName];
+            NSURL* dstURL = nil;
+            dstURL = [self.simURL URLByAppendingPathComponent:fileName];
+
+            if (! [dstURL isEqualTo:fileURL]) {
+                [mgr copyItemAtURL:fileURL toURL:dstURL error:&err];
+            }
+        }
+    }
+    return err;
+}
 
 //-----------------------------------------------------------------------------
 //       Alerts the user if a new simulation data is going to collide with
@@ -1504,7 +1534,7 @@
                     [self.runningTasks addObject:nTask];
                     NSInteger newIndex = self.runningTasks.count - 1;
                     [self.runningTasksPopUp insertItemWithTitle:nTask.theName atIndex:newIndex]; // add at the bottom of the menu to match the order in self.playInstances
-                    if ([nTask.theName hasPrefix:@"sim"])
+                    if ((!self.batchRun) && ([nTask.theName hasPrefix:@"sim"]))
                         [self recordConfigWithName:[nTask.theName stringByAppendingString:@"_Trace.cym"] AtURL:self.simURL];
                     self.curRunningTask.isRunning = @YES;
                     self.curRunningTask.isPaused = @NO;
@@ -2266,8 +2296,12 @@
 -(IBAction) choseCommandAndObjectCombination:(id)sender {
 
     // as 2 senders should be combined, get the titles directly from the NSPopUpButtons references in AppDelegate
-    NSString* whichObject = self.buildObjectPopUp.title;
-    NSString* whichCommand = self.buildCommandPopUp.title;
+//    NSString* whichObject = self.buildObjectPopUp.title;
+//    NSString* whichCommand = self.buildCommandPopUp.title;
+    
+    NSString* whichCommand = @"set";
+    VConfigObject* senderObj = (VConfigObject*)sender;
+    NSString* whichObject = [senderObj.objType copy];
     
     for (int k = 1; k <= (2 * NUM_HELP_IMAGES); k += 2){
         NSButton* iView = [self.modelDesignWindow.contentView viewWithTag: k];
@@ -2838,7 +2872,8 @@
         VDocument* doc = (VDocument*)[self topDoc];
         answer = (doc != nil);
     }
- 
+
+    
     return answer;
 }
 
