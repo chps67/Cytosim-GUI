@@ -27,6 +27,7 @@
 		833031EC29F3F17D003E0AE5 /* bundle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833031EB29F3F17D003E0AE5 /* bundle.plist */; };
 		833031EE29F3F189003E0AE5 /* bundle_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833031ED29F3F189003E0AE5 /* bundle_help.plist */; };
 		834E183229FEE79700997AA8 /* positioning_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834E183129FE736E00997AA8 /* positioning_help.plist */; };
+		8379CFA52D0D567700890265 /* VDrawingGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8379CFA42D0D567700890265 /* VDrawingGrid.m */; };
 		8386CD1629084A2C00AB7428 /* VPrintableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8386CD1529084A2C00AB7428 /* VPrintableView.m */; };
 		83939A8F2986622A00F962D7 /* Dealing with responder loops in Resources */ = {isa = PBXBuildFile; fileRef = 83939A8E2986622A00F962D7 /* Dealing with responder loops */; };
 		83A668B02A29BD6100268D42 /* VDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A668A42A29BD6000268D42 /* VDocumentController.m */; };
@@ -123,6 +124,8 @@
 		835FF8B428BE9CB500F9CCB0 /* single.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = single.plist; sourceTree = "<group>"; };
 		835FF8B528BE9CB500F9CCB0 /* simul.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = simul.plist; sourceTree = "<group>"; };
 		835FF8B728BE9CB500F9CCB0 /* display_point_help.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = display_point_help.plist; sourceTree = "<group>"; };
+		8379CFA32D0D567700890265 /* VDrawingGrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDrawingGrid.h; sourceTree = "<group>"; };
+		8379CFA42D0D567700890265 /* VDrawingGrid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDrawingGrid.m; sourceTree = "<group>"; };
 		8386CD1429084A2C00AB7428 /* VPrintableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPrintableView.h; sourceTree = "<group>"; };
 		8386CD1529084A2C00AB7428 /* VPrintableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPrintableView.m; sourceTree = "<group>"; };
 		83939A8E2986622A00F962D7 /* Dealing with responder loops */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Dealing with responder loops"; sourceTree = "<group>"; };
@@ -277,6 +280,15 @@
 			path = "organelles and organizers";
 			sourceTree = "<group>";
 		};
+		8334146F2A706F5D0075EBF9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				83DC88C028AB9C7C0024BF2B /* OrderedDictionary.h */,
+				83DC88C228AB9C7C0024BF2B /* OrderedDictionary.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		834E182E29FE6E1B00997AA8 /* Placement */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +296,53 @@
 				834E183129FE736E00997AA8 /* positioning_help.plist */,
 			);
 			path = Placement;
+			sourceTree = "<group>";
+		};
+		8351AB212A4C0F1800988F2F /* Variations */ = {
+			isa = PBXGroup;
+			children = (
+				83A668C52A29BE3200268D42 /* VOutlineItem.h */,
+				83A668B72A29BE3200268D42 /* VOutlineItem.m */,
+				83A668C12A29BE3200268D42 /* VParameterVariations.h */,
+				83A668BA2A29BE3200268D42 /* VParameterVariations.m */,
+				83A668BE2A29BE3200268D42 /* VParamInterpolationImageView.h */,
+				83A668C62A29BE3200268D42 /* VParamInterpolationImageView.m */,
+				83A668B82A29BE3200268D42 /* VParamVariationsManager.h */,
+				83A668C02A29BE3200268D42 /* VParamVariationsManager.m */,
+			);
+			path = Variations;
+			sourceTree = "<group>";
+		};
+		8351AB222A4C0F4800988F2F /* Configuration - reading */ = {
+			isa = PBXGroup;
+			children = (
+				83A668BC2A29BE3200268D42 /* VConfigObject.h */,
+				83A668B62A29BE3200268D42 /* VConfigObject.m */,
+				83A668BF2A29BE3200268D42 /* VConfigInstance.h */,
+				83A668C72A29BE3300268D42 /* VConfigInstance.m */,
+				83A668C32A29BE3200268D42 /* VConfigParameter.h */,
+				83A668C82A29BE3300268D42 /* VConfigParameter.m */,
+				83A668B92A29BE3200268D42 /* VConfigurationModel.h */,
+				83A668BB2A29BE3200268D42 /* VConfigurationModel.m */,
+			);
+			path = "Configuration - reading";
+			sourceTree = "<group>";
+		};
+		8351AB232A4C0F7800988F2F /* Configuration - setting */ = {
+			isa = PBXGroup;
+			children = (
+				83A668C92A29BE3300268D42 /* VConfigModelCreator.h */,
+				83A668CA2A29BE3300268D42 /* VConfigModelCreator.m */,
+				831CA39E294FB2040052EF61 /* VModelDrawingView.h */,
+				831CA39F294FB2040052EF61 /* VModelDrawingView.m */,
+				83B020142A35989C00775C9D /* VProteinAssemblyView.h */,
+				83B020152A35989C00775C9D /* VProteinAssemblyView.m */,
+				83A668CB2A29BE3300268D42 /* VConfigObjectCreator.h */,
+				83A668C22A29BE3200268D42 /* VConfigObjectCreator.m */,
+				83A668BD2A29BE3200268D42 /* VCymParameter.h */,
+				83A668C42A29BE3200268D42 /* VCymParameter.m */,
+			);
+			path = "Configuration - setting";
 			sourceTree = "<group>";
 		};
 		83CF261E29EFB9F9000F6EB0 /* Instantiable cytosim objects */ = {
@@ -340,30 +399,9 @@
 		83CF262329EFED92000F6EB0 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				83DC88C028AB9C7C0024BF2B /* OrderedDictionary.h */,
-				83DC88C228AB9C7C0024BF2B /* OrderedDictionary.m */,
-				83A668BF2A29BE3200268D42 /* VConfigInstance.h */,
-				83A668C72A29BE3300268D42 /* VConfigInstance.m */,
-				83A668C92A29BE3300268D42 /* VConfigModelCreator.h */,
-				83A668CA2A29BE3300268D42 /* VConfigModelCreator.m */,
-				83A668BC2A29BE3200268D42 /* VConfigObject.h */,
-				83A668B62A29BE3200268D42 /* VConfigObject.m */,
-				83A668CB2A29BE3300268D42 /* VConfigObjectCreator.h */,
-				83A668C22A29BE3200268D42 /* VConfigObjectCreator.m */,
-				83A668C32A29BE3200268D42 /* VConfigParameter.h */,
-				83A668C82A29BE3300268D42 /* VConfigParameter.m */,
-				83A668B92A29BE3200268D42 /* VConfigurationModel.h */,
-				83A668BB2A29BE3200268D42 /* VConfigurationModel.m */,
-				83A668BD2A29BE3200268D42 /* VCymParameter.h */,
-				83A668C42A29BE3200268D42 /* VCymParameter.m */,
-				83A668C52A29BE3200268D42 /* VOutlineItem.h */,
-				83A668B72A29BE3200268D42 /* VOutlineItem.m */,
-				83A668C12A29BE3200268D42 /* VParameterVariations.h */,
-				83A668BA2A29BE3200268D42 /* VParameterVariations.m */,
-				83A668BE2A29BE3200268D42 /* VParamInterpolationImageView.h */,
-				83A668C62A29BE3200268D42 /* VParamInterpolationImageView.m */,
-				83A668B82A29BE3200268D42 /* VParamVariationsManager.h */,
-				83A668C02A29BE3200268D42 /* VParamVariationsManager.m */,
+				8351AB232A4C0F7800988F2F /* Configuration - setting */,
+				8351AB222A4C0F4800988F2F /* Configuration - reading */,
+				8351AB212A4C0F1800988F2F /* Variations */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -373,12 +411,10 @@
 			children = (
 				830D747628FCB09900995468 /* NSBezierPath+QuartzUtilities.h */,
 				830D747528FCB09900995468 /* NSBezierPath+QuartzUtilities.m */,
+				8379CFA32D0D567700890265 /* VDrawingGrid.h */,
+				8379CFA42D0D567700890265 /* VDrawingGrid.m */,
 				830D747228FC4ECF00995468 /* VPolygonDrawingView.h */,
 				830D747328FC4ECF00995468 /* VPolygonDrawingView.m */,
-				831CA39E294FB2040052EF61 /* VModelDrawingView.h */,
-				831CA39F294FB2040052EF61 /* VModelDrawingView.m */,
-				83B020142A35989C00775C9D /* VProteinAssemblyView.h */,
-				83B020152A35989C00775C9D /* VProteinAssemblyView.m */,
 				8386CD1429084A2C00AB7428 /* VPrintableView.h */,
 				8386CD1529084A2C00AB7428 /* VPrintableView.m */,
 			);
@@ -434,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				83EF071B2A2BE3910019AFE4 /* Cytosim-GUI.md */,
+				8334146F2A706F5D0075EBF9 /* Utilities */,
 				83CF262429EFEDDC000F6EB0 /* Drawing & Printing */,
 				83CF262229EFECAB000F6EB0 /* Core */,
 				83CF262329EFED92000F6EB0 /* Configuration */,
@@ -597,6 +634,7 @@
 				83A668B22A29BD6100268D42 /* VAppDelegate.m in Sources */,
 				83A668D02A29BE3300268D42 /* VParamVariationsManager.m in Sources */,
 				83A668D12A29BE3300268D42 /* VConfigObjectCreator.m in Sources */,
+				8379CFA52D0D567700890265 /* VDrawingGrid.m in Sources */,
 				83A668B12A29BD6100268D42 /* VDocument.m in Sources */,
 				83A668B32A29BD6100268D42 /* VAutoSelectTextField.m in Sources */,
 				83DC88C428AB9C7C0024BF2B /* OrderedDictionary.m in Sources */,

@@ -5,6 +5,16 @@
 //  Created by Chris on 15/08/2022.
 //
 
+
+/*******************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************/
+// VConfigurationModel stores all the objects that are extracted from the configuration (.cym) text files
+// Most of its work is to parse the configuration file to identify cytosim instances and organize them and to extract commands
+// This set of operations is not needed to run simulations but is necessary to perform parameter variations
+// and to feed the graphical interface of configuration building.
+/*******************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************/
+
 #import <Foundation/Foundation.h>
 #import "VConfigObject.h"
 #import "VConfigInstance.h"
@@ -13,6 +23,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface VConfigurationModel : NSObject
 
 @property (strong) NSURL*           configURL;
@@ -20,9 +31,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) NSString*        trimmedConfigString;
 @property (strong) NSString*        modelConfigCode;
 @property (strong) NSMutableArray*  configLines;
+
 @property (strong) NSMutableArray*  configObjects;
 @property (strong) NSMutableSet*    objectNamesSet; // for real-time object names recognition in VDocument's textStorage::didProcessEditing
+@property (strong) NSMutableArray*  objectMatrix;   // graph of directional relationships between config objects
+
 @property (strong) NSMutableArray*  configInstances;
+@property (strong) NSMutableArray*  instanceMatrix; // graph of directional relationships between config instances
 
 @property (strong) NSString*        variableConfigString;
 @property (assign) BOOL             hasVariations;
@@ -32,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) removeComments;
 -(void) removeBlankLines;
 -(void) extractObjectsAndInstances;
+
+-(void) buildObjectAndInstanceGraphs;
+
 -(void) extractOutlineVariableItems;
 -(void) reorderOutlineVariableItem:(VOutlineItem*)draggedItem ToPosition:(NSInteger)toPos IntoRootItem:(VOutlineItem*)rootItem;
 

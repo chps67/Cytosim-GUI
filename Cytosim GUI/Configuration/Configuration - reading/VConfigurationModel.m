@@ -27,6 +27,9 @@
         self.configInstances = [NSMutableArray arrayWithCapacity:0];
         self.variableOutlineItems = [NSMutableArray arrayWithCapacity:0];
         self.hasVariations = NO;
+        
+        self.objectMatrix = [NSMutableArray arrayWithCapacity:0];
+        self.instanceMatrix = [NSMutableArray arrayWithCapacity:0];
     }
     return self;
 }
@@ -287,6 +290,7 @@
             stopExpansion = ([extendedString containsString:@"set"])
             || ([extendedString containsString:@"new"])
             || ([extendedString containsString:@"run"])
+            || ([extendedString containsString:@"delete"])
             || ([extendedString containsString:@"cut"]);
         }
 
@@ -361,6 +365,139 @@
 
     }
 }
+
+//======================================================================================
+
+-(void) buildObjectAndInstanceGraphs {
+    // build the graphs (fill the matrices i.e. the C-arrays) to decipher directional edges between objects and between instances
+    
+    // reset the matrices
+    NSInteger no = self.configObjects.count;
+    for (NSInteger nObj=0; nObj<no*no; nObj++){
+        [self.objectMatrix addObject:@0];
+    }
+    NSInteger ni = self.configInstances.count;
+    for (NSInteger nInst=0; nInst<ni*ni; nInst++){
+        [self.instanceMatrix addObject:@0];
+    }
+
+    // 1----    VConfigObject Graph. Mixes relations between objects and a few relations described in instances
+    
+    NSInteger srcIndex = -1, dstIndex = -1;
+    NSInteger srcKeyNum = -1, dstKeyNum = -1;
+    NSInteger keyCount = 0, fiberCount = 0;
+
+    for (VConfigObject* src in self.configObjects){
+
+        // mark the hands connected to single or couple objects
+        if (([src.objType containsString:@"single"]) || ([src.objType containsString:@"couple"])){
+            srcIndex = [self.configObjects indexOfObject:src];
+            for (VConfigParameter* par in src.objParameters) {
+                if ([par.paramName containsString:@"hand"]) {
+                    for (VConfigObject* dst in self.configObjects) {
+                        if ([dst.objName isEqualToString:par.paramStringValue]) {
+                            dstIndex = [self.configObjects indexOfObject:dst];
+                            [self.objectMatrix setObject:@1 atIndexedSubscript:(srcIndex * no + dstIndex)];
+                        }
+                    }
+                }
+            }
+        }
+
+        // count the occurrences of "fiber" and of "binding_key"
+        if ([src.objType containsString:@"fiber"]){
+            fiberCount++;
+        }
+        for (VConfigParameter* srcPar in src.objParameters) {
+            if ([srcPar.paramName containsString:@"binding_key"]) {
+                keyCount++;
+            }
+        }
+        
+        
+        // otherwise, mark the fibers with the same binding_key as the hand
+        
+        if ([src.objType containsString:@"hand"]){
+            for (VConfigParameter* hPar in src.objParameters) {
+                if ([hPar.paramName containsString:@"binding_key"]) {
+                    srcKeyNum = hPar.paramNumValue.integerValue;
+                    srcIndex = [self.configObjects indexOfObject:src];
+                }
+            }
+            for (VConfigObject* dst in self.configObjects) {
+                if ([dst.objType containsString:@"fiber"]) {
+                    for (VConfigParameter* fPar in dst.objParameters) {
+                        if ([fPar.paramName containsString:@"binding_key"]) {
+                            dstKeyNum = fPar.paramNumValue.integerValue;
+                            if (dstKeyNum == srcKeyNum) {
+                                dstIndex = [self.configObjects indexOfObject:dst];
+                                [self.objectMatrix setObject:@1 atIndexedSubscript:(srcIndex * no + dstIndex)];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // mark the single attached to a solid (this occurs when analyzing instances !)
+    }
+    
+    // if no binding_key is present and there is only one type of fibers, bind each hand to the fiber
+    if ((keyCount ==0) && (fiberCount == 1)) {
+        for (VConfigObject* src in self.configObjects) {
+            if ([src.objType containsString:@"hand"]){
+                srcIndex = [self.configObjects indexOfObject:src];
+                for (VConfigObject* dst in self.configObjects) {
+                    if ([dst.objType containsString:@"fiber"]) {
+                        dstIndex = [self.configObjects indexOfObject:dst];
+                        [self.objectMatrix setObject:@1 atIndexedSubscript:(srcIndex * no + dstIndex)];
+                    }
+                }
+            }
+        }
+    }
+    
+    // Now add relationships thanks to 2 kinds of interactions defined in instances:
+    // single attached to solid and single or couple attached to fibers
+    
+    NSString *singleName = @"", *solidName = @"";
+    
+    for (VConfigObject* src in self.configObjects) {
+        
+        if ([src.objType containsString:@"single"]){
+            singleName = src.objName;
+            dstIndex = [self.configObjects indexOfObject:src];
+            
+            for (VConfigObject* src2 in self.configObjects) {
+                if ([src2.objType containsString:@"solid"]){
+                    solidName = src2.objName;
+                    srcIndex = [self.configObjects indexOfObject:src2];
+                    
+                    for (VConfigInstance* srcI in self.configInstances) {
+                        if ([srcI.instanceName containsString:solidName]){
+                            if ([srcI.instanceCode containsString:singleName]) {
+                                [self.objectMatrix setObject:@1 atIndexedSubscript:(srcIndex * no + dstIndex)];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // 2----    VConfigInstance Graph.
+
+        
+}
+
+//======================================================================================
+
+// Orders the graphs' elements to allow consistent drawing
+
+-(void) sortGraphTopology {
+    
+}
+
 
 //======================================================================================
 

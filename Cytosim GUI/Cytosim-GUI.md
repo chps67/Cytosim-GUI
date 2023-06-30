@@ -24,7 +24,7 @@ In the "Signing & Capabilities" page set:
 	- Bundle Identifier:  `YOUR_NAME.Cytosim-GUI`
 	- Signing Certificate:  `Sign to Run Locally`
 
-In the toolbar of the main window, open the Schemes menu and select "Manage Schemes". In the window that opens click on "Autocreate Schemes Now". The new automatic scheme appears in the list. Select it and click on "Edit". Check that the "Run" configuration displays "Debug" display "Debug" below it. Duplicate this scheme and rename it "Cytosim GUI - release". Set all the appropriate items to "Release" instead of "Debug" under the "Run" and the "Analyze" configurations.
+In the toolbar of the main window, open the Schemes menu and select "Manage Schemes". In the window that opens click on "Autocreate Schemes Now". The new automatic scheme appears in the list. Select it and click on "Edit". Check that the "Run" configuration displays "Debug" below it. Duplicate this scheme and rename it "Cytosim GUI - release". Set all the appropriate items to "Release" instead of "Debug" under the "Run" and the "Analyze" configurations.
 
 ### **Cytosim-GUI instructions in 10 points:**
 

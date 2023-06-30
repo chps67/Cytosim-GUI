@@ -119,10 +119,6 @@
     
     NSInteger answer = 0;
     if (item == nil) { // This is for displaying only the root items
-        // Beware : to display only the expandable items, they all should appear at the top of the NSOutlineDataSource array
-        // because cocoa is going to pick 'expandables' items including the first object and then stop
-        
-        //answer = expandables;
         answer = model.variableOutlineItems.count;
     } else  {   // this is for expanding the root items -> insert 'numberOfChildren' rows
         answer = [item numberOfChildren];
@@ -133,11 +129,11 @@
 //-----------------------------------------------------------------------------
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
-    BOOL answer = NO;
-    if ([item isMemberOfClass:[VOutlineItem class]]) {
-        VOutlineItem* oIt = (VOutlineItem*)item;
-        answer = oIt.expandable;
-    }
+    BOOL answer;
+    if (item == nil)
+        answer = YES;
+    else
+        answer = ([item numberOfChildren] != -1);
     return answer;
 }
 
@@ -165,31 +161,26 @@
     NSLocale* en_loc = [[NSLocale alloc] initWithLocaleIdentifier: @"en"];
     [form setLocale:en_loc];
 
+    
     if ([tableColumn.identifier isEqualToString:@"Use"]) {
         theCell = ([outlineView makeViewWithIdentifier:@"Use_view" owner:self]);
         NSArray* subs = [theCell subviews];
+        
         checkButton = (NSButton*)(subs.firstObject);
-        if (oIt.expandable == YES) {
-            NSNumber* num = [form numberFromString:oIt.configParameter.instanceCount.stringValue];
-            if ((num == nil) || (num.integerValue == 0)) {   // the parameter value is only numeric
-                checkButton.hidden = YES;
-            } else {
-                checkButton.hidden = NO;
-            }
-        } else {
-            checkButton.hidden = NO;
-            if (oIt.configParameter.variations.active.boolValue == YES) {
-                checkButton.state = NSControlStateValueOn;
-            } else {
-                checkButton.state = NSControlStateValueOff;
-            }
-        }
+        (oIt.useIt) ? (checkButton.state = NSControlStateValueOn) : (checkButton.state = NSControlStateValueOff);
+        checkButton.enabled = [oIt.configParameter validateDX];
     }
     
+    if ([tableColumn.identifier isEqualToString:@"Name"]){
+        theCell = ([outlineView makeViewWithIdentifier:@"Name_view" owner:self]);
+        theCell.textField.stringValue = [oIt.configParameter.paramName copy];
+    }
+
     if ([tableColumn.identifier isEqualToString:@"Object"]){
         theCell = ([outlineView makeViewWithIdentifier:@"Object_view" owner:self]);
-        theCell.textField.stringValue = [oIt.configParameter.ownerType copy];
+        theCell.textField.stringValue = oIt.configParameter.ownerType;
     }
+    
     if ([tableColumn.identifier isEqualToString:@"Instances"]){
         theCell = ([outlineView makeViewWithIdentifier:@"Instances_view" owner:self]);
         if (oIt.configParameter.ownerIsInstance) {
@@ -197,10 +188,6 @@
         } else {
             theCell.textField.stringValue = @"";
         }
-    }
-    if ([tableColumn.identifier isEqualToString:@"Name"]){
-        theCell = ([outlineView makeViewWithIdentifier:@"Name_view" owner:self]);
-        theCell.textField.stringValue = [oIt.configParameter.paramName copy];
     }
     if ([tableColumn.identifier isEqualToString:@"MinX"]){
         theCell = ([outlineView makeViewWithIdentifier:@"MinX_view" owner:self]);
@@ -255,16 +242,15 @@
     [form setLocale:en_loc];
     BOOL answer = NO;
     
-    if (oIt.expandable == YES) {
+    if (oIt.expandable) {
         NSNumber* num = [form numberFromString:oIt.configParameter.instanceCount.stringValue];
-        if (num) {   // the parameter value is only numeric
-            if (num.integerValue > 0)
-                answer = YES;
+        if (num.integerValue >0 ) {
+            answer = YES;
         }
-    } else {
+    }else {
         answer = YES;
     }
-
+    
     return answer;
 }
 
@@ -280,15 +266,12 @@
     
     self.currentItem = (VOutlineItem*)[self.outlineView itemAtRow:row];
     
-    // update the manager's check flags for each parameter
-    [self checkBoxForItem:self.currentItem];
-    [self synchronizeUseBoxes];
-    
     // display the original or the interpolated values in the image view
     self.interpolView.var = self.currentItem.configParameter.variations;
     [self.interpolView setNeedsDisplay:YES];
 }
 
+//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 
@@ -305,7 +288,6 @@
     
     NSModalResponse response = [reloadAlert runModal];
     if (response == NSAlertSecondButtonReturn) {
-        //NSControl_Inspector* ctrl_Insp = [[NSControl_Inspector alloc] initWithControl: self.runBatchButton];
         VConfigurationModel* model = self.ownerDoc.configModel;
         [model extractObjectsAndInstances];
         [model extractOutlineVariableItems];
@@ -338,48 +320,12 @@
 
 //-----------------------------------------------------------------------------
 
--(void) synchronizeUseBoxes {
-    
-    NSButton* useBox = nil;
-    
-    for (NSInteger row = 0; row < [self.outlineView numberOfRows]; row++) {
-        VOutlineItem* root = (VOutlineItem*)[self.outlineView itemAtRow:row];
-        if (root.configParameter.isNumeric) {
-            
-            useBox = [self checkBoxForItem:root];
-            if ((root.configParameter.variations.active.boolValue == YES) || (root.configParameter.validateDX)) {
-                useBox.enabled = YES;
-                (root.configParameter.variations.active.boolValue == YES) ? (useBox.state = NSControlStateValueOn) : (useBox.state = NSControlStateValueOff);
-            }
-            
-            if ([self.outlineView isItemExpanded:root]) {
-                
-                for (NSInteger childIndex = 0; childIndex < root.children.count; childIndex++) {
-                    VOutlineItem* child = (VOutlineItem*)[root.children objectAtIndex:childIndex];
-                    if (child.configParameter.isNumeric) {
-                        useBox = [self checkBoxForItem:child];
-                        if ((child.configParameter.variations.active.boolValue) || (child.configParameter.validateDX)) {
-                            useBox.enabled = YES;
-                            (child.configParameter.variations.active.boolValue == YES) ? (useBox.state = NSControlStateValueOn) : (useBox.state = NSControlStateValueOff);
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
-}
-
 - (void)outlineViewItemDidCollapse:(NSNotification *)notification {
-    
-    [self synchronizeUseBoxes];
 }
 
 //-----------------------------------------------------------------------------
 
 - (void)outlineViewItemDidExpand:(NSNotification *)notification {
-    
-    [self synchronizeUseBoxes];
 }
 
 //-----------------------------------------------------------------------------
@@ -418,16 +364,18 @@
 //-----------------------------------------------------------------------------
 
 - (IBAction) useOutlineItemVariation:(id)sender {
+    
     NSButton* checkBox = (NSButton*)sender;
-    
-    // This is mandatory since a click in the checkbox does NOT select the row.
-    // i.e. the user may check a row while another one is actually selected
-    NSInteger targetRow = [self.outlineView rowForView:checkBox];
-    VConfigParameter* targetParam = ((VOutlineItem*)[self.outlineView itemAtRow:targetRow]).configParameter;
-    
+    // do NOT change the button's status since it is changed by the user's click
+    // instead read the status and copy it into VOutlineItem.useIt
     BOOL status = (checkBox.state == NSControlStateValueOn);
+
+    NSInteger targetRow = [self.outlineView rowForView:checkBox];
+    VOutlineItem* item = (VOutlineItem*)[self.outlineView itemAtRow:targetRow];
+    item.useIt = status;
     
     // set variations according to the checkbox status
+    VConfigParameter* targetParam = item.configParameter;
     if (targetParam) {
         targetParam.variations.active = [NSNumber numberWithBool: status];
     }
@@ -435,7 +383,6 @@
     self.numSim = [[self computeNumSimCalls] copy];
     if (! self.ownerDoc.documentEdited)
         [self.ownerDoc updateChangeCount:NSChangeDone];
-
 }
 
 //-------------------------------------------------------------------------------------
@@ -537,7 +484,7 @@
 #pragma mark ......................... Drag and Drop
 //-----------------------------------------------------------------------------
 
-// The pasterboard item with a unique identifier = the # of the selected row or -1 if none is seleceted
+// The pasterboard item with a unique identifier = the # of the selected row or -1 if none is selected
 - (id <NSPasteboardWriting>)outlineView:(NSOutlineView *)outlineView pasteboardWriterForItem:(id)item {
     NSPasteboardItem *pboardItem = nil;
     NSInteger selRow = outlineView.selectedRow;
@@ -586,7 +533,6 @@
     VConfigurationModel* model = self.ownerDoc.configModel;
     [model reorderOutlineVariableItem:self.currentItem ToPosition:index IntoRootItem:item];
     [outlineView reloadData];
-    [self synchronizeUseBoxes];
     return answer;
 }
 
@@ -600,7 +546,6 @@
 //-----------------------------------------------------------------------------
 
 - (IBAction) editParameterValues:(id)sender {
-    [self synchronizeUseBoxes];
     [self applyVariationChange];
     [self computeNumSimCalls];
 }
@@ -714,7 +659,7 @@
     // store the configObject / configInstance and subsequently parameters with each of the variations
     // into a sub-array called levelArray.
     // Then, add this levelArray into the final 'parameterVariations' array
-    //
+
     
     NSMutableArray* parameterVariations = [NSMutableArray arrayWithCapacity:0];
     
@@ -817,7 +762,6 @@
     NSInteger changeStep = 1;       // the number of index repeats before incrementation is the product of the maxIndexes of all the levels on the right
     NSInteger changeIndex = 0;      // when the changeIndex reaches change, then increment the index. Use this sub index and not the % operator
                                     // because 0 % x is also 0 and we don't want to increment i[level] at the first occurrence of a 0
-                                    // see the file "combinations.xlsx" in the project's folder for a simple simulation with the above example
     
     for (NSInteger level=numLevels-1; level>=0; level--) {                      // loop down through the levels
         // calculate how many times an index should be repeated before changing
@@ -888,7 +832,7 @@
             if ((par.ownerIsInstance) && ([par.ownerName isEqualToString:@"instance"]))
                 pName = @"instance";
         
-            NSString* newVar = [[NSArray arrayWithObjects:genObjName,pName,par.paramStringValue,nil] componentsJoinedByString:@"_"];
+            NSString* newVar = [[NSArray arrayWithObjects:genObjName,pName,par.paramStringValue,nil] componentsJoinedByString:@"__"];
             NSString* newComment = [@[@"% ", newVar, @"\n"]componentsJoinedByString:@""];
             comment = [comment stringByAppendingString:newComment];
             label = [label stringByAppendingString:[[NSArray arrayWithObjects:pName,par.paramStringValue,nil] componentsJoinedByString:@"_"]];
@@ -921,7 +865,7 @@
                 for (NSInteger vs=0; vs < variationStrings.count; vs++) {
                     
                     NSString* s = [variationStrings objectAtIndex:vs];
-                    NSArray* paramComponents = [s componentsSeparatedByString:@"_"];
+                    NSArray* paramComponents = [s componentsSeparatedByString:@"__"];
                     NSString* parComponentName = [paramComponents objectAtIndex:1];         // name is at index #1
                     NSString* parComponentValueString = [paramComponents objectAtIndex:2];  // value is at index #2
 
@@ -958,6 +902,9 @@
             del.simURL = [NSURL fileURLWithPath:varDirPath];
             comment = [comment stringByAppendingString:@"\n\n"];
             err = [self saveConfigWithVarName:varConfigFileName AtURL:del.simURL WithComment:comment]; // pass the folder's URL
+            if (err == nil) {
+                err = [del copySupportingFilesIntoActiveDirectory];
+            }
             if (err != nil) {
                 [self raiseFileMgrAlert:err];
                 return;

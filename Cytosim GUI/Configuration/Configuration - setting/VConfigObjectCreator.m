@@ -50,7 +50,7 @@
     [self initializeDataSource:@"display_view"];
     [self initializeDataSource:@"display_world"];
     [self initializeDataSource:@"display_play"];
-    
+
     [self initializeDataSource:@"positioning"];
 }
 
@@ -70,7 +70,7 @@
 //
 //---------------------------------------------------------------------------------------------
 
-- (VCymParameter*) extractParamRecursivelyFromItem:(VCymParameter*)rootParam WithHelpDictionary:(MutableOrderedDictionary*)helpDic {
+- (VCymParameter*) extractParamRecursivelyFromItem:(VCymParameter*)rootParam WithHelpDictionary:(OrderedDictionary*)helpDic {
 
     VCymParameter* returnParam = nil;
 
@@ -79,13 +79,12 @@
     if (hasChildren) {
 
         rootParam.children = [NSMutableArray arrayWithCapacity:0];
-        OrderedDictionary* dic = (OrderedDictionary*)rootParam.cymValueObject;
-
+        MutableOrderedDictionary* dic = (MutableOrderedDictionary*)rootParam.cymValueObject;
 //      OrderedDictionary* hDic = [(OrderedDictionary*)helpDic objectForKey:rootParam.cymKey];
 //      The instruction above is natural but fails sometimes for obscure reasons
 //      that I did not thoroughly explore, and it may return nil
 //      It is nicely replaced by the casting of the cymKeyHelpString to an OrderedDictionary :
-        OrderedDictionary* hDic = (OrderedDictionary*)rootParam.cymKeyHelpString;
+        MutableOrderedDictionary* hDic = (MutableOrderedDictionary*)rootParam.cymKeyHelpString;
 
         for (NSInteger index=0; index<dic.count; index++){
             NSString* key = [dic keyAtIndex:index];
@@ -115,26 +114,57 @@
 
     // Read the contents of the cytosim object's .plist file
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:cymObjectName ofType:@"plist"];
-    MutableOrderedDictionary* plistObject = [[MutableOrderedDictionary alloc]init];
-    plistObject = [MutableOrderedDictionary dictionaryWithContentsOfFile:plistPath];
+    OrderedDictionary* plistObject = [[OrderedDictionary alloc]init];
+    plistObject = [OrderedDictionary dictionaryWithContentsOfFile :plistPath];
     
     // Read the contents of the cytosim help strings for object's .plist file
     NSString* cymObjectHelpName = [cymObjectName stringByAppendingString:@"_help"];
     NSString *helpPlistPath = [[NSBundle mainBundle] pathForResource:cymObjectHelpName ofType:@"plist"];
-    MutableOrderedDictionary* plistHelpObject = [[MutableOrderedDictionary alloc]init];
-    plistHelpObject = [MutableOrderedDictionary dictionaryWithContentsOfFile:helpPlistPath];
+    OrderedDictionary* plistHelpObject = [[OrderedDictionary alloc]init];
+    plistHelpObject = [OrderedDictionary dictionaryWithContentsOfFile:helpPlistPath];
     
-    // Build the data source
-
+    //------------------------------------------------------------------------------------------------------------------------
+    // Setting recursively objects of type MutableOrderedDictionary does NOT work correctly (sub-dictionaries are NOT mutable)
+    // so the only way is to re-build the data source explicitely, dictionary by dictionary.
+    //------------------------------------------------------------------------------------------------------------------------
     for (NSInteger index=0; index<plistObject.count; index++){
         NSString* rootKey = [plistObject keyAtIndex:index];
         id obj = [plistObject valueForKey:rootKey];
+        
+        // there are 3-level deep objects at the maximum in .plist files
+        MutableOrderedDictionary *mutObjDic = nil, *mutObjDicChild = nil, *mutObjDicGrandChild = nil;
+        
+        if ([obj isMemberOfClass:[OrderedDictionary class]]) {
+            
+            OrderedDictionary* objDic = (OrderedDictionary*)obj;
+            mutObjDic = [MutableOrderedDictionary dictionaryWithDictionary:objDic];
+            
+            for (NSInteger child = 0; child < mutObjDic.count; child ++) {
+                
+                if ([[mutObjDic objectAtIndex:child] isKindOfClass:[OrderedDictionary class]]) {
+                    objDic = [mutObjDic objectAtIndex:child];
+                    mutObjDicChild = [MutableOrderedDictionary dictionaryWithDictionary:objDic];
+                    [mutObjDic setObject:mutObjDicChild atIndexedSubscript:child];
+                    
+                    for (NSInteger grandChild = 0; grandChild < mutObjDicChild.count; grandChild ++) {
+                        if ([[mutObjDicChild objectAtIndex:grandChild] isKindOfClass:[OrderedDictionary class]]) {
+                            objDic = [mutObjDicChild objectAtIndex:grandChild];
+                            mutObjDicGrandChild = [MutableOrderedDictionary dictionaryWithDictionary:objDic];
+                            [mutObjDicChild setObject:mutObjDicGrandChild atIndexedSubscript:grandChild];
+                        }
+                    }
+                }
+            }
+        }
+        
         VCymParameter* param = [VCymParameter initWithKey:rootKey HelpString:[plistHelpObject valueForKey:rootKey] Value:obj];
+        //VCymParameter* param = [VCymParameter initWithKey:rootKey HelpString:[plistHelpObject valueForKey:rootKey] Value:mutObjDic];
         param = [self extractParamRecursivelyFromItem:param WithHelpDictionary:plistHelpObject]; // AppDelegate version
         //[param extractParamRecursivelyWithHelpDictionary:plistHelpObject];
         if (param)
             [tempArray addObject:param];
     }
+    
     tempDic = [NSMutableDictionary dictionaryWithObject:tempArray forKey:cymObjectName];
     [self.configObjectsDic addEntriesFromDictionary: tempDic];
 }
@@ -216,7 +246,7 @@
     // may take also differ. To distinguish between these possibilities, the name of the parameter
     // is followed by the object's name between curly braces as follows: 'parameter {object}'
     // of course this {...} is trimmed at run time (see trimmedName: below)
-    // To display the possible choices in the image buttonsbelow the outline view,
+    // To display the possible choices in the image buttons below the outline view,
     // the corresponding icon names are stored in the help_icon_names.plist
     
     
@@ -502,10 +532,19 @@
     NSButton* checkBox = (NSButton*)sender;
     NSInteger row = [del.paramOutlineView rowForView:checkBox];
     VCymParameter* targetParam = [del.paramOutlineView itemAtRow:row];
+    VCymParameter* targetParent = targetParam.parent;
+    MutableOrderedDictionary* mDic = nil;
+    
     BOOL status = (checkBox.state == NSControlStateValueOn);
     NSUInteger cbState = checkBox.state;
-    targetParam.used = [NSNumber numberWithBool:status];
-    
+    //targetParam.used = [NSNumber numberWithBool:status];
+
+    if ([self.paramDataSource containsObject:targetParent]) {
+        mDic = (MutableOrderedDictionary*)(targetParent.cymValueObject);
+        [mDic setValue:[NSNumber numberWithBool:status] forKey:targetParam.cymKey];
+    }
+
+
     if ([targetParam.cymKey containsString:@"X"]){
         VCymParameter* YParam = [del.paramOutlineView itemAtRow:row+1];
         NSButton* YBtn = [self checkBoxAtRow:row+1];
@@ -632,7 +671,10 @@
 }
 
 //-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 -(NSString*) extractParameterList {
     
     NSString* result = @"";

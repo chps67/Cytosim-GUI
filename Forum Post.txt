@@ -1,0 +1,41 @@
+Hi all,
+I am writing a GUI application for a series of command line tools that simulate cytoskeletons. I run simulations concurrently with NTask objects launched through Grand Central Dispatch and it works fine. However, I am facing a problem for which I cannot figure out a solution:
+One application (let's call it 'play') can be run in several instances with the same name but with different processIdentifiers / unix pIDs to visually explore the results of various simulations. However, each 'play' instance runs with its window at the top left of the screen, resulting in a stack that can be comprised of up to 16 windows. As I kept track of the NSTasks / processIDs and present them to the user in a PopUpMenu, I expected I could activate the corresponding 'play' instance but all the attemps I made in this direction failed using either NSWorkSpace, NSRunningApplication or NSAppleEvent. I also tried to post directly a message to the appropriate instance of NSTask through the attached NSPipe but neither version did control 'play' instance activation as tghe finder's cmd+tab could.
+Has anybody an idea of how to proceed ?
+All the best
+C.
+
+version 1 fails:
+
+NSInteger taskIndex = [list indexOfItemWithTitle: tName];
+NSNumber* appID = (NSNumber*)[self.playInstances objectAtIndex:taskIndex]; 
+NSString* IDString = [appID stringValue];
+NSString* __block script = @"tell application \"System Events\"\n set frontmost of the first process whose unix id is myProcessId to true \n end tell";
+script = [script stringByReplacingOccurrencesOfString:@"myProcessId" withString:IDString];
+
+dispatch_queue_t own_queue = dispatch_queue_create("com.My_AppID", DISPATCH_QUEUE_SERIAL);
+	dispatch_async(own_queue,
+	^{
+	NSAppleScript* appScript = [[NSAppleScript alloc]initWithSource:script];
+	NSDictionary*  err = [NSDictionary dictionary];
+	[appScript compileAndReturnError:&err];
+	if (err.count == 0) {
+	[appScript executeAndReturnError:&err];
+	}
+});
+
+version 2 fails too
+
+NSInteger taskIndex = [list indexOfItemWithTitle: tName];
+NSNumber* appID = (NSNumber*)[self.playInstances objectAtIndex:taskIndex];
+NSPipe* inputPipe = (NSPipe*)self.curRunningTask.theTask.standardInput;
+NSFileHandle* inputHandle = inputPipe.fileHandleForWriting;
+NSData* data = nil;
+NSString* sID = pidNum.stringValue;
+NSArray* msgParts = [NSArray arrayWithObjects:@"osascript -e \"tell application \"System Events\"\n",
+@"set frontmost of the first process whose unix id is ", sID, @" to true\n", @"end tell\n", @"\"", nil ];
+NSString* message = [msgParts componentsJoinedByString:@""];
+NSError* err = nil;
+data = [message dataUsingEncoding:NSUTF8StringEncoding];
+[inputHandle writeData:data error:&err];
+

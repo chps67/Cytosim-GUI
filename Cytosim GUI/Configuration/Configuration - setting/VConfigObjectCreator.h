@@ -8,6 +8,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "VCymParameter.h"
+#import "VConfigObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,11 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 // a mutable dic that contains the config object parameters arrays read from the .plist files
 @property (strong) NSMutableDictionary* configObjectsDic;
+// The same as the above but to store an unchanged copy of the parameters read from disk
+@property (strong) NSMutableDictionary* referenceObjectsDic;
 
 // the current array to be displayed in the NSOutlineView, picked into the 'configObjectsDic' dictionary
 @property (strong) NSMutableArray* paramDataSource;
 
-@property (assign) NSNumber* readyForCodeInsertion;   // boolean to control the enabling of the 'Inset code' button
+@property (assign) NSNumber* readyForCodeInsertion;   // boolean to control the enabling of the 'Insert code' button
 
 
 - (void) preloadCymObjectFiles;
@@ -28,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction) choseHelpIconValue: (id) sender;
 - (IBAction) changeParameterColor: (id) sender;
 - (NSString*) templateText;
+- (NSString*)trimmedName: (NSString*) aName;
+
 @end
 
 NS_ASSUME_NONNULL_END
