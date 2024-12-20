@@ -17,12 +17,12 @@
 #endif
 
 #ifndef NUM_HELP_IMAGES
-    #define NUM_HELP_IMAGES 20
+    #define NUM_HELP_IMAGES 22
 #endif
 
 //---------------------------------------------
 
-@class VPolygonDrawingView;
+@class VDrawingView;
 @class VModelDrawingView;
 
 @interface VAppDelegate : NSObject <NSApplicationDelegate, NSMenuItemValidation, NSPathControlDelegate>
@@ -173,6 +173,8 @@ enum urlType {
 
                     // cym file code insertion --------------
 
+@property (strong) IBOutlet     NSPanel*                elementsWindow;
+
 @property (strong) IBOutlet     NSWindow*               modelDesignWindow;
 @property (strong) IBOutlet     NSPopUpButton*          buildCommandPopUp;
 @property (strong) IBOutlet     NSPopUpButton*          buildObjectPopUp;
@@ -194,7 +196,7 @@ enum urlType {
                     // interactive polygon drawing --------------
 
 @property (strong) IBOutlet     NSWindow*               polygonDrawingWindow;
-@property (strong) IBOutlet     VPolygonDrawingView*    polygonDrawingView;
+@property (strong) IBOutlet     VDrawingView*           polygonDrawingView;
 
 @property (assign)              NSNumber*               xPolygonValue;
 @property (assign)              NSNumber*               yPolygonValue;

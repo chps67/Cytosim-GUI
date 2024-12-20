@@ -716,7 +716,8 @@
 - (IBAction) openModelBuilder: (id) sender {
     VAppDelegate* del = (VAppDelegate*)NSApp.delegate;
     [self parseAgain:self];
-    [del.modelDesignWindow orderFront:self];
+    [del.elementsWindow orderFront:self];
+    //[del.modelDesignWindow orderFront:self];
     [del.paramOutlineView reloadData];
     
 }

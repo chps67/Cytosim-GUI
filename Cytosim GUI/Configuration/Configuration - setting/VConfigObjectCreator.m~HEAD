@@ -334,8 +334,8 @@
         
         //hide all help images and legends
         for (int k = 1; k <= (2 * NUM_HELP_IMAGES); k += 2){
-            NSButton* iView = [del.elementsWindow.contentView viewWithTag: k];
-            NSTextField* fView = [del.elementsWindow.contentView viewWithTag: k+1];
+            NSButton* iView = [del.modelDesignWindow.contentView viewWithTag: k];
+            NSTextField* fView = [del.modelDesignWindow.contentView viewWithTag: k+1];
             iView.hidden = YES;
             fView.hidden = YES;
         }
@@ -356,33 +356,62 @@
             
             NSImage* img = nil;
             NSInteger numIcons = iconsDic.count;
-            NSInteger buttonCenter = -1;
+            NSInteger topIcons = numIcons;
+            NSInteger bottomIcons = 0;
             
-            for (int k = 1; k <= 2*numIcons; k++ ){
-                NSInteger reqIndex = (k-1)/2;
-                NSString* aKey = [iconsDic keyAtIndex: reqIndex];
-                if (k % 2 == 1) {
-                    NSButton* iView = [del.elementsWindow.contentView viewWithTag: k];
-                    buttonCenter = iView.frame.origin.x + iView.frame.size.width / 2;
-                    img = [NSImage imageNamed:aKey];
-                    iView.image = img;
-                    iView.hidden = NO;
-                } else {
-                    NSTextField* fView = [del.elementsWindow.contentView viewWithTag: k];
-                    NSString* nameStr = [NSString stringWithString:aKey];
-                    if ([aKey containsString:@"{"])
-                        nameStr = [self trimmedName:nameStr];
-                    NSFont* currentFont = [NSFont systemFontOfSize:[NSFont smallSystemFontSize]];
-                    NSSize nameStrSize = [nameStr sizeWithAttributes:[NSDictionary dictionaryWithObject:currentFont forKey:NSFontAttributeName]];
-                    NSInteger reqWidth = (NSInteger)nameStrSize.width + 10;
-                    NSRect newFrame = fView.frame;
-                    newFrame.size.width = reqWidth;
-                    newFrame.origin.x = buttonCenter - reqWidth / 2;
-                    fView.frame = newFrame;
-                    fView.stringValue = [NSString stringWithString:nameStr];
-                    fView.hidden = NO;
+            if (numIcons > 11) {
+                if (numIcons % 2 == 0) {
+                    topIcons = numIcons / 2;
                 }
+                else {
+                    topIcons = (numIcons / 2) + 1;
+                }
+                bottomIcons = numIcons - topIcons;
             }
+            
+            NSInteger keyIndex = 0;
+            
+            for (int k = 1; k <= (topIcons * 2); k += 2){
+                
+                NSButton* iView = [del.modelDesignWindow.contentView viewWithTag: k];
+                NSTextField* fView = [del.modelDesignWindow.contentView viewWithTag: k+1];
+            
+                NSString* aKey = [iconsDic keyAtIndex:keyIndex++];
+                img = [NSImage imageNamed:aKey];
+                iView.image = img;
+                iView.hidden = NO;
+                // remove any object name enclosed by curly brackets
+                NSString* nameStr = [NSString stringWithString:aKey];
+                if ([aKey containsString:@"{"])
+                    nameStr = [self trimmedName:nameStr];
+                fView.stringValue = [NSString stringWithString:nameStr];
+                fView.hidden = NO;
+            }
+            
+            for (int k = 1 + NUM_HELP_IMAGES ; k <= ((bottomIcons * 2) + NUM_HELP_IMAGES) ; k += 2){
+                
+                NSButton* iView = [del.modelDesignWindow.contentView viewWithTag: k];
+                NSTextField* fView = [del.modelDesignWindow.contentView viewWithTag: k+1];
+            
+                NSString* aKey = [iconsDic keyAtIndex:keyIndex++];
+                img = [NSImage imageNamed:aKey];
+                iView.image = img;
+                iView.hidden = NO;
+                // remove any object name enclosed by curly brackets
+                NSString* nameStr = [NSString stringWithString:aKey];
+                if ([aKey containsString:@"{"])
+                    nameStr = [self trimmedName:nameStr];
+                fView.stringValue = [NSString stringWithString:nameStr];
+                fView.hidden = NO;
+            }
+
+            [self distributeIconsOnLine:1 reqIcons:topIcons];
+            [self distributeIconsOnLine:2 reqIcons:bottomIcons];
+            
+            // for later reuse upon window resizing
+            del.helpIconsOnFirstLine = topIcons;
+            del.helpIconsOnSecondLine = bottomIcons;
+
         }
         
     }
@@ -451,8 +480,8 @@
     NSInteger k = 0;
 
     for (NSInteger tag = 1 + (lineNumber - 1) * NUM_HELP_IMAGES ; tag < lineNumber * NUM_HELP_IMAGES ; tag += 2) {
-        NSButton* iView = [del.elementsWindow.contentView viewWithTag: tag];
-        NSTextField* fView = [del.elementsWindow.contentView viewWithTag: tag + 1];
+        NSButton* iView = [del.modelDesignWindow.contentView viewWithTag: tag];
+        NSTextField* fView = [del.modelDesignWindow.contentView viewWithTag: tag + 1];
         NSRect R = iView.superview.frame;
         // Half of the deltaX is set as a margin before the first image view and implicitely,
         //  the same half will remain after the last image View...
@@ -460,8 +489,7 @@
         dx2 = deltaX / 2;
         
         if (iView.hidden == NO) {
-            if (tag == 23)
-                NSLog(@"Starting second line");
+            
             NSRect newFrameI = iView.frame;
             newFrameI.origin.x = dx2 + (k * deltaX) - (iView.frame.size.width / 2.0);
             iView.frame = newFrameI;
@@ -485,23 +513,12 @@
     NSButton* iView = (NSButton*)sender;
     NSInteger senderTag = iView.tag + 1;
 
-    NSString* chosenValue = [(NSTextField*)[del.elementsWindow.contentView viewWithTag: senderTag] stringValue];
+    NSString* chosenValue = [(NSTextField*)[del.modelDesignWindow.contentView viewWithTag: senderTag] stringValue];
     
     NSInteger selIndex = [del.paramOutlineView selectedRow];
     VCymParameter* selParam = [del.paramOutlineView itemAtRow:selIndex];
     selParam.cymValueObject = [NSString stringWithString:chosenValue];
     selParam.cymValueString = chosenValue;
-    
-    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-    VCymParameter* targetParent = selParam.parent;
-    MutableOrderedDictionary* mDic = nil;
-    if ([self.paramDataSource containsObject:targetParent]) {
-        mDic = [MutableOrderedDictionary dictionaryWithDictionary:targetParent.cymValueObject];
-        [mDic setValue:chosenValue forKey:selParam.cymKey];
-        targetParent.cymValueObject = mDic;
-    }
-    //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-
     
     [del.paramOutlineView reloadItem:[del.paramOutlineView itemAtRow:selIndex]];
 }
@@ -518,14 +535,14 @@
     VCymParameter* targetParent = targetParam.parent;
     MutableOrderedDictionary* mDic = nil;
     
-    NSUInteger cbState = checkBox.state;
     BOOL status = (checkBox.state == NSControlStateValueOn);
-    targetParam.used = [NSNumber numberWithBool:status];
+    NSUInteger cbState = checkBox.state;
+    //targetParam.used = [NSNumber numberWithBool:status];
 
-//    if ([self.paramDataSource containsObject:targetParent]) {
-//        mDic = (MutableOrderedDictionary*)(targetParent.cymValueObject);
-//        [mDic setValue:[NSNumber numberWithBool:status] forKey:targetParam.cymKey];
-//    }
+    if ([self.paramDataSource containsObject:targetParent]) {
+        mDic = (MutableOrderedDictionary*)(targetParent.cymValueObject);
+        [mDic setValue:[NSNumber numberWithBool:status] forKey:targetParam.cymKey];
+    }
 
 
     if ([targetParam.cymKey containsString:@"X"]){

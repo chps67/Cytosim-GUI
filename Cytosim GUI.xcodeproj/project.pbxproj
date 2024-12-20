@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8306738929E7D74C004D71C6 /* Tool_Tips.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8306738829E7D74C004D71C6 /* Tool_Tips.plist */; };
-		830D747428FC4ECF00995468 /* VPolygonDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 830D747328FC4ECF00995468 /* VPolygonDrawingView.m */; };
+		830D747428FC4ECF00995468 /* VDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 830D747328FC4ECF00995468 /* VDrawingView.m */; };
 		830D747728FCB09900995468 /* NSBezierPath+QuartzUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 830D747528FCB09900995468 /* NSBezierPath+QuartzUtilities.m */; };
 		831CA3A0294FB2040052EF61 /* VModelDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831CA39F294FB2040052EF61 /* VModelDrawingView.m */; };
 		832BD4C728CACB7E00AE0FC8 /* help_icon_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832BD4C628CACB7E00AE0FC8 /* help_icon_names.plist */; };
@@ -27,7 +27,6 @@
 		833031EC29F3F17D003E0AE5 /* bundle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833031EB29F3F17D003E0AE5 /* bundle.plist */; };
 		833031EE29F3F189003E0AE5 /* bundle_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833031ED29F3F189003E0AE5 /* bundle_help.plist */; };
 		834E183229FEE79700997AA8 /* positioning_help.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834E183129FE736E00997AA8 /* positioning_help.plist */; };
-		8379CFA52D0D567700890265 /* VDrawingGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8379CFA42D0D567700890265 /* VDrawingGrid.m */; };
 		8386CD1629084A2C00AB7428 /* VPrintableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8386CD1529084A2C00AB7428 /* VPrintableView.m */; };
 		83939A8F2986622A00F962D7 /* Dealing with responder loops in Resources */ = {isa = PBXBuildFile; fileRef = 83939A8E2986622A00F962D7 /* Dealing with responder loops */; };
 		83A668B02A29BD6100268D42 /* VDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A668A42A29BD6000268D42 /* VDocumentController.m */; };
@@ -92,8 +91,8 @@
 /* Begin PBXFileReference section */
 		8306738829E7D74C004D71C6 /* Tool_Tips.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Tool_Tips.plist; sourceTree = "<group>"; };
 		830A63062900388800F0E351 /* Cytosim_GUI.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Cytosim_GUI.entitlements; sourceTree = "<group>"; };
-		830D747228FC4ECF00995468 /* VPolygonDrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPolygonDrawingView.h; sourceTree = "<group>"; };
-		830D747328FC4ECF00995468 /* VPolygonDrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPolygonDrawingView.m; sourceTree = "<group>"; };
+		830D747228FC4ECF00995468 /* VDrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDrawingView.h; sourceTree = "<group>"; };
+		830D747328FC4ECF00995468 /* VDrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDrawingView.m; sourceTree = "<group>"; };
 		830D747528FCB09900995468 /* NSBezierPath+QuartzUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+QuartzUtilities.m"; sourceTree = "<group>"; };
 		830D747628FCB09900995468 /* NSBezierPath+QuartzUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+QuartzUtilities.h"; sourceTree = "<group>"; };
 		831CA39E294FB2040052EF61 /* VModelDrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VModelDrawingView.h; sourceTree = "<group>"; };
@@ -124,8 +123,6 @@
 		835FF8B428BE9CB500F9CCB0 /* single.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = single.plist; sourceTree = "<group>"; };
 		835FF8B528BE9CB500F9CCB0 /* simul.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = simul.plist; sourceTree = "<group>"; };
 		835FF8B728BE9CB500F9CCB0 /* display_point_help.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = display_point_help.plist; sourceTree = "<group>"; };
-		8379CFA32D0D567700890265 /* VDrawingGrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDrawingGrid.h; sourceTree = "<group>"; };
-		8379CFA42D0D567700890265 /* VDrawingGrid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDrawingGrid.m; sourceTree = "<group>"; };
 		8386CD1429084A2C00AB7428 /* VPrintableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VPrintableView.h; sourceTree = "<group>"; };
 		8386CD1529084A2C00AB7428 /* VPrintableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VPrintableView.m; sourceTree = "<group>"; };
 		83939A8E2986622A00F962D7 /* Dealing with responder loops */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Dealing with responder loops"; sourceTree = "<group>"; };
@@ -411,10 +408,8 @@
 			children = (
 				830D747628FCB09900995468 /* NSBezierPath+QuartzUtilities.h */,
 				830D747528FCB09900995468 /* NSBezierPath+QuartzUtilities.m */,
-				8379CFA32D0D567700890265 /* VDrawingGrid.h */,
-				8379CFA42D0D567700890265 /* VDrawingGrid.m */,
-				830D747228FC4ECF00995468 /* VPolygonDrawingView.h */,
-				830D747328FC4ECF00995468 /* VPolygonDrawingView.m */,
+				830D747228FC4ECF00995468 /* VDrawingView.h */,
+				830D747328FC4ECF00995468 /* VDrawingView.m */,
 				8386CD1429084A2C00AB7428 /* VPrintableView.h */,
 				8386CD1529084A2C00AB7428 /* VPrintableView.m */,
 			);
@@ -619,7 +614,7 @@
 				83A668B02A29BD6100268D42 /* VDocumentController.m in Sources */,
 				83A668CE2A29BE3300268D42 /* VParameterVariations.m in Sources */,
 				83A668CC2A29BE3300268D42 /* VConfigObject.m in Sources */,
-				830D747428FC4ECF00995468 /* VPolygonDrawingView.m in Sources */,
+				830D747428FC4ECF00995468 /* VDrawingView.m in Sources */,
 				83A668D52A29BE3300268D42 /* VConfigParameter.m in Sources */,
 				83A668B42A29BD6100268D42 /* VNamedTask.m in Sources */,
 				83A668CD2A29BE3300268D42 /* VOutlineItem.m in Sources */,
@@ -634,7 +629,6 @@
 				83A668B22A29BD6100268D42 /* VAppDelegate.m in Sources */,
 				83A668D02A29BE3300268D42 /* VParamVariationsManager.m in Sources */,
 				83A668D12A29BE3300268D42 /* VConfigObjectCreator.m in Sources */,
-				8379CFA52D0D567700890265 /* VDrawingGrid.m in Sources */,
 				83A668B12A29BD6100268D42 /* VDocument.m in Sources */,
 				83A668B32A29BD6100268D42 /* VAutoSelectTextField.m in Sources */,
 				83DC88C428AB9C7C0024BF2B /* OrderedDictionary.m in Sources */,

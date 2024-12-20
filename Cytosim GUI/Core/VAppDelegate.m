@@ -11,7 +11,7 @@
 #import "VConfigObject.h"
 #import "VConfigParameter.h"
 #import "VCymParameter.h"
-#import "VPolygonDrawingView.h"
+#import "VDrawingView.h"
 #import "VModelDrawingView.h"
 
 #import "NSTask_Inspector.h"
@@ -220,8 +220,8 @@
         NSArray* subViews = self.polygonDrawingWindow.contentView.subviews;
         for (NSView* aView in subViews) {
             if ([aView isMemberOfClass:[NSScrollView class]]) {
-                VPolygonDrawingView* dView = (VPolygonDrawingView*)(((NSScrollView*)aView).documentView);
-                if ([dView isMemberOfClass:[VPolygonDrawingView class]]) {
+                VDrawingView* dView = (VDrawingView*)(((NSScrollView*)aView).documentView);
+                if ([dView isMemberOfClass:[VDrawingView class]]) {
                     [dView initialize];
                 }
             }
@@ -469,16 +469,16 @@
     NSWindow *theWindow = [aNotif object];
     
     if ([theWindow isEqualTo:self.modelDesignWindow]) {
-        NSInteger count = -1;
-        
-        for (int k=0; k<10; k++) {
-            if ([theWindow.contentView viewWithTag:k].hidden == NO)
-                count++;
-        }
-        if (count>0){
-            [self.configObjectCreator distributeIconsOnLine: 1 reqIcons:self.helpIconsOnFirstLine];
-            [self.configObjectCreator distributeIconsOnLine: 2 reqIcons:self.helpIconsOnSecondLine];
-        }
+//        NSInteger count = -1;
+//        
+//        for (int k=0; k<10; k++) {
+//            if ([theWindow.contentView viewWithTag:k].hidden == NO)
+//                count++;
+//        }
+//        if (count>0){
+//            [self.configObjectCreator distributeIconsOnLine: 1 reqIcons:self.helpIconsOnFirstLine];
+//            [self.configObjectCreator distributeIconsOnLine: 2 reqIcons:self.helpIconsOnSecondLine];
+//        }
     }
 }
 
@@ -2580,7 +2580,7 @@
 
 -(IBAction) changePolygonZoom:(id)sender {
     self.polygonZoom = [NSNumber numberWithFloat:(self.polygonZoomSlider.integerValue/10.0)];
-    [self.polygonDrawingView scalePolygon];
+    [self.polygonDrawingView scaleObjects];
 }
 
 //-----------------------------------------------------------------------------

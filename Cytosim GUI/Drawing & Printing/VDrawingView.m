@@ -5,12 +5,12 @@
 //  Created by Chris on 16/10/2022.
 //
 
-#import "VPolygonDrawingView.h"
+#import "VDrawingView.h"
 #import "VAppDelegate.h"
 #import "VPrintableView.h"
 #import "NSBezierPath+QuartzUtilities.h"
 
-@implementation VPolygonDrawingView
+@implementation VDrawingView
 
 /*==================================================================================*/
 
@@ -41,9 +41,10 @@
         VAppDelegate* del = (VAppDelegate*)(NSApp.delegate);
         del.polygonScale = @50;            // default = 50 pixels by micron
         del.polygonNumMicrons = @10;       // default = 10 µm i.e 500 pixels wide and high
+
         [self addGrid:self];
         
-        self.currentPolygonZoom = 1.0;
+        self.currentObjectZoom = 1.0;
         self.window.documentEdited = NO;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeSelColor) name:NSColorPanelColorDidChangeNotification object:nil];
@@ -246,10 +247,10 @@
 /*==================================================================================*/
 // scale by a user input zoomFactor with the scaling center being the barycenter of the polygon
 
--(void) scalePolygon {
+-(void) scaleObjects {
     
     VAppDelegate* del = (VAppDelegate*)NSApp.delegate;
-    float oldZoomFactor = self.currentPolygonZoom;
+    float oldZoomFactor = self.currentObjectZoom;
     float newZoomFactor = del.polygonZoom.floatValue;
     if (newZoomFactor != 1.0) {
         //float halfPos = del.polygonScale.floatValue * del.polygonNumMicrons.floatValue / 2.0;
@@ -266,7 +267,7 @@
             self.polygon[k].x = ((self.polygon[k].x - baryCenter.x) * newZoomFactor) + baryCenter.x;
             self.polygon[k].y = ((self.polygon[k].y - baryCenter.y) * newZoomFactor) + baryCenter.y;
         }
-        self.currentPolygonZoom = newZoomFactor;
+        self.currentObjectZoom = newZoomFactor;
         del.polygonZoom = [NSNumber numberWithFloat:newZoomFactor];
     }
     [self polygonToPath];
@@ -276,13 +277,13 @@
 /*==================================================================================*/
 
 -(void) addPolygonLayer {
-    self.polygonLayer = [CAShapeLayer layer];
-    self.polygonLayer.lineWidth = 1.0;
-    self.polygonLayer.lineCap = kCALineCapRound;
-    self.polygonLayer.strokeColor = [self.selColor CGColor];
-    self.polygonLayer.fillColor = [[NSColor clearColor] CGColor];
-    self.polygonLayer.lineDashPattern = @[@11, @4];
-    [self.layer addSublayer:self.polygonLayer];
+    self.objectLayer = [CAShapeLayer layer];
+    self.objectLayer.lineWidth = 1.0;
+    self.objectLayer.lineCap = kCALineCapRound;
+    self.objectLayer.strokeColor = [self.selColor CGColor];
+    self.objectLayer.fillColor = [[NSColor clearColor] CGColor];
+    self.objectLayer.lineDashPattern = @[@11, @4];
+    [self.layer addSublayer:self.objectLayer];
     [self animatePolygonLayer];
 }
 
@@ -297,7 +298,7 @@
     dashAnimation.toValue = @15.0f;
     dashAnimation.duration = 0.75f;
     dashAnimation.repeatCount = HUGE_VALF;
-    [self.polygonLayer addAnimation:dashAnimation forKey:@"marching_ants"];
+    [self.objectLayer addAnimation:dashAnimation forKey:@"marching_ants"];
 }
 
 /*==================================================================================*/
@@ -313,6 +314,7 @@
 /*==================================================================================*/
 
 -(void) showGrid {
+    
     
     VAppDelegate* del = (VAppDelegate*)(NSApp.delegate);
 
@@ -377,6 +379,7 @@
 -(void) removeGrid {
     [self.gridLayer removeFromSuperlayer];
     [self.axesLayer removeFromSuperlayer];
+    
     self.gridVisible = NO;
 }
 
@@ -406,10 +409,10 @@
 }
 
 -(void) rebuildPolygonLayer {
-    [self.polygonLayer removeFromSuperlayer];
+    [self.objectLayer removeFromSuperlayer];
     [self addPolygonLayer];
     CGPathRef path = [self.curPath quartzPath];
-    self.polygonLayer.path = path;
+    self.objectLayer.path = path;
     CGPathRelease(path);
     
     [self.handleLayer removeFromSuperlayer];
@@ -635,12 +638,12 @@
 
             [self polygonToPath];
             [self redrawSelection];
-            CABasicAnimation* ants = (CABasicAnimation*)[self.polygonLayer animationForKey:@"marching_ants"];
+            CABasicAnimation* ants = (CABasicAnimation*)[self.objectLayer animationForKey:@"marching_ants"];
             if (ants) {
-                [self.polygonLayer addAnimation:ants forKey:nil];
+                [self.objectLayer addAnimation:ants forKey:nil];
             }
 
-        } else if (CGPathContainsPoint(self.polygonLayer.path, NULL, self.hitPoint, NO)) {
+        } else if (CGPathContainsPoint(self.objectLayer.path, NULL, self.hitPoint, NO)) {
             
             self.dragSelection = YES;
             
@@ -684,7 +687,7 @@
         [self addFloatingPoint:movedPoint];
         [self redrawSelection];
     } else {
-        if  ((CGPathContainsPoint(self.polygonLayer.path, NULL, movedPoint, NO)) ||
+        if  ((CGPathContainsPoint(self.objectLayer.path, NULL, movedPoint, NO)) ||
              (CGPathContainsPoint(self.handleLayer.path, NULL, movedPoint, NO))) {
             NSCursor* curs = [NSCursor arrowCursor];
             [curs set];
